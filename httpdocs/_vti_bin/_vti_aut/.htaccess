@@ -1,0 +1,18 @@
+# -FrontPage-
+
+Options +FollowSymlinks
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+require group authors administrators
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthType Passthrough
+AuthName panelflow.com
+AuthUserFile /home/panel/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/panel/public_html/_vti_pvt/service.grp

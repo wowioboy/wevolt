@@ -1,0 +1,153 @@
+/**
+ * Additional styles for the controls.
+ */
+.jcarousel-control {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.jcarousel-control a {
+    font-size: 75%;
+    text-decoration: none;
+    padding: 0 5px;
+    margin: 0 0 5px 0;
+    border: 1px solid #fff;
+    color: #eee;
+    background-color: #4088b8;
+    font-weight: bold;
+}
+
+.jcarousel-control a:focus,
+.jcarousel-control a:active {
+    outline: none;
+}
+
+.jcarousel-scroll {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.jcarousel-scroll form {
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-scroll select {
+    font-size: 75%;
+}
+
+#mycarousel-next,
+#mycarousel-prev {
+    cursor: pointer;
+    margin-bottom: -10px;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+div.workarea { padding:10px; float:left }
+
+ul.draglist { 
+    position: relative;
+    width: 200px; 
+    height:240px;
+    background: #f7f7f7;
+    border: 1px solid gray;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+ul.draglist li {
+    margin: 1px;
+    cursor: move;
+    zoom: 1;
+}
+
+ul.draglist_alt { 
+    position: relative;
+    width: 200px; 
+    list-style: none;
+    margin:0;
+    padding:0;
+    /*
+       The bottom padding provides the cushion that makes the empty 
+       list targetable.  Alternatively, we could leave the padding 
+       off by default, adding it when we detect that the list is empty.
+    */
+    padding-bottom:20px;
+}
+
+ul.draglist_alt li {
+    margin: 1px;
+    cursor: move; 
+}
+
+.yui-overlay { position:absolute; }
+	.yui-overlay .hd {padding:0px; }
+	.yui-overlay .bd { padding:0px; }
+	.yui-overlay .ft { padding:0px; }
+
+	#ctx { background:orange;width:100px;height:25px; }
+	
+	#example {height:15em;}
+  div.yui-b p {
+            
+                margin: 0 0 .5em 0;
+                color: #999;
+            
+            }
+            
+            div.yui-b p strong {
+            
+                font-weight: bold;
+                color: #000;
+            
+            }
+            
+            div.yui-b p em {
+
+                color: #000;
+            
+            }            
+            
+            h1 {
+
+                font-weight: bold;
+                margin: 0 0 1em 0;                
+                padding: .25em .5em;
+                background-color: #ccc;
+
+            }
+
+            #drawer_container1,#drawer_container2 {
+                
+                position: static;
+                
+            }
+
+
+			/*
+				For IE 6: trigger "haslayout" for the anchor elements in the root Menu by 
+				setting the "zoom" property to 1.  This ensures that the selected state of 
+				MenuItems doesn't get dropped when the user mouses off of the text node of 
+				the anchor element that represents a MenuItem's text label.
+			*/
+
+			#drawer_container1.yuimenuitemlabel,#drawer_container2.yuimenuitemlabel {
+			
+				_zoom: 1;
+			
+			}
+
+			#drawer_container1,#drawer_container2 .yuimenu .yuimenuitemlabel {
+
+				_zoom: normal;
+
+			}
+			
+			.yuimenuitem-selected {
+			background-image:url(http://www.wevolt.com/images/drawer_normal_hover.jpg);
+			height:33px;
+			width:241px;
+			
+			}

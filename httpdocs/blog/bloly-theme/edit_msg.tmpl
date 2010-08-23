@@ -1,0 +1,16 @@
+<include /bloly-theme/page_header.tmpl>
+<%g_result%>
+
+<div class=post_reply>Edit message</div>
+<form action="<%URL_SELF%>" method=post name=editor onSubmit="javascript:return Send(this)">
+Title: <input type=text name=header style="width:100%"><br>
+<%authentication%>
+<include /bloly-theme/editor.tmpl>
+</form>
+
+<script>
+editor.txt.value="<%js_msg_body%>";
+editor.header.value="<%js_msg_header%>";
+</script>
+
+<include /bloly-theme/page_footer.tmpl>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/container/assets/skins/sam/container.css" />
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/container/container-min.js"></script>
+
+
+<script type="text/javascript">
+YAHOO.namespace("wevolt.container");
+
+YAHOO.wevolt.container.t1 = new YAHOO.widget.Tooltip("t1", { context:"contact" });
+</script>
+<title>Untitled Document</title>
+</head>
+
+<body class="yui-skin-sam">
+<a href="http://www.wevolt.com/index.php?p=contact" title="Click here if you want to get a hold of us" id="contact"><img src="http://www.wevolt.com/images/contact_button.png" id="contact_button"  onmouseover="roll_over('contact_button', 'http://www.wevolt.com/images/contact_button_over.png')" onmouseout="roll_over('contact_button', 'http://www.wevolt.com/images/contact_button.png')" class="navbuttons"/></a>
+</body>
+</html>

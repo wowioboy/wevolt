@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^page/([^/]+)/$ index.php?page=$1 [QSA]
+RewriteRule ^extras/page/([^/]+)/$ extras.php?page=$1 [QSA]
+RewriteRule ^extras/$ extras.php [QSA]
+RewriteRule ^contact/$ contact.php [QSA]
+RewriteRule ^episodes/$ episodes.php [QSA]
+RewriteRule ^creator/$ about.php [QSA]
+RewriteRule ^characters/$ characters.php [QSA]
+RewriteRule ^downloads/$ downloads.php [QSA]
+RewriteRule ^mobile/$ mobile.php [QSA]
+RewriteRule ^products/$ products.php [QSA]

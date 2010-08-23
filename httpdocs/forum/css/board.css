@@ -1,0 +1,40 @@
+body,html {
+	margin:0px;
+	padding:0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#breadcrumb {
+	font-size:10px;
+	color:#185591;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#breadcrumb a:link {
+	font-size:10px;
+	color:#185591;
+	font-style:italic;
+}
+
+#breadcrumb a:visited {
+	font-size:10px;
+	color:#185591;
+	font-style:italic;
+}
+
+#breadcrumb a:hover {
+	font-size:10px;
+	color:#000000;
+	font-style:italic;
+	text-decoration:underline;
+}
+
+.catheader {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#FFFFFF;
+background-color:#6190c4;
+line-height:16px;
+font-weight:bold;
+padding-left:5px;
+}

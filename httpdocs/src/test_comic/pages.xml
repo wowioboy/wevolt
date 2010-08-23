@@ -1,0 +1,29 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data bg="http://images.barkit.gameriot.com/barkit/default/barkit_comic_bkgrd.jpg" id="">
+
+		
+	<page>
+		<title>Cover Page</title>
+		<asset>http://images.barkit.gameriot.com/barkit/comics/page.7.7.1248194032.jpg</asset>
+		<thumb>http://images.barkit.gameriot.com/barkit/comics/thumb-page.7.7.1248194032.jpg</thumb>
+	</page>
+	
+
+	
+	<toc>
+		<thumb>http://images.barkit.gameriot.com/barkit/default/barkit_comic_toc_bkgrd.jpg</thumb>
+	</toc>
+	
+
+	
+	<page> 
+		<title>Chapter 1</title>
+		<asset>http://www.outlandentertainment.com/barkit/99sense.flv</asset>
+		<thumb>http://images.barkit.gameriot.com/barkit/comics/thumb-page.7.7.1248283586.jpg</thumb>
+	</page>
+	
+	
+	
+</data>

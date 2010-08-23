@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Carousel: Circular Carousel</title>
+<!-- Combo-handled YUI CSS files: --> 
+<link rel="stylesheet" type="text/css" href="http://www.w3volt.com/css/spotlight_css.css">  
+<!-- Combo-handled YUI JS files: --> 
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js&2.8.0r4/build/animation/animation-min.js&2.8.0r4/build/container/container_core-min.js&2.8.0r4/build/menu/menu-min.js&2.8.0r4/build/element/element-min.js&2.8.0r4/build/carousel/carousel-min.js"></script>
+    <style type="text/css">
+    body {
+        margin:0;
+        padding:0;
+    }
+    #container {
+        font-size: 13px;
+        margin: 0 auto;
+    }
+
+    #container a {
+        text-decoration: none;
+    }
+            
+    #container .intro {
+        display: inline;
+        margin: 0px 14px 0px 4px;
+        width: 202px;
+    }
+            
+    #container .item {
+        display: inline;
+      
+        overflow: hidden;
+  
+        width: 300px;
+    }
+
+    #container .item .authimg {
+        bottom: 2px;
+        margin-left: 61px;
+        position: absolute;
+        z-index: 1;
+    }
+            
+    #container .item h3 {
+        line-height: 85%;
+        margin-top: 4px;
+    }
+            
+    #container .item h3 a {
+        font: 77% Arial, sans-serif;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+            
+    #container .item h3 a:link {
+        color:#35a235;
+    }
+            
+    #container .item h4 {
+        margin-top:5px;
+    }
+            
+    #container .item h4 a {
+        font: 100% Georgia, Times, serif;
+        position: relative;
+        z-index:2;
+    }
+
+    #container .item h4 a:link {
+        color:#00639b;
+    }
+            
+    #container .item cite {
+        color: #888;
+        display: block;
+        font-size: 77%;
+        line-height: normal;
+        margin-bottom: 30px;
+    }
+            
+    #container .item p.all {
+        bottom: 25px;
+        position: absolute;
+        z-index: 2;
+    }
+            
+    #container .item p.all a {
+        font-weight: bold;
+        font-size: 85%;
+    }
+
+    </style>
+  <script>
+    (function () {
+        var carousel;
+                
+        YAHOO.util.Event.onDOMReady(function (ev) {
+            var carousel    = new YAHOO.widget.Carousel("container", {
+                        isCircular: true, numVisible: 1
+                });
+
+            carousel.render(); // get ready for rendering the widget
+            carousel.show();   // display the widget
+        });
+    })();
+    </script>
+</head>
+<body class="yui-skin-sam">
+    <h1>Circular Carousel Example</h1>
+    <!-- The Carousel container -->
+
+   <div id="container">
+      <ol id="carousel">
+                    <li class="item"><img src="http://www.panelflow.com/comics/S/Stupid_Users/images/comicthumb.jpg" align="left" hspace="5"><div class="sender_name">Stupid Users</div><div class="messageinfo">Check out this crazy comic about crazy zombies!<br/><a href="http://www.w3volt.com/Stupid_Users/">CHECK IT OUT</a></div></li><li class="item"><img src="http://www.panelflow.com/users/matteblack/avatars/TPcolor.jpg" align="left" hspace="5"><div class="sender_name">Matt Jacobs - The Myth</div><div class="messageinfo">This cat is one talented dude, you have to check out his stuff on his W3VOLT page.<br/><a href="http://users.w3volt.com/matteblack/">CHECK IT OUT</a></div></li>          <li class="item"><img src="http://www.panelflow.com/comics/S/Stupid_Users/images/comicthumb.jpg" align="left" hspace="5"><div class="sender_name">Stupid Users</div><div class="messageinfo">Check out this crazy comic about crazy zombies!<br/><a href="http://www.w3volt.com/Stupid_Users/">CHECK IT OUT</a></div></li><li class="item"><img src="http://www.panelflow.com/users/matteblack/avatars/TPcolor.jpg" align="left" hspace="5"><div class="sender_name">Matt Jacobs - The Myth</div><div class="messageinfo">This cat is one talented dude, you have to check out his stuff on his W3VOLT page.<br/><a href="http://users.w3volt.com/matteblack/">CHECK IT OUT</a></div></li>
+      </ol>
+
+    </div>
+
+    </div>
+
+  
+
+</body>
+</html>
+

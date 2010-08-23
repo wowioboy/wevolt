@@ -1,0 +1,25 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^profile/([^/]+)/$ profile.php?name=$1 [QSA] # Process parrots
+RewriteRule ^([^/]+)/$ viewcomic.php?comicname=$1 [QSA] # Process parrots
+
+<IfModule mod_security.c>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</IfModule>
+

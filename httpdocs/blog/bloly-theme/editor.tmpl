@@ -1,0 +1,124 @@
+<style TYPE="text/css">
+<!--
+.preview_title { font-size:larger; color:#990000; background:#cccccc; margin-top:20px; margin-bottom:0px;}
+.preview_text { border:1px; border-color:#cccccc; border-style:solid; }
+.tb { font-family:Verdana; background:#eeeeee; border:1px; border-color:#cccccc; border-style:solid; cursor:hand; }
+-->
+</style>
+
+<script>
+
+function Send(f)
+{	editor.ok.disabled=true;
+	editor.ok.style.visibility='hidden';
+	return true;
+}
+
+function f1(t) { t.style.backgroundColor='#ccccff';}
+function f2(t) { t.style.backgroundColor='#eeeeee';}
+
+function insertTag(tag1,tag2)
+{	f=editor.txt;
+	f.focus();
+	if(document.selection)
+	{	sel = document.selection.createRange();
+		if(sel.text.length > 0)
+		{	sel.text = tag1+sel.text+tag2;
+		}
+		else
+		{	sel.text=tag1;
+		}
+		return true;
+	}
+	if(f.selectionStart || f.selectionStart=='0')
+	{	var startPos = f.selectionStart;
+		var endPos = f.selectionEnd;
+		var cursorPos = endPos;
+		var scrollTop = f.scrollTop;
+
+		if(startPos != endPos)
+		{	f.value = f.value.substring(0,startPos)
+				+ tag1 + f.value.substring(startPos,endPos)
+				+ tag2 + f.value.substring(endPos,f.value.length);
+			cursorPos += tag1.length + tag2.length;
+		}
+		else
+		{	f.value = f.value.substring(0,startPos)
+				+ tag1 + f.value.substring(endPos,f.value.length);
+			cursorPos = startPos + tag1.length;
+		}
+		f.focus();
+		f.selectionStart = cursorPos;
+		f.selectionEnd = cursorPos;
+		f.scrollTop = scrollTop;
+		return true;
+	}
+	return false;
+}
+
+function onBtn(b,tag)
+{	editor.txt.focus();
+	if(b==null)
+	{	insertTag("<"+tag+">", "");
+	}
+	else
+	{	if(b.value.charAt(0)=='/')
+		{	insertTag("</"+tag+">", "");
+			b.value=b.value.substr(1);
+		}
+		else
+		{	insertTag("<"+tag+">", "</"+tag+">");
+			b.value="/"+b.value;
+		}
+	}
+	return false;
+}
+
+function onImage()
+{	editor.txt.focus();
+	var URL=prompt("Enter the URL of image","http://");
+	if(URL) insertTag('<img src="'+URL+'" border="0">', "");
+}
+
+function onLink()
+{	editor.txt.focus();
+	var URL=prompt("Enter the URL","http://");
+	if(URL)
+	{	var title=prompt("Enter link name","click here");
+		if(title) insertTag('<a href="'+URL+'">'+title+'</a>', "");
+	}
+}
+
+var txtSaved="";
+
+function onTxtChange()
+{	if(txtSaved!=editor.txt.value)
+	{	preview.innerHTML=editor.txt.value;
+		txtSaved=editor.txt.value;
+	}
+	return false;
+}
+
+setInterval("onTxtChange()", 1000);
+</script>
+
+<input type=button name=b accessKey=b title="Alt+B" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Bold" class=tb style="font-weight:bold" onClick="javascript:return onBtn(this,'B')">
+<input type=button name=b accessKey=i title="Alt+I" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Italic" class=tb style="font-style:italic" onClick="javascript:return onBtn(this,'I')">
+<input type=button name=b accessKey=s title="Alt+S" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Strikethrough" class=tb style="text-decoration:line-through" onClick="javascript:return onBtn(this,'STRIKE')">
+<input type=button name=b accessKey=u title="Alt+U" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Underline" class=tb style="text-decoration:underline" onClick="javascript:return onBtn(this,'U')">
+<input type=button name=b accessKey=q title="Alt+Q" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Indent" class=tb onClick="javascript:return onBtn(this,'BLOCKQUOTE')">
+<input type=button name=b accessKey=y title="Alt+Y" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Line break" class=tb onClick="javascript:return onBtn(null,'BR')">
+<input type=button name=b accessKey=o title="Alt+O" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="OL" class=tb onClick="javascript:return onBtn(this,'OL')">
+<input type=button name=b accessKey=k title="Alt+K" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="UL" class=tb onClick="javascript:return onBtn(this,'UL')">
+<input type=button name=b accessKey=l title="Alt+L" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="LI" class=tb onClick="javascript:return onBtn(this,'LI')">
+<input type=button name=b accessKey=c title="Alt+C" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Code" class=tb onClick="javascript:return onBtn(this,'CODE')">
+<input type=button name=b accessKey=p title="Alt+P" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Img" class=tb onClick="javascript:return onImage(this)">
+<input type=button name=b accessKey=a title="Alt+A" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Link" class=tb style="color:#0000cc;text-decoration:underline" onClick="javascript:return onLink(this)">
+<input type=button name=b accessKey=. title="Alt+." onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="&lt;" class=tb onClick="javascript:return insertTag('&amp;lt;','')">
+<input type=button name=b accessKey=, title="Alt+," onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="&gt;" class=tb onClick="javascript:return insertTag('&amp;gt;','')">
+<input type=button name=b accessKey=7 title="Alt+7" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="&amp;" class=tb onClick="javascript:return insertTag('&amp;amp;','')">
+<input type=button name=b accessKey=m title="Alt+M" onmouseover="javascript:f1(this)" onmouseout="javascript:f2(this)" value="Read more" class=tb onClick="javascript:return insertTag('&lt;MORE&gt;','')">
+<textarea name=txt class=t_reply cols=10 rows=10></textarea>
+<input type="submit" name=ok value="Save">
+<div class=preview_title>Preview</div>
+<div class=preview_text id=preview></div>

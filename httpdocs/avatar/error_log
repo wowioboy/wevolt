@@ -1,0 +1,62 @@
+[29-Apr-2008 02:06:27] PHP Warning:  MAX_FILE_SIZE of 50000 bytes exceeded - file [image=page 10.bmp] not saved in Unknown on line 0
+[29-Apr-2008 02:12:57] PHP Warning:  MAX_FILE_SIZE of 50000 bytes exceeded - file [image=page-11.jpg] not saved in Unknown on line 0
+[29-Apr-2008 02:39:25] PHP Warning:  main(install_functions.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/outland/public_html/spamkills/resize/uploadavatar.php on line 1
+[29-Apr-2008 02:39:25] PHP Warning:  main(install_functions.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/outland/public_html/spamkills/resize/uploadavatar.php on line 1
+[29-Apr-2008 02:39:25] PHP Warning:  main(install_functions.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/outland/public_html/spamkills/resize/uploadavatar.php on line 1
+[29-Apr-2008 02:39:25] PHP Fatal error:  main() [<a href='function.require'>function.require</a>]: Failed opening required 'install_functions.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/outland/public_html/spamkills/resize/uploadavatar.php on line 1
+[02-May-2008 02:13:45] PHP Warning:  main(includes/init.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/header.php on line 1
+[02-May-2008 02:13:45] PHP Warning:  main(includes/init.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/header.php on line 1
+[02-May-2008 02:13:45] PHP Warning:  main(includes/init.php) [<a href='function.main'>function.main</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/header.php on line 1
+[02-May-2008 02:13:45] PHP Warning:  main() [<a href='function.include'>function.include</a>]: Failed opening 'includes/init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/outland/public_html/panelflow/avatar/header.php on line 1
+[02-May-2008 02:26:20] PHP Parse error:  syntax error, unexpected '}' in /home/outland/public_html/panelflow/avatar/header.php on line 28
+[02-May-2008 02:26:46] PHP Fatal error:  Call to undefined function:  is_authed() in /home/outland/public_html/panelflow/avatar/header.php on line 26
+[02-May-2008 02:49:29] PHP Parse error:  syntax error, unexpected $end in /home/outland/public_html/panelflow/avatar/header.php on line 61
+[02-May-2008 02:56:02] PHP Fatal error:  Cannot redeclare getwidth() (previously declared in /home/outland/public_html/panelflow/avatar/functions.php:3) in /home/outland/public_html/panelflow/avatar/functions.php on line 3
+[02-May-2008 02:58:21] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 25
+[02-May-2008 02:58:21] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[02-May-2008 02:58:21] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[02-May-2008 02:59:52] PHP Fatal error:  Call to undefined function:  is_authed() in /home/outland/public_html/panelflow/avatar/header.php on line 27
+[02-May-2008 02:59:57] PHP Fatal error:  Call to undefined function:  is_authed() in /home/outland/public_html/panelflow/avatar/header.php on line 27
+[02-May-2008 03:00:01] PHP Fatal error:  Call to undefined function:  is_authed() in /home/outland/public_html/panelflow/avatar/header.php on line 27
+[02-May-2008 03:00:15] PHP Fatal error:  Call to undefined function:  is_authed() in /home/outland/public_html/panelflow/avatar/header.php on line 27
+[02-May-2008 03:27:04] PHP Warning:  copy(./users/
+matteblack
+
+/avatars/Alexi1.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[02-May-2008 03:29:43] PHP Warning:  copy(./users/matteblack/avatars/Alexi1.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[02-May-2008 03:30:51] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[02-May-2008 03:30:51] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[02-May-2008 03:30:51] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[02-May-2008 03:30:51] PHP Warning:  copy(working/finished/eldar2.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[02-May-2008 03:32:04] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[02-May-2008 03:32:04] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[02-May-2008 03:32:04] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[02-May-2008 03:32:04] PHP Warning:  copy(working/finished/eldar2.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[02-May-2008 03:32:16] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[02-May-2008 03:32:16] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[02-May-2008 03:32:16] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[02-May-2008 03:32:16] PHP Warning:  copy(working/finished/eldar2.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[02-May-2008 03:35:20] PHP Warning:  copy(../users/
+matteblack
+
+/avatars/eldar-spawn.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[02-May-2008 03:40:00] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[02-May-2008 03:40:00] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[02-May-2008 03:40:00] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[02-May-2008 03:40:00] PHP Warning:  copy(working/finished/CADE9.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[05-May-2008 16:44:50] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[05-May-2008 16:44:50] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[05-May-2008 16:44:50] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[05-May-2008 16:44:50] PHP Warning:  copy(working/finished/avatar.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[05-May-2008 16:45:12] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[05-May-2008 16:45:12] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[05-May-2008 16:45:12] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[05-May-2008 16:45:12] PHP Warning:  copy(working/finished/avatar.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[10-May-2008 14:31:29] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[10-May-2008 14:31:29] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[10-May-2008 14:31:29] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[10-May-2008 14:31:29] PHP Warning:  copy(working/finished/armor.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37
+[10-May-2008 14:32:02] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 26
+[10-May-2008 14:32:02] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 27
+[10-May-2008 14:32:02] PHP Warning:  chmod() [<a href='function.chmod'>function.chmod</a>]: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 28
+[10-May-2008 14:32:02] PHP Warning:  copy(working/finished/armor.jpg) [<a href='function.copy'>function.copy</a>]: failed to open stream: No such file or directory in /home/outland/public_html/panelflow/avatar/last_step.php on line 37

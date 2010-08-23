@@ -1,0 +1,25 @@
+Simple PHP Blog:
+----------------
+
+This is a modified version of the original SPHPBlog found at 
+http://sourceforge.net/projects/sphpblog/
+
+This version is Trackback (http://www.movabletype.org/trackback/beginners/) 
+enabled.
+
+WARNING: Make backup copies first!!
+This stuff is not yet very well tested!! It works fine for me, but your mileage 
+may vary.
+
+When using this version with content created in the original version, run 
+upgrade.php to move all comment*.txt to a comments/ subdirectory, where the new 
+script expects them to be.
+There is also a downgrade.php script to move the comments files back where the 
+original scripts can find them. NOTE that this script also deletes all trackback
+information!
+
+More up-to-date info may be found at http://blog.hakwerk.com/sphpblog-tb/
+
+
+28-Nov-2004
+Arjan Hakkesteegt, sphpblog <at> hakwerk <dot> com

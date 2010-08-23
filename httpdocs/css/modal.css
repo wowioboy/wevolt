@@ -1,0 +1,52 @@
+#friendModal
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 192px;
+    top: 300px; left: 0px;
+}
+.modalBackground
+{
+    filter: Alpha(Opacity=70); -moz-opacity:0.4; opacity: 0.4;
+    width: 100%; height: 1280px; background-color: #666666;
+    position: absolute;
+    z-index: 500;
+    top: 0px; left: 0px;
+}
+.modalContainer
+{
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    z-index: 750;
+}
+.modal
+{
+    background-color: white;
+    border: solid 4px black; position: relative;
+    top: 150px;
+    left: -150px;
+    z-index: 1000;
+    width: 350px;
+    height: 192px;
+    padding: 0px;
+}
+.modalTop
+{
+    width: 342px;
+    background-color: #f58434;
+    padding: 4px;
+    color: #ffffff;
+    text-align: right;
+}
+.modalTop a, .modalTop a:visited
+{
+    color: #ffffff;
+}
+.modalBody
+{
+    padding: 10px;
+}
+

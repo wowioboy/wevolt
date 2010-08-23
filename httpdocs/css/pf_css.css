@@ -1,0 +1,474 @@
+body, html {
+margin:0px;
+padding:0px;
+background-color:#f6ecea;
+font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+color:#000000;
+font-size:10px;
+}
+
+
+#modrightside {
+width: 11px;
+background-image:url(../images/right_side.jpg);
+background-repeat:repeat-y;
+
+}
+
+#modleftside {
+width: 11px;
+background-image:url(../images/left_side.jpg);
+background-repeat:repeat-y;
+
+}
+
+#modtop {
+height:13px;
+background-image:url(../images/mod_top.png);
+background-repeat:repeat-x;
+}
+
+.boxcontent {
+color:#000000;
+background-color:#FFFFFF;
+}
+
+#modbottom {
+height:13px;
+background-image:url(../images/mod_bottom.png);
+background-repeat:repeat-x;
+
+}
+
+#modbottomleft{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_bottom_left.png);
+background-repeat:no-repeat;
+}
+
+#modtopleft{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_top_left.png);
+background-repeat:no-repeat;
+}
+
+#modtopright{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_top_right.png);
+background-repeat:no-repeat;
+}
+
+#modbottomright{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_bottom_right.png);
+background-repeat:no-repeat;
+}
+
+
+.shortdescription {
+text-align:left;
+}
+
+.listheader{
+font-weight:bold;
+font-size:14px;
+padding-left:21px;
+text-align:left;
+}
+
+
+.favs{
+font-weight:bold;
+font-size:14px;
+text-align:left;
+}
+
+
+.contentdiv {
+text-align:center;
+padding-left:20px;
+}
+
+.contenttext {
+
+text-align:left;
+padding-left:15px;
+padding-right:15px;
+}
+.featuresheader{
+font-weight:bold;
+font-size:14px;
+padding-left:20px;
+text-align:left;
+}
+
+ul {
+text-align:left;
+}
+
+.featurediv {
+
+}
+
+.featurelist {
+padding-right:20px;.
+}
+
+
+#contentfooter {
+background-image:url(../../outland/images/content_footer.gif);
+height:30px;
+} 
+
+.menu {
+padding-top:5px;
+padding-right:15px;
+text-align:right;
+}
+
+li.bullet {
+list-style-image:url(../images/radiobtn.jpg);
+}
+
+.slug {
+padding-right:15px;
+font-size:14px;
+font-weight:bold;
+}
+
+.logindiv {
+padding-right:15px;
+text-align:right;
+}
+
+
+
+.logo {
+padding-left:15px;
+width: 202px;
+float:left;
+}
+
+.hidden { display:none; }
+.showing { display:block; }
+.error { margin:25px auto; text-align:center; font-size:1.2em; color:#f00; font-weight:bold; }
+#cropWrap { margin:10px 0 0 0; }
+#wait { padding:15px 0 0 0; text-align:center; }
+div.info { width:500px; font-size:1.2em; margin:15px auto 30px auto; line-height:1.7em; border:1px solid #ccc; background:#fff; padding:20px; }
+div.info h1 { font-size:1.6em; border-bottom:1px solid #000; padding:0 0 6px 0; margin:0 0 10px 0; }
+div.info p { margin:0 0 1.2em 0; }
+
+
+/* INITIAL UPLOAD FORM */
+
+form#imigUpload { display:block; border:1px solid #ccc; background:#fff; padding:20px; }
+form legend { font-size:1.4em; font-weight:bold; letter-spacing:1px; }
+form label { display:block; font-size:1.1em; margin:0 0 4px 0; }
+form input {  background:#fafafa;  border:1px solid #ccc;  }
+form div.select { clear:both; padding:5px 0; }
+form select { display:block; border:1px solid #ccc; background:#fafafa; }
+form div#submit, form div#wait { height:30px; padding:5px 0 0 0; }
+
+ .delfav input
+{
+color: #000;
+background: #ffffff;
+border: 1px solid  #ffa20f;
+font-size:10px;
+height:23px;
+width:60px;
+vertical-align:middle;
+}
+
+
+.delfav input:hover
+{
+color: #ffa20f;
+background: #ffffff;
+border: 1px solid  #000000;
+font-size:10px;
+height:23px;
+width:60px;
+}
+
+/* FORMS WHICH STORE EDITING DATA */
+form.frmCrop legend, form.frmResize legend { display:none; }
+
+
+/* RESIZE TRACK AND HANDLE */
+#resizeTrack { width:200px; height:5px; background:transparent url(../images/bg_track.gif) left top no-repeat; margin:0 0 20px 0; }
+#resizeHandle { cursor:move; width:5px; height:10px; background:transparent url(../images/bg_handle.gif) left top no-repeat; }
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+.spacer {
+height:10px;
+}
+
+.medspacer {
+height:5px;
+}
+
+.smspacer {
+height:2px;
+}
+
+.lgspacer {
+height:15px;
+}
+
+.pageheader{
+font-size:16px;
+font-weight:bold;
+
+}
+
+.creatorwrapper {
+padding-left:10px;
+
+}
+
+.imageName {
+padding-top:10px;
+font-size:12px;
+font-weight:bold;
+color:white;
+}
+
+a:link {
+font-size:10px;
+text-decoration:none;
+}    
+ /* unvisited link */
+ 
+a:visited {
+font-size:10px;
+text-decoration:none;
+}  /* visited link */
+
+a:hover {
+font-size:10px;
+text-decoration:none;
+}   /* mouse over link */
+
+a:active {
+font-size:10px;
+text-decoration:none;
+}   /* selected link */
+
+.modtext {
+padding-left:5px;
+color:#FFFFFF;
+} 
+
+.modheader {
+color:#FFFFFF;
+padding-left:5px;
+font-weight:bold;
+}
+
+.pagination {
+text-align:right;
+}
+
+.infoheader {
+color:#000000;
+padding-left:10px;
+font-weight:bold;
+}
+
+.infotext {
+padding-left:10px;
+color:#000000;
+padding-right:10px;
+} 
+
+#modtext a:active {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:visited {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:hover {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:focus {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:link {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+
+.locationwrapper {
+padding-left:5px;
+}
+
+
+
+.header {
+font-size:14px;
+font-weight:bold;
+}
+.notlogged {
+text-align:center;
+font-size:10px;
+}
+
+.rightwrapper{
+text-align:left;
+padding-right:10px;
+}
+
+.leftwrapper{
+/* padding-left:18px;*/
+text-align:left;
+padding-right:20px;
+}
+
+.bugwrapper{
+padding-left:18px;*/
+text-align:left;
+padding-right:20px;
+}
+
+.bugtext{
+
+}
+
+.bugtextheader{
+font-size:14px;
+font-weight:bold;
+
+}
+
+.bugtextsubheader{
+font-size:12px;
+font-weight:bold;
+
+}
+
+.username {
+font-size:10px;
+font-weight:bold;
+}
+
+.notespacer{
+height:3px;
+}
+.commentdate {
+font-size:10px;
+font-weight:100;
+font-style:italic;
+}
+
+.recdescription {
+font-size:10px;
+font-weight:100;
+padding-left:5px;
+}
+
+.rectitle {
+font-size:10px;
+font-weight:bold;
+
+}
+.nocomments{
+font-size:14px;
+font-weight:bold;
+padding:20px;
+text-align:center;
+}
+
+.infotext{
+font-size:10px;
+font-weight:100;
+}
+
+.comment{
+font-size:10px;
+font-weight:100;
+}
+.comicinfo {
+font-weight:bold;
+font-size:10px;
+color:#000000;
+}
+
+.genres {
+padding-left:10px;
+}
+
+.question {
+font-size:14px;
+font-weight:bold;
+}
+
+.errormsg {
+padding-left:25px;
+padding-right:25px;
+color:#FF6600;
+font-size:12px;
+}
+
+.answer {
+padding-top:5px;
+padding-bottom:5px;
+}
+
+.pageheader {
+font-weight:bold;
+font-size:16px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.joined {
+font-size:9px;
+}
+
+
+.comictitle {
+font-weight:bold;
+font-size:14px;
+}
+
+.comictitlelist {
+font-weight:bold;
+font-size:10px;
+}
+
+.pages {
+font-size:10px;
+}
+
+.updated {
+font-size:8px;
+}
+.comments {
+padding-left:10px;
+font-size:10px;
+}
+
+.authornote {
+font-weight:bold;
+font-size:12px;
+}
+
+.questions {
+padding-left:10px;
+}
+
+.questions a {
+color:#fda46a;
+text-decoration:none;
+}
+.questions a:link {
+color:#fda46a;
+}
+.questions a:hover{
+color:#000000;
+}
+
+.pagelink {
+color:#fda46a;
+text-decoration:none
+}

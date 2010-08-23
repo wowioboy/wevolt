@@ -1,0 +1,59 @@
+Simple PHP Blog:
+----------------
+
+To do list
+----------
+
+
+Assigned	Feature 	Description
+--------	-----------	-----------
+Alex		Read More Tag	[0%] Only display a portion of the entry on the main page. Click the Read More tag to see the rest of the article.
+
+Jesse		Mood and song	[0%] Move the display of mood and song after the entry text, and before the links (rate and comment) of the entry
+
+			Go back			[0%] When data is submited the user should be redirected to the appropiate page, not always index.php. Example: When rating an entry the user is always redirected to index.php
+
+			HTML 			[0%] Make sure the generated output is HTML/XHTML compliant
+			validation
+
+			Update views	[0%] Comment views should be updated even if there are no comments posted
+			In the URLs		[0%] Sometimes // is appended to the URL. This causes problems in the blog engine, and also in some web servers. Fix it!
+
+Alex		Image/File 		[0%] Enhance the Image Upload feature. Add ability to delete files, move files, create directories, unzip files...
+			Update
+
+Alex		Anit-Leech /	[0%] Add some protection against people stealing bandwidth by hijacking images. 
+			Anit-hotlink
+
+Alex		Guest Book		[0%] Optional Guest Book.
+
+Alex		Links Menu		[0%] Add checkbox to the Links Menu to open URLs in new window.
+
+Guti		404 static		[90%] Add a default static page to show if the requested static page is not found. Also consider making hidden static entries (ie starting with a dot) that are not shown in the links menu
+
+			Move 			[0%] Move the sensitive information stored in password.txt to a PHP file to increase security. Also check MD5 issues. But what about PHP obfustators/optimizers. It is compatible?
+			password.txt
+
+			Mandatory		[0%] Include an asterisk in all the input fields that are required
+			fields
+
+			More themes		[50%] Add new themes, and expand the predefined colors palete. Try to get http://nodo1.taramay.tropicalwireless.org 
+			and colors
+
+			Missing			[20%] Search for all the missing translatable strings and add the the the languages files
+			translations	
+
+			Cleanup			[5%] Take care of the total memory used by a script. Try to recycle big temporal array, and to unset them as soon as they are not needed
+
+Alex		Improve 	[40%] Continue to improve the installation scripts. Detect more cases (like Safe Mode issues.)
+			Installation 	
+
+Alex		XML 		[0%] Switch to XML data format.
+
+			Document	[0%] Document the theme creation, and blog's customization
+
+			Pingbacks	[0%] Consider also supporting pingbacks
+
+			Edit dates	[0%] Ability to edit publish dates in entries, comments and static pages
+
+			Polls		[0%] Implement a new entry type, so we can create customizable polls, and the users can vote

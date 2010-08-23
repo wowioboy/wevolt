@@ -1,0 +1,35 @@
+<include /bloly-theme/page_header.tmpl><%g_result%><br>
+
+<div class="msg_hdr1">Log in</div>
+<form action="<%g_URL_SELF%>" method=post name=editor>
+<%authentication%>
+<%authentication_ok%>
+</form>
+
+<br><br>
+<div class="msg_hdr1">Register</div>
+Type in your email address below, and we will send you the password.
+<form action="<%g_URL_SELF%>" method=post><input type="hidden" name="register" value="1">
+<input type="text" name="email" value="<%post_email%>"><input type="submit" value="Register">
+</form>
+
+<br><br>
+<div class="msg_hdr1">Forgot your password?</div>
+Type in your email address below, and we will send you the password.
+<form action="<%g_URL_SELF%>" method=post><input type="hidden" name="remind" value="1">
+<input type="text" name="email" value="<%post_email%>"><input type="submit" value="Send the password">
+</form>
+
+<br><br>
+<div class="msg_hdr1">Change your password</div>
+Use the following form if you want to change your password.
+<form action="<%g_URL_SELF%>" method=post><input type="hidden" name="change" value="1">
+<table border=0>
+<tr><td>Email address:</td><td><input type="text" name="email" value="<%post_email%>"></td></tr>
+<tr><td>Your current password:</td><td><input type="password" name="old" value=""></td></tr>
+<tr><td>New password:</td><td><input type="password" name="new1" value=""></td></tr>
+<tr><td>Confirm new password:</td><td><input type="password" name="new2" value=""></td></tr>
+<tr><td>&nbsp;</td><td><input type="submit" value="Change the password"></td></tr>
+</table></form>
+
+<include /bloly-theme/page_footer.tmpl>

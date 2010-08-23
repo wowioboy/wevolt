@@ -1,0 +1,31 @@
+body{
+	font-family: arial, helvetica, sans-serif;
+	font-size: small;
+}
+
+.editable, textarea{
+	background-color: #DEB887;
+	font-family:verdana;
+	font-size:12px;
+	width:500px;
+	text-margin:5px;
+	align:center;
+}
+
+textarea{
+	width: 95%;
+	font-size: 100%;
+}
+
+img.progress{
+	vertical-align: middle;
+	padding: 0 10px;
+}
+
+.showText {
+	font-family:verdana;
+	font-size:12px;
+	width:500px;
+	text-margin:5px;
+	align:center;
+}

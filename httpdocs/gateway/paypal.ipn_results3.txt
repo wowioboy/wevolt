@@ -1,0 +1,47 @@
+[04/06/2009 2:02 AM] - SUCCESS!
+IPN POST Vars from gateway:
+amount1=0.00, amount3=3.00, address_status=unconfirmed, subscr_date=00:02:12 Apr 06, 2009 PDT, payer_id=LTKYBYMZEAC9S, address_street=8456 Blackburn Ave
+#9, mc_amount1=0.00, mc_amount3=3.00, charset=windows-1252, address_zip=90048, first_name=Matthew, reattempt=1, address_country_code=US, address_name=Inc House Hosting, notify_version=2.7, subscr_id=S-37J99914ME309394C, custom=34l4epBWmRRf2J8, payer_status=verified, business=store@outlandentertainment.com, address_country=United States, address_city=Los Angeles, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31Ajol-9Df9aBVfpatyIPIRlnzUIoN, payer_email=theunlisted@gmail.com, payer_business_name=Inc House Hosting, last_name=Jacobs, address_state=CA, receiver_email=store@outlandentertainment.com, recurring=1, txn_type=subscr_signup, item_name=Pro Subscription w/Ads, mc_currency=USD, item_number=PFSUB-001, residence_country=US, period1=7 D, period3=1 M, 
+IPN Response from gateway Server:
+ HTTP/1.1 200 OK
+Date: Mon, 06 Apr 2009 07:02:15 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=-z6TA2BYs1QqGd-0-5JS7VCRMSwPCJYv-zv9wICMbWxeku4amj0eIbUiD0uqQi_Rc_X13JhNNqExKa7-qCUAWZNUBabFQ_lQfXaoWrSYS4UzHDz9--dqIa3d_DARhpP3-TZVdG%7c4uAqN63myD4qNzLPp9gkfw9Is5qij2UaPHFJ1fF1K3oKzH1v0kRxdSt4E0wHU-kSbJs7bW%7cL4p0wQIfmqVOIO6FQjLC1NOvBZpuqcFH_pxr2mjwMe9xwuo--csi2li_hxjJGhL1fxO-QG%7c1239001336; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 04-Apr-2019 07:02:16 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 01-Apr-2029 07:02:16 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[04/06/2009 2:02 AM] - FAIL: IPN Validation Failed . /cgi-bin/webscr : www.paypal.com
+IPN POST Vars from gateway:
+
+IPN Response from gateway Server:
+ HTTP/1.1 200 OK
+Date: Mon, 06 Apr 2009 07:02:51 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=DcSOkIBAqvGEdKFcQZFFeHi-ojZcJbzaoRX9BI2i18we_RQtVUBxEm3yVfrsdGcAs2KD5QO5Adev-3tqkhmjkjFF7aFFC3CVTmRQKrorKsFsRbtKDd1wm1IRA9khCaGCIl_6iG%7cQFS9HIEBpi70PuUAYiI89WFZDOIk_TJGTGFFMad4vqk8s7ccLrR8nbaVDQO6W-A-wF9uAW%7cR0AFAh2zV8HZP-PGPLdw2i7nJdV_skKqzseEo4c_lN-82CHLxDCpcsaMCODbQZQbWEXfX0%7c1239001371; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 04-Apr-2019 07:02:51 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 01-Apr-2029 07:02:51 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+

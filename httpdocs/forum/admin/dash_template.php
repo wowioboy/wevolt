@@ -1,0 +1,1 @@
+<div class="spacer"></div><div class="spacer"></div>Hi! You have reached your forum admin panel. <div class="spacer"></div><div class="spacer"></div>Here you can control everything about your forum. Just use those links at the top to get started. <div class="spacer"></div><div class="spacer"></div>

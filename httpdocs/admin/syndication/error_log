@@ -1,0 +1,12 @@
+[04-Sep-2008 19:09:20] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 3
+[04-Sep-2008 19:09:40] PHP Warning:  include(includes/db.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/outland/public_html/cms/syndication/rss.php on line 3
+[04-Sep-2008 19:09:40] PHP Warning:  include(includes/db.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/outland/public_html/cms/syndication/rss.php on line 3
+[04-Sep-2008 19:09:40] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'includes/db.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/outland/public_html/cms/syndication/rss.php on line 3
+[04-Sep-2008 19:09:40] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 4
+[04-Sep-2008 20:38:19] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 3
+[04-Sep-2008 20:40:57] PHP Parse error:  syntax error, unexpected T_DNUMBER in /home/outland/public_html/cms/syndication/rss.php on line 79
+[04-Sep-2008 20:41:22] PHP Parse error:  syntax error, unexpected T_DNUMBER in /home/outland/public_html/cms/syndication/rss.php on line 78
+[04-Sep-2008 21:57:52] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 4
+[04-Sep-2008 21:58:53] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 4
+[04-Sep-2008 21:58:55] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 4
+[04-Sep-2008 21:59:49] PHP Fatal error:  Class 'DB' not found in /home/outland/public_html/cms/syndication/rss.php on line 4

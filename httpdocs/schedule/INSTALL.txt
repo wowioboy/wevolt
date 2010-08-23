@@ -1,0 +1,39 @@
+///////////////////////////////////////////////////////////////////////////////////
+// 
+// Advanced Power of PHP
+// ---------------------
+// http://www.apphp.com
+// 
+// ApPHP Calendar Pro
+//
+// Version: 3.0.2
+//
+///////////////////////////////////////////////////////////////////////////////////
+
+Software requirements: PHP 5.0, MySQL 5.0.3 or later versions.
+
+1. To install ApPHP Calendar, you should have to extract the ApPHP Calendar ZIP file. 
+   It depends on the operating system you use. Once extracted, you will have a directory
+   containing the ApPHP Calendar script.
+
+2. Upload all content of this directory to your webserver, either by copying the 
+   directory or by using an FTP program.
+
+3. Using phpMyAdmin or another tool, create your database and user, and assign that
+   user to the database. Write down the name of the database, username, and password
+   for the database installation procedure. 
+
+   Create all appropriate database tables using sql/db_dump.sql file.
+   Change database host, database name, username and user password in inc/config.inc.php
+   
+4. Type in your browser code_example.php
+
+    If you are running on your own computer, this will be
+        http://localhost/{calendar directory}/code_example.php
+    or if on a live server:
+        http://{www.mydomain.com}/code_example.php
+
+5. Make sure folder cache has access rights 755
+   
+Congratulations, you now have ApPHP Calendar v.3.x.x. Installed!   
+

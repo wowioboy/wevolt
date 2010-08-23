@@ -1,0 +1,77 @@
+.cartheader {
+background-color:#8296b7;
+color:#FFFFFF;
+text-transform:uppercase;
+
+}
+.carttext {
+color:#000000;
+font-size:12px;
+
+
+}
+.simpleCart_items{
+	float:left;
+	clear:left;
+	width:546px;
+	margin:20px;
+}
+.itemContainer{
+	clear:both;
+	width:543px;
+	padding:15px 0;
+	font-size:11px;
+	line-height:25px;
+	height:10px;
+}
+.itemImage{
+	float:left;
+	width:80px;
+}
+.itemImage img{
+	vertical-align:middle;
+}
+.itemName{
+	float:left;
+	width:160px;
+}
+.itemPrice{
+	float:left;
+	width:55px;
+	color:#418932;
+}
+.itemQuantity{
+	float:left;
+	width:105px;
+	vertical-align:middle;
+	text-align:center;
+}
+.itemQuantity input{
+	width:20px;
+	border:1px solid #ccc;
+	padding:3px 2px;
+	margin:0 auto;
+	display:block;
+	font-size:11px;
+}
+.itemTotal{
+	float:left;
+	color:#c23f26;
+	text-align:right;
+	width:45px;
+}
+.totalRow{
+	clear:both;
+	float:left;
+	margin-top:10px;
+}
+.totalItems{
+	float:left;
+	width:105px;
+	margin-left:295px;
+	text-align:center;
+}
+.totalPrice{
+	float:right;
+	text-align:right;
+}

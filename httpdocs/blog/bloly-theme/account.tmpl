@@ -1,0 +1,14 @@
+<include /bloly-theme/page_header.tmpl><%g_result%>
+<form action="<%g_URL_SELF%>" method="post" name="editor">
+Your name: <input type="text" name="name" value="<%f_user_name%>" size="20"><br><br>
+<input type="checkbox" name="notitication" value="1" id="inot"><label for="inot"> Send email notifications when new comment is posted</label><br><br>
+<div class=msg_hdr1>A few words about you</div>
+<%authentication%>
+<include /bloly-theme/editor.tmpl>
+</form>
+<script>
+editor.txt.value="<%js_user_info%>";
+var n="<%js_user_notifications%>";
+if(n==1) editor.notitication.checked=true;
+</script>
+<include /bloly-theme/page_footer.tmpl>

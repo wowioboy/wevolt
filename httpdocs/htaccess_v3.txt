@@ -1,0 +1,34 @@
+# Use PHP5 as default
+AddHandler application/x-httpd-php5 .php
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^cms/create/$ /panelflow/create_comic.php [QSA]
+RewriteRule ^cms/admin/$ /panelflow/admin.php [QSA]
+RewriteRule ^cms/edit/([^/]+)/$ /panelflow/admin.php?id=$1 [QSA]
+RewriteRule ^cms/admin/([^/]+)/$ /panelflow/admin.php?id=$1 [QSA]
+RewriteRule ^profile/([^/]+)/$ profile.php?name=$1 [QSA] # Process parrots
+RewriteRule ^([^/]+)/$ viewcomic.php?comicname=$1 [QSA] # Process parrots
+# Use PHP5 as default
+AddHandler application/x-httpd-php5 .php
+
+<IfModule mod_security.c>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</IfModule>
+

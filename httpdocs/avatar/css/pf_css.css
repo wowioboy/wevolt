@@ -1,0 +1,213 @@
+body, html {
+margin:0px;
+padding:0px;
+background-color:#FFFFFF;
+font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+color:#000000;
+font-size:10px;
+}
+
+#contentfooter {
+background-image:url(../../outland/images/content_footer.gif);
+height:30px;
+} 
+
+.slug {
+padding-right:10px;
+font-size:14px;
+font-weight:bold;
+}
+
+.logindiv {
+padding-right:10px;
+text-align:right;
+}
+
+.logo {
+padding-left:30px;
+width: 202px;
+float:left;
+}
+
+.hidden { display:none; }
+.showing { display:block; }
+.error { margin:25px auto; text-align:center; font-size:1.2em; color:#f00; font-weight:bold; }
+#cropWrap { margin:10px 0 0 0; }
+#wait { padding:15px 0 0 0; text-align:center; }
+div.info { width:500px; font-size:1.2em; margin:15px auto 30px auto; line-height:1.7em; border:1px solid #ccc; background:#fff; padding:20px; }
+div.info h1 { font-size:1.6em; border-bottom:1px solid #000; padding:0 0 6px 0; margin:0 0 10px 0; }
+div.info p { margin:0 0 1.2em 0; }
+
+
+/* INITIAL UPLOAD FORM */
+form { margin:20px 0 0 0; }
+form#imigUpload { display:block; border:1px solid #ccc; background:#fff; padding:20px; }
+form legend { font-size:1.4em; font-weight:bold; letter-spacing:1px; }
+form label { display:block; font-size:1.1em; margin:0 0 4px 0; }
+form input { display:block; border:1px solid #ccc; background:#fafafa; padding:3px; }
+form div.select { clear:both; padding:12px 0; }
+form select { display:block; border:1px solid #ccc; background:#fafafa; }
+form div#submit, form div#wait { height:30px; padding:15px 0 0 0; }
+form div#submit input { width:75px; margin:0 auto; }
+
+
+/* FORMS WHICH STORE EDITING DATA */
+form.frmCrop legend, form.frmResize legend { display:none; }
+
+
+/* RESIZE TRACK AND HANDLE */
+#resizeTrack { width:200px; height:5px; background:transparent url(../images/bg_track.gif) left top no-repeat; margin:0 0 20px 0; }
+#resizeHandle { cursor:move; width:5px; height:10px; background:transparent url(../images/bg_handle.gif) left top no-repeat; }
+
+/* ROTATED IMAGES */
+#rotatedImages { padding-top:30px; }
+#rotatedImages h2 { margin:20px 0 5px 0; }
+#showRotatedImages { font-size:1.1em; padding-top:10px; }
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+
+.spacer {
+height:10px;
+}
+
+.pageheader{
+font-size:16px;
+font-weight:bold;
+
+}
+
+.creatorwrapper {
+padding-left:10px;
+
+}
+
+.imageName {
+padding-top:10px;
+font-size:12px;
+font-weight:bold;
+color:white;
+}
+
+a:link {
+font-size:10px;
+text-decoration:none;
+}    
+ /* unvisited link */
+ 
+a:visited {
+font-size:10px;
+text-decoration:none;
+}  /* visited link */
+
+a:hover {
+font-size:10px;
+text-decoration:none;
+}   /* mouse over link */
+
+a:active {
+font-size:10px;
+text-decoration:none;
+}   /* selected link */
+
+.modtext {
+padding-left:5px;
+color:#CCCCCC;
+} 
+
+#modtext a:active {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:visited {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:hover {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:focus {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:link {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+
+.locationwrapper {
+padding-left:5px;
+}
+
+.modheader {
+color:#FFFFFF;
+padding-left:5px;
+}
+
+.header {
+font-size:14px;
+font-weight:bold;
+}
+.notlogged {
+text-align:center;
+font-size:10px;
+}
+
+.rightwrapper{
+text-align:left;
+padding-right:5px;
+}
+
+.leftwrapper{
+/* padding-left:18px;*/
+text-align:left;
+padding-right:20px;
+}
+
+.username {
+font-size:10px;
+font-weight:bold;
+}
+
+.notespacer{
+height:3px;
+}
+.commentdate {
+font-size:10px;
+font-weight:100;
+font-style:italic;
+}
+
+.recdescription {
+font-size:10px;
+font-weight:100;
+padding-left:5px;
+}
+
+.rectitle {
+font-size:10px;
+font-weight:bold;
+
+}
+.nocomments{
+font-size:14px;
+font-weight:bold;
+padding:20px;
+text-align:center;
+}
+
+.infotext{
+font-size:10px;
+font-weight:100;
+}
+
+.comment{
+font-size:10px;
+font-weight:100;
+}
+.comicinfo {
+font-weight:bold;
+font-size:10px;
+}
+
+.comments {
+padding-left:10px;
+font-size:10px;
+}
+
+.authornote {
+font-weight:bold;
+font-size:12px;
+}

@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css" media="screen">
+    #top { 
+	outline:none; 
+	background-color:#000000;
+	}
+	#bottomcontrols { 
+	outline:none;
+	display:block;  
+	}
+	#mpl {
+	outline:none;
+	display:block;  
+	}
+	
+	#emailer {
+	outline:none;
+	display:block;  
+	}
+	
+	#postcalendar {
+	outline:none;
+	display:block;  
+	}
+	
+	#chardiv {
+	outline:none;
+	display:block;
+	}
+	
+	#pfreader {
+	outline:none;
+	display:block;
+	}
+	#pagediv {
+	outline:none;
+	display:block;
+	}
+#bubble_tooltip{
+	width:300px;
+	position:absolute;
+	display:none;
+	z-index:3;
+}
+
+#bubble_tooltip .bubble_top{
+	background-image: url('/panelflow/images/bubble_top.png');
+	background-repeat:no-repeat;
+	height:16px;	
+}
+#bubble_tooltip .bubble_middle{
+	background-image: url('/panelflow/images/bubble_middle.png');
+	background-repeat:repeat-y;	
+	background-position:bottm left;
+	padding-left:7px;
+	padding-right:7px;
+}
+#bubble_tooltip .bubble_middle span{
+	position:relative;
+	top:-8px;
+	font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+	font-size:11px;
+}
+#bubble_tooltip .bubble_bottom{
+	background-image: url('/panelflow/images/bubble_bottom.png');
+	background-repeat:no-repeat;
+	background-repeat:no-repeat;	
+	height:44px;
+	position:relative;
+	top:-6px;
+}
+
+.smalltext {
+font-size:10px;
+color:#000000;
+padding-left:73px;
+font-weight:bold; 
+}
+</style>
+
+<style type="text/css">
+#facebox .body {
+  padding: 10px;
+  background: #FFFFFF;
+  width: 370px;
+}
+
+#facebox .b {
+  background:url(/panelflow/scripts/facebox/b.png);
+}
+
+#facebox .tl {
+  background:url(/panelflow/scripts/facebox/tl.png);
+}
+
+#facebox .tr {
+  background:url(/panelflow/scripts/facebox/tr.png);
+}
+
+#facebox .bl {
+  background:url(/panelflow/scripts/facebox/bl.png);
+}
+
+#facebox .br {
+  background:url(/panelflow/scripts/facebox/br.png);
+} 
+
+
+
+.tabactive {
+height:12px;
+background-color:#f58434;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-style:normal;font-size:14px;
+width:100px;
+color:#FFFFFF;
+}
+.tabinactive { 
+height:12px;
+background-color:#dc762f;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-style:normal;font-size:14px;
+width:100px;
+color:#FFFFFF;
+}
+.tabhover{
+height:12px;
+background-color:#ffab6f;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-style:normal;font-size:14px;
+width:100px;
+color:#000000;
+}
+
+.peeltabactive {
+height:10px;
+background-color:#f58434;
+text-align:center;
+padding:5px;
+cursor:pointer;
+
+font-size:10px;
+width:50px;
+color:#FFFFFF;
+}
+.peeltabinactive {
+height:10px;
+background-color:#dc762f;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-size:10px;
+width:50px;
+color:#FFFFFF;
+}
+.peeltabhover{
+height:10px;
+background-color:#ffab6f;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-size:10px;
+width:50px;
+color:#000000;
+}
+
+#modrightside { 
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModRightSideImage.jpg);
+background-repeat:repeat-y;
+width: 11px;
+
+}
+
+#modleftside {
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModLeftSideImage.jpg);
+background-repeat:repeat-y;
+width: 11px;
+}
+
+#modtop {
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModTopImage.png);
+background-repeat:repeat-x;
+height:13px;
+}
+
+.boxcontent {
+background-color:#FFFFFF;
+color:#000000;
+font-size:12px;
+
+}
+
+#modbottom {
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModBottomImage.png);
+background-repeat:repeat-x;
+height:13px;
+
+}
+
+#modbottomleft{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModBottomLeftImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+#modtopleft{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModTopLeftImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+#modtopright{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModTopRightImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+#modbottomright{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModBottomRightImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+
+
+#bubblerightside { 
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModRightSideImage.jpg);
+background-repeat:repeat-y;
+width: 11px;
+
+}
+
+#bubbleleftside {
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModLeftSideImage.jpg);
+background-repeat:repeat-y;
+width: 11px;
+}
+
+#bubbletop {
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModTopImage.png);
+background-repeat:repeat-x;
+height:13px;
+}
+
+#bubble_tooltip_content {
+background-color:#FFFFFF;
+color:#000000;
+font-size:12px;
+}
+
+#bubblebottom {
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModBottomImage.png);
+background-repeat:repeat-x;
+height:13px;
+
+}
+
+#bubblebottomleft{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModBottomLeftImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+#bubbletopleft{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModTopLeftImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+#bubbletopright{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModTopRightImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+#bubblebottomright{
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ModBottomRightImage.png);
+background-repeat:none;
+height:13px;
+width:11px;
+}
+
+
+#ControlBar{
+
+background-image:url(/panelflow/templates/skins/PFSK-00136/images/ControlBarImage.jpg);
+background-repeat:repeat-x;
+height:32px;
+background-color:#000000;
+font-size:12px;
+font-style:normal;}
+
+
+#AuthorComment{
+
+color:#000000;
+
+text-transform:lowercase;
+background-color:#FFB34F;
+font-size:globalpx;
+font-weight:bold;
+}
+
+#LinksBox {
+text-transform:lowercase;
+		
+padding:2px;
+background-color:#FFB34F; 
+font-size:12px;
+color:#000000;
+font-weight:bold;}
+
+.modheader{
+text-transform:lowercase;
+		
+padding:2px;
+background-color:#FFB34F; 
+font-size:12px;
+text-align:left;
+color:#000000;
+font-weight:bold;}
+
+#ComicSynopsis{
+padding:3px;
+color:#000000;
+text-transform:lowercase;
+background-color:#FFB34F;
+font-size:globalpx;
+font-weight:bold;
+}
+
+#ComicInfo{
+text-transform:lowercase;
+padding:3px;
+color:#000000;
+background-color:#FFB34F;
+font-size:globalpx;
+font-weight:bold;
+}		
+
+#UserComments{
+text-transform:lowercase;
+padding:3px;
+color:#000000;
+background-color:#FFB34F;
+font-size:globalpx;
+font-weight:bold;
+}			
+	
+#ComicSynopsis{
+text-transform:lowercase;
+padding:3px;
+color:#000000;
+background-color:#FFB34F;
+font-size:globalpx;
+font-weight:bold;
+}	
+
+#Products{
+text-transform:lowercase;
+padding:3px;
+color:#click here;
+background-color:#click here;
+font-size:globalpx;
+font-weight:bold;
+}	
+	
+#MobileContent{
+text-transform:lowercase;
+padding:3px;
+color:#click here;
+background-color:#click here;
+font-size:globalpx;
+font-weight:bold;
+}	
+
+
+	
+#MobileContent{
+text-transform:lowercase;
+padding:3px;
+color:#click here;
+background-color:#click here;
+font-size:globalpx;
+font-weight:bold;
+}	
+.latestpageheader  {
+text-transform:lowercase;
+color:#000000;
+background-color:#000000;
+font-size:12px;
+font-weight:bold;
+}
+.latestpageheader a:link{
+text-transform:lowercase;
+padding:3px;
+color:#000000;
+background-color:#FFB34F;
+font-size:12px;
+font-weight:bold;
+}
+.latestpageheader a:visited{
+text-transform:lowercase;
+padding:3px;
+color:#000000;
+background-color:#FFB34F;
+font-size:12px;
+font-weight:bold;
+}
+
+.blogtitle {
+font-size:14px;
+font-weight:bold;
+
+
+}
+
+.blogdate {
+font-size:12px;
+}
+.globalheader{
+text-transform:lowercase;
+padding:3px;
+text-align:left;
+color:#000000;
+background-color:#FFB34F;
+font-size:12px;
+font-weight:bold;}	
+ 
+.global_button{
+padding:3px;
+
+background-color:#CFCFCF;
+font-size:12px;
+font-style:normal;
+}	
+
+#FirstButton{
+}
+
+#NextButton{
+}
+
+#BackButton{
+}
+#LastButton{
+}	
+#HomeButton{
+}	
+#CreatorButton{
+}		
+#CharactersButton{
+}	
+
+#DownloadsButton{
+}		
+#ExtrasButton{
+}
+
+#EpisodesButton{
+background-color:#;
+
+color:#;
+
+}
+#MobileButton{
+}		
+#ProductsButton{
+}	
+		
+#CommentButton{
+
+}	
+#VoteButton{
+
+}			
+
+#LogoutButton{
+
+}			
+.pagelinks {
+font-style:normal;	color:#ffffcc;
+}
+.pagelinks a{
+font-style:normal;	color:#ffffcc;
+}
+.pagelinks a:link{
+	font-style:normal;	color:#ffffcc;
+}
+.pagelinks a:visited { 
+font-style:normal;color:#99A0A3;
+}
+.pagelinks a:hover{
+	font-style:normal;	color:#ffffff;
+}
+
+.buttonlinks {
+font-style:normal;	color:#ffffcc;
+}
+.buttonlinks a{
+font-style:normal;	color:#ffffcc;
+}
+.buttonlinks a:link{
+	font-style:normal;	color:#ffffcc;
+}
+.buttonlinks a:visited{ 
+font-style:normal;color:#99A0A3;
+}
+.buttonlinks a:hover{
+	font-style:normal;	color:#ffffff;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="/panelflow/scripts/bubble-tooltip.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+function GetElementPostion(xElement){
+
+  var selectedPosX = 0;
+  var selectedPosY = 0;
+  var theElement = document.getElementById(xElement);
+     // alert(xElement);        
+  while(theElement != null){
+    selectedPosX += theElement.offsetLeft;
+    selectedPosY += theElement.offsetTop;
+    theElement = theElement.offsetParent;
+  }
+      // alert('X='+ selectedPosX);  
+	   alert(selectedPosX + "," + selectedPosY);               		      		      
+  return selectedPosX + "," + selectedPosY;
+  
+
+}
+
+
+function create_spot(asttop,asleft,count) {
+
+var iposition = GetElementPostion('pagereaderdiv');
+
+var dimarray = iposition.split(',');
+asttop = (parseInt(asttop) + parseInt(dimarray[1]));
+asleft = (parseInt(asleft) + parseInt(dimarray[0]));
+
+element = document.createElement("div");
+element.setAttribute("id","asterickloc_"+count);
+
+element.setAttribute("style", "background-color:#ff0000;width:5px;height:px;border:2px solid #000;position:absolute;top:"+asttop+"px;left:"+asleft+"px;cursor:default;");
+element.style.cssText ="background-color:#ff0000;width:5px;height:5px;border:2px solid #000;position:absolute;top:"+asttop+"px;left:"+asleft+"px;cursor:default;";
+
+document.getElementById('pagereaderdiv').appendChild(element);
+} 
+
+
+
+</script>
+</head>
+
+<body>
+ <script type="text/javascript">function peelpage(peelid) {if (peelid == 'pagediv') { document.getElementById("PeelTwo").style.display ='none';document.getElementById("twotab").className ='peeltabinactive';document.getElementById("pagediv").style.display ='';document.getElementById("finaltab").className ='peeltabactive';} else if (peelid == 'PeelOne') { document.getElementById("PeelOne").style.display ='';document.getElementById("onetab").className ='peeltabactive';document.getElementById("PeelTwo").style.display ='none';document.getElementById("twotab").className ='peeltabinactive';document.getElementById("pagediv").style.display ='none';document.getElementById("finaltab").className ='peeltabinactive';} else if (peelid == 'PeelTwo') { document.getElementById("PeelTwo").style.display ='';document.getElementById("twotab").className ='peeltabactive';document.getElementById("pagediv").style.display ='none';document.getElementById("finaltab").className ='peeltabinactive';} else if (peelid == 'PeelThree') {document.getElementById("PeelTwo").style.display ='none';document.getElementById("twotab").className ='peeltabinactive';document.getElementById("PeelThree").style.display ='';document.getElementById("threetab").className ='peeltabactive';document.getElementById("pagediv").style.display ='none';document.getElementById("finaltab").className ='peeltabinactive';}  else if (peelid == 'PeelFour') {document.getElementById("PeelTwo").style.display ='none';document.getElementById("twotab").className ='peeltabinactive';document.getElementById("PeelFour").style.display ='';document.getElementById("pdfcell").style.display ='';document.getElementById("fourtab").className ='peeltabactive';document.getElementById("pagediv").style.display ='none';document.getElementById("finaltab").className ='peeltabinactive';}}</script>
+ 
+
+ 
+<center><div id="peeldiv" align="left" style="width:750px; background-color:#000000;"><table cellspacing="0" cellpadding="0" border="0"><tr><td><div class="peeltabactive" onclick="peelpage('pagediv');finaltab();" id="finaltab">FINAL</div></td><td width="5"></td><td><div class="peeltabinactive" onclick="peelpage('PeelTwo');twotab();" id="twotab">INKS</div></td><td width="5"></td></tr></table></div></center><div id="pagediv" style="background-color:#000000; width:750px;"><div id="pagereaderdiv" style="z-index:1;"><img src="http://www.needcomics.com/comics/L/Locus/images/pages/a88447426c867e608ed448243e6a2609.png"usemap="#hotmap" border="0"></div></div><div id="PeelOne" style="display:none;"></div><div id="PeelTwo" style="display:none;"><img src="http://www.needcomics.com/comics/L/Locus/images/pages/4511db3657d4a9b9a0d724b8188b5951.png"></div><div id="PeelThree" style="display:none;"></div><div id="PeelFour" style="display:none;"></div>
+<script type="text/javascript">
+var at='731';
+var al='502';
+create_spot(at,al,'0');
+
+</script>
+
+<map name="hotmap"><area shape ="rect" coords ="417,556,592,884" href="#" onmouseover="showToolTip(event,'This isn\'t Xel\'Duum\'s armor, but it did once belong to one of the Bloodied Ones.&nbsp;');return false;"onmouseout="hideToolTip();" style="cursor:help;"></map>
+<div id="bubble_tooltip">
+<!--
+<table width="" border="0" cellspacing="0" cellpadding="0">
+<tr><td id="bubbletopleft"></td>
+<td id="bubbletop"></td>
+<td id="bubbletopright"></td></tr><tr>
+<td id="bubbleleftside"></td>
+<td id="bubble_tooltip_content" valign="top">
+</td><td id="bubblerightside"></td></tr>
+<tr><td id="bubblebottomleft"></td><td id="modbottom"></td>
+<td id="bubblebottomright"></td></tr>
+<tr><td colspan="3" valign="top" align="center"><img src="/images/bubble_tail.png"</td></tr>
+</table>
+-->
+<div class="bubble_top"><span></span></div>
+	<div class="bubble_middle"><span id="bubble_tooltip_content">Content is comming here as you probably can see.Content is comming here as you probably can see.</span><br/><center></center></div>
+	<div class="bubble_bottom"></div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+RewriteRule ^comic/complete/([^/]+)/$ /pf_16_core/install/last_step.php?comic=$1 [QSA]
+RewriteRule ^cms/admin/$ /pf_16_core/admin.php [QSA]
+RewriteRule ^cms/create/$ /pf_16_core/create_comic_new.php [QSA]
+RewriteRule ^cover/complete/([^/]+)/$ /pf_16_core/covercrop/coverfinal.php?comic=$1 [QSA]
+RewriteRule ^create/pdf/([^/]+)/$ /create_pdf_hosted.php?comic=$1 [QSA]
+RewriteRule ^create/pdf/$ /create_pdf_hosted.php [QSA]
+RewriteRule ^process/pdf/([^/]+)/$ /process_pdf.php?comic=$1 [QSA]
+
+RewriteRule ^comic/import/([^/]+)/$ /import_pages.php?id=$1 [QSA]
+RewriteRule ^comic/import/process/([^/]+)/$ /process_pages.php?id=$1 [QSA]
+RewriteRule ^comic/import/smackjeeves/([^/]+)/$ /extract_smackjeeves.php?id=$1 [QSA]
+RewriteRule ^comic/import/drunkduck/([^/]+)/$ /extract_drunkduck.php?id=$1 [QSA]
+RewriteRule ^comic/import/comicspace/([^/]+)/$ /extract_comicspace.php?id=$1 [QSA]
+RewriteRule ^comic/import/$ /import_pages.php [QSA] 
+
+RewriteRule ^subscription/comics/$ /comics_hosting.php [QSA]
+RewriteRule ^subscription/app/$ /application_hosting.php [QSA]
+RewriteRule ^subscription/domain/$ /domain_hosting.php [QSA]
+
+RewriteRule ^store/start/$ /start_processing_new.php [QSA]
+RewriteRule ^store/paypal/$ /paypal_start.php [QSA]
+
+RewriteRule ^go/pro/$ /download_new.php [QSA]
+RewriteRule ^register/$ /register.php [QSA]
+RewriteRule ^cms/edit/([^/]+)/$ /pf_16_core/admin.php?id=$1 [QSA]
+RewriteRule ^cms/batch/process/([^/]+)/$ /pf_16_core/process_batch.php?id=$1 [QSA]
+RewriteRule ^cms/batch/([^/]+)/$ /pf_16_core/batch.php?id=$1 [QSA]
+RewriteRule ^cms/creator/([^/]+)/$ /pf_16_core/loadcreator.php?comic=$1 [QSA]
+RewriteRule ^cms/cover/crop/([^/]+)/$ /pf_16_core/covercrop/cropcover.php?comic=$1 [QSA]
+RewriteRule ^cms/cover/([^/]+)/$ /pf_16_core/covercrop/comicthumb.php?comic=$1 [QSA]
+RewriteRule ^cms/mobile/([^/]+)/$ /pf_16_core/covercrop/cropmobile.php?comic=$1 [QSA]
+RewriteRule ^creator/avatar/crop/([^/]+)/$ /pf_16_core/covercrop/cropavatar.php?comic=$1 [QSA]
+RewriteRule ^creator/avatar/([^/]+)/$ /pf_16_core/covercrop/create_avatar.php?comic=$1 [QSA]
+RewriteRule ^creator/invitation/([^/]+)/([^/]+)/$ /pf_16_core/verification.php?id=$1&email=$2 [QSA]
+RewriteRule ^profile/([^/]+)/$ profile.php?name=$1 [QSA] 
+RewriteRule ^([^/]+)/iphone/$ /pf_16_core/templates/iphone/index.php?comic=$1 [QSA]
+RewriteRule ^([^/]+)/iphone/downloads/$ /pf_16_core/templates/iphone/downloads.php?comic=$1 [QSA]
+RewriteRule ^([^/]+)/iphone/login/$ /pf_16_core/templates/iphone/login.php?ref=$1 [QSA]
+RewriteRule ^([^/]+)/iphone/characters/$ /pf_16_core/templates/iphone/downloads.php?comic=$1 [QSA]
+RewriteRule ^([^/]+)/iphone/extras/$ /pf_16_core/templates/iphone/downloads.php?comic=$1 [QSA]
+RewriteRule ^([^/]+)/iphone/about/$ /pf_16_core/templates/iphone/about.php?comic=$1 [QSA]
+
+RewriteRule ^([^/]+)/products/([^/]+)/$ view_product.php?productid=$2 [QSA]
+RewriteRule ^([^/]+)/products/$ view_product.php?comic=$1 [QSA]
+RewriteRule ^([^/]+)/mobile/([^/]+)/$ send_to_mobile.php?content=$2 [QSA]
+RewriteRule ^([^/]+)/mobile/$ mobile.php?comic=$1[QSA]
+RewriteRule ^([^/]+)/$ viewcomic.php?comicname=$1 [QSA] 
+
+<IfModule mod_security.c>
+
+</IfModule>
+

@@ -1,0 +1,1 @@
+<? header("location:http://www.wevolt.com/");?>

@@ -1,0 +1,24 @@
+[18-Mar-2009 01:14:04] PHP Warning:  require_once(includes/db_config.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/cart/database.php on line 2
+[18-Mar-2009 01:14:04] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/db_config.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/stevefir/public_html/cart/database.php on line 2
+[18-Mar-2009 14:44:57] PHP Parse error:  syntax error, unexpected '}' in /home/stevefir/public_html/gateway/paypal_ipn.php on line 59
+[18-Mar-2009 14:46:16] PHP Fatal error:  Call to a member function execute() on a non-object in /home/stevefir/public_html/gateway/paypal_ipn.php on line 29
+[19-Mar-2009 02:43:42] PHP Parse error:  syntax error, unexpected '}' in /home/stevefir/public_html/gateway/paypal_ipn.php on line 78
+[27-Mar-2009 20:18:43] PHP Warning:  include(includes/init.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:18:43] PHP Warning:  include(includes/init.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:18:43] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'includes/init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:18:43] PHP Fatal error:  Class 'DB' not found in /home/stevefir/public_html/gateway/download_product.php on line 9
+[27-Mar-2009 20:18:55] PHP Warning:  include(includes/init.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:18:55] PHP Warning:  include(includes/init.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:18:55] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'includes/init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:18:55] PHP Fatal error:  Class 'DB' not found in /home/stevefir/public_html/gateway/download_product.php on line 9
+[27-Mar-2009 20:19:21] PHP Warning:  include(includes/init.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:19:21] PHP Warning:  include(includes/init.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:19:21] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'includes/init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/stevefir/public_html/gateway/download_product.php on line 2
+[27-Mar-2009 20:19:21] PHP Fatal error:  Class 'DB' not found in /home/stevefir/public_html/gateway/download_product.php on line 9
+[27-Mar-2009 20:22:03] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/stevefir/public_html/gateway/download_product.php:5) in /home/stevefir/public_html/includes/init.php on line 3
+[28-Mar-2009 03:14:15] PHP Fatal error:  Call to undefined function  int() in /home/stevefir/public_html/gateway/paypal_ipn.php on line 50
+[28-Mar-2009 03:45:41] PHP Fatal error:  Call to undefined function  int() in /home/stevefir/public_html/gateway/paypal_ipn.php on line 50
+[06-Apr-2009 02:02:15] PHP Fatal error:  Call to a member function query() on a non-object in /home/panel/public_html/gateway/paypal_ipn.php on line 126
+[06-Apr-2009 02:09:49] PHP Fatal error:  Call to a member function query() on a non-object in /home/panel/public_html/gateway/paypal_ipn.php on line 129
+[06-Apr-2009 02:17:41] PHP Fatal error:  Call to a member function query() on a non-object in /home/panel/public_html/gateway/paypal_ipn.php on line 127
+[06-Apr-2009 02:19:39] PHP Fatal error:  Call to a member function query() on a non-object in /home/panel/public_html/gateway/paypal_ipn.php on line 127

@@ -1,0 +1,42 @@
+<config>
+  <!-- BASIC FLASHVARS -->
+  <author>Author's Name</author>
+  <title>Media Title</title>
+  <description>Descriptive text.</description>
+  <!-- <width>320</width> -->
+  <!-- <height>240</height> -->
+  <displayheight>240</displayheight>
+  <file>playlist.xml</file>
+  <image>image01.jpg</image>
+  <!-- COLOR FLASHVARS -->
+  <backcolor>0x000000</backcolor> 
+  <frontcolor>0xCCCCCC</frontcolor> 
+  <lightcolor>0X808080</lightcolor>
+  <screencolor>0x666666</screencolor> 
+  <!-- APPEARANCE FLASHVARS -->
+  <autoscroll>false</autoscroll>
+  <!-- OK <logo>logo.jpg</logo> -->
+  <overstretch>false</overstretch>
+  <showdigits>true</showdigits>
+  <showdownload>false</showdownload>
+  <showeq>false</showeq>
+  <showicons>true</showicons>
+  <showstop>true</showstop>
+  <thumbsinplaylist>true</thumbsinplaylist>
+  <!-- PLAYBACK FLASHVARS -->
+  <autostart>true</autostart>
+  <bufferlength>3</bufferlength>
+  <deblocking>3</deblocking> <!-- 1-5 -->
+  <repeat>list</repeat>
+  <shuffle>false</shuffle>
+  <smoothing>true</smoothing>
+  <volume>80</volume> <!-- 0-100 -->
+  <!-- INTERACTION FLASHVARS -->
+  <enablejs>true</enablejs>
+  <javascriptid>mpl</javascriptid>
+  <link>http://cms.outlandwebworks.com</link>
+  <!-- not working <searchbar>false</searchbar> -->
+  <useaudio>false</useaudio>
+  <usefullscreen>true</usefullscreen>
+  <usekeys>true</usekeys>
+</config>

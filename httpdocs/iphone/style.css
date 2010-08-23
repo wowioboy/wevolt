@@ -1,0 +1,289 @@
+body{
+
+-webkit-margin-top-collapse:separate;
+-webkit-margin-bottom-collapse:separate;
+position:relative;
+margin:0;
+-webkit-text-size-adjust:none;
+min-height:416px;font-family:helvetica,sans-serif;
+background-image:url(images/backgroundStripes.png);
+background-repeat:repeat;
+-webkit-touch-callout:none
+}
+.comictitlelist{
+
+}
+
+.moreinfo{
+font-size:10px;
+}
+
+.updated {
+font-size:10px;
+}
+
+.pages {
+font-size:10px;
+
+}
+#title{
+position:absolute;
+top:0;
+left:0;
+right:0;
+padding-left:10px;
+padding-right:10px;
+text-align:center;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+height:44px;
+line-height:44px;
+font-weight:bold;
+color:rgb(255,255,255);
+text-shadow:rgba(0,0,0,0.6) 0 -1px 0;
+font-size:16pt;
+z-index:0
+
+}
+
+#topbar{
+position:relative;
+left:0;
+top:0;
+height:44px;
+width:auto;
+-webkit-margin-top-collapse:separate;
+margin-bottom:13px;
+z-index:0;
+background-color:#0e478a;
+}
+
+#content{
+width:100%;
+position:relative;
+min-height:250px;
+margin-top:10px;
+height:auto;
+-webkit-transition-property:-webkit-transform;
+-webkit-transform-style:preserve-3d
+}
+
+.menu,.store{
+-webkit-border-bottom-left-radius:8px 8px;
+-webkit-border-bottom-right-radius:8px 8px;
+-webkit-border-top-left-radius:8px 8px;
+-webkit-border-top-right-radius:8px 8px;
+-webkit-margin-bottom-collapse:separate;
+-webkit-margin-top-collapse:separate;
+background-color:#fff;
+border:rgb(135,135,135) solid 1px;
+font-size:12pt;margin-bottom:17px;margin-left:9px;margin-right:9px;overflow:hidden;padding:0;position:relative;display:block;height:auto;width:auto;margin-top:3px}
+
+ul.menu li{
+position:relative;
+list-style-type:none;
+display:block;
+height:43px;
+overflow:hidden;
+border-top-width:1px;
+border-top-style:solid;
+border-top-color:rgb(135,135,135);
+-webkit-margin-top-collapse:separate;
+width:auto}
+
+ul.menu li:first-child{border-top:0}
+
+ul.menu li a{display:block;height:43px;overflow:hidden;-webkit-margin-top-collapse:separate;width:auto;text-decoration:none}
+
+ul.menu li:hover{background-image:url('images/menutouched.png');background-repeat:repeat-x;}
+
+ul.menu li:first-child:hover{background-image:url('images/menutouched.png');background-repeat:repeat-x;-webkit-border-top-left-radius:8px 8px;-webkit-border-top-right-radius:8px 8px}
+
+ul.menu li:last-child:hover{background-image:url('images/menutouched.png');background-repeat:repeat-x;-webkit-border-bottom-left-radius:8px 8px;-webkit-border-bottom-right-radius:8px 8px}
+
+.menuname{margin-left:7px;margin-top:11px;width:auto;color:#000;font-weight:bold;font-size:17px;text-overflow:ellipsis;overflow:hidden;max-width:75%;white-space:nowrap;float:left}
+
+ul.menu span.arrow,body.musiclist span.arrow,body.list span.arrow{position:absolute;width:8px;height:13px;right:10px;top:15px;background:url(images/chevron.png) no-repeat}
+
+ul.menu li a img{width:auto;height:32px;margin-top:5px;margin-left:5px;float:left}
+
+#footer{text-overflow:ellipsis;overflow:hidden;-webkit-margin-top-collapse:separate;text-align:center;-webkit-margin-bottom-collapse:separate;position:relative;background-image:none!important;margin-left:10px!important;margin-right:10px!important;margin-top:10px!important;height:auto!important;width:auto!important;bottom:10px!important}
+
+#footer a{text-decoration:none;font-size:9pt;color:rgb(76,86,108);text-shadow:rgb(255,255,255) 0 1px 0}
+
+.graytitle{position:relative;font-weight:bold;font-size:17px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;right:20px;width:auto;left:9px;color:rgb(76,86,108);padding-bottom:3px;padding-top:1px;padding-left:8px}
+
+.header{display:block;font-weight:bold;color:rgb(73,102,145);font-size:12pt;margin-bottom:6px;font-size:11pt;line-height:14pt}li.writehere p{margin-top:2px;color:#000;margin-bottom:2px}
+
+.writehere{position:relative;width:auto;height:auto;margin-left:9px;margin-right:9px;margin-bottom:-3px;margin-top:10px;min-height:20px;padding-bottom:10px;-webkit-margin-top-collapse:separate}
+
+div.writehere img{max-width:100%}
+
+ul.textbox{-webkit-border-bottom-left-radius:8px 8px;-webkit-border-bottom-right-radius:8px 8px;-webkit-border-top-left-radius:8px 8px;-webkit-border-top-right-radius:8px 8px;-webkit-margin-bottom-collapse:separate;-webkit-margin-top-collapse:separate;background-color:#fff;border:rgb(135,135,135) solid 1px;font-size:12pt;overflow:hidden;list-style:none;padding:0;position:relative;display:block;height:auto;margin-left:9px;margin-right:9px;;margin-top:3px;margin-bottom:13px}
+
+table#topmenu{width:auto;height:30px;font-size:12px;position:absolute;top:7px;max-width:280px;left:9px;font-weight:bold;z-index:1}
+
+#startbutton{background-image:url('images/buttonstart.png');background-repeat:no-repeat;width:14px}
+
+.buttonfield{background-image:url('images/buttonfield.png');background-repeat:repeat-x}
+
+.buttonlink{background-image:url('images/buttonlink.png');width:17px}
+
+#buttonend{background-image:url('images/buttonend.png');background-repeat:no-repeat;width:6px}
+
+table#topmenu img{margin-top:2px}
+
+table#topmenu a{text-decoration:none;text-overflow:ellipsis;overflow:hidden;color:#fff;text-shadow:rgba(0,0,0,0.6) 0 -1px 0;margin-right:3px}
+
+.center{margin:auto;display:block}
+
+ul.textlist li.textlistitem{margin-top:4px;margin-bottom:4px;margin-left:-20px;list-style-type:disc;list-style-position:outside}ul.textlist li.textlistitem p{display:block;margin-top:2px;margin-left:-3px;margin-bottom:6px}
+
+img{border:0}
+
+#buttonbegin{background-image:url('images/buttonbegin.png');background-repeat:no-repeat;width:6px}
+
+.buttonend{background-image:url('images/buttonend.png');background-repeat:no-repeat;width:6px}
+
+#toprightbutton{position:absolute;z-index:1;width:auto;height:30px;font-size:12px;position:absolute;top:7px;max-width:280px;right:9px;font-weight:bold}
+
+table#toprightbutton a{text-decoration:none;text-overflow:ellipsis;overflow:hidden;color:#fff;z-index:1;padding-left:3px;text-shadow:rgba(0,0,0,0.6) 0 -1px 0;margin-right:3px}
+
+#toprightmenu{width:auto;height:30px;font-size:12px;position:absolute;top:7px;max-width:280px;right:9px;font-weight:bold;z-index:1}
+
+.buttonlinkright{background-image:url('images/buttonlinkright.png');width:17px}
+
+#buttonstartright{background-image:url('images/buttonstartright.png');width:14px}
+
+table#toprightmenu a{text-decoration:none;padding-left:3px;text-overflow:ellipsis;overflow:hidden;color:#fff;text-shadow:rgba(0,0,0,0.6) 0 -1px 0;margin-right:3px;z-index:1}
+
+table#toprightmenu img{margin-top:2px}
+
+ul.store li{height:90px;position:relative;list-style-type:none;display:block;overflow:hidden;border-top-width:1px;border-top-style:solid;border-top-color:rgb(135,135,135);width:auto}
+
+li.storeitem img{height:90px;width:90px;position:absolute;left:0px;top:0px;background-image:url('images/shopimage.png');background-repeat:repeat-x;-webkit-border-top-left-radius:8px 8px}
+
+li.storeitem:first-child span.itemimage{-webkit-border-top-left-radius:8px 8px}
+
+li.storeitem:last-child span.itemimage{-webkit-border-bottom-left-radius:8px 8px}
+
+li.storeitem span.itemimage img{height:90px;width:90px}
+
+li.storeitem a{height:100%;width:auto;color:#000;font-weight:bold;font-size:17px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;float:left;width:100%;text-decoration:none}
+
+li.storeitem span.arrow{background-image:url('images/roundarrow.png');background-repeat:no-repeat;height:29px;width:35px;position:absolute;right:0px;top:50%;margin-top:-14px}
+
+li.storeitem a:hover{background-image:url('images/storetouched.png');background-repeat:repeat-x;}
+
+li.storeitem:first-child,li.storeitem:first-child a,li.storeitem:first-child{-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;border-top:0px}
+
+li.storeitem:last-child,li.storeitem:last-child a{-webkit-border-bottom-left-radius:8px 8px;-webkit-border-bottom-right-radius:8px 8px}
+
+.artist{font-size:12px;color:#7f7f7f;font-weight:lighter;margin-left:100px}
+
+li.storeitem .item{font-size:15px;white-space:nowrap;white-space:normal;margin-top:28px;display:block;margin-left:95px;overflow:hidden;max-width:65%;text-overflow:ellipsis}
+
+.slidedone{-webkit-transform:translate(-150%,0px);-webkit-transition-duration:1.5s}
+
+.slidedone2{-webkit-transform:translate(150%,0px);-webkit-transition-duration:1.5s}
+
+body.list div#content div{background-image:url('images/listheader.gif');background-repeat:repeat-x;height:22px;width:100%}
+
+body.list div#content ul{width:auto;background-color:white}
+
+body.list div#content li{height:40px;position:relative;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#e1e1e1;list-style:none;margin-left:-40px;padding:0
+}
+
+body.list div#content li:first-child{margin-top:-15px}
+
+body.list div#content li:last-child{margin-bottom:-16px}
+
+.list{background-color:white;background-image:none!important}
+
+body.list div#footer{margin-top:40px!important;border:solid 1px gray}
+
+body.list div#footer a:hover{text-decoration:underline}
+
+body.list div#content li a{padding-left:20px;padding-top:8px;font-size:large;font-weight:bold;display:block;color:black;text-decoration:none;height:32px}
+body.list div#content div span{color:white;font-size:16px;font-weight:bold;text-shadow:gray 0 1px 0;display:block;height:20px;padding-top:2px;padding-left:20px}
+
+.spacer {
+height:5px;
+}
+
+.imageName {
+padding:5px;
+}
+.comicinfo {
+font-size:10px;
+font-weight:800;
+}
+
+.infotext {
+font-size:10px;
+}
+.locationwrapper {
+padding-left:5px;
+}
+
+.ActiveStyle {
+background-color:#CCCCCC; 
+color:#000000;
+padding-right:5px; 
+font-weight:bold; 
+text-align:right;
+} 
+
+.NonActiveStyle {
+background-color:#666666; 
+color:#ffffff;
+padding-right:5px; 
+font-weight:bold; 
+text-align:right;
+} 
+
+
+body.list div#content li span.arrow{position:absolute;right:10px}
+
+body.list div#content li a:hover{background-image:url('images/menutouched.png');background-repeat:repeat-x}
+
+body.list div#content{margin-top:-13px!important}
+
+body.musiclist div#content{width:auto;margin-top:-16px;margin-left:-40px;margin-right:0px;margin-bottom:0px}
+
+body.musiclist div#content ul li{list-style:none;height:44px;width:auto;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#e6e6e6;position:relative}
+
+body.musiclist div#content ul li a{text-decoration:none;color:black;width:100%!important;height:100%;display:block}
+
+body.musiclist div#footer{padding-top:30px}
+
+.light{background-image:url('images/musiclistlightbg.png');background-repeat:repeat-y;background-color:#dddee0}
+
+.dark{background-image:url('images/musiclistdarkbg.png');background-repeat:repeat-y;background-color:#cbcccf}
+
+.number,.name,.time{display:inline-block;height:44px;font-weight:bold;font-size:large;width:44px;text-align:center;line-height:46px}
+
+.name{margin-left:5px;width:auto!important;font-size:medium}
+
+.time{color:#848484;font-size:medium;margin-left:4px;width:auto!important;font-weight:normal}
+
+body.musiclist{background-image:none!important;background-color:#cbcccf}
+
+li.withimage a{height:100%!important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;padding-top:0!important;width:auto!important}
+
+li.withimage span.itemimage{height:90px;width:90px;position:absolute;left:0px;top:0px;background-image:url('images/shopimage.png');background-repeat:repeat-x}
+
+li.withimage{height:90px!important}
+
+li.withimage span{display:block}
+
+li.withimage span.artist{margin-left:82px!important}
+
+li.withimage span.item{margin-top:29px;margin-left:80px!important;max-width:65%;text-overflow:ellipsis;overflow:hidden}
+
+li.withimage span.arrow{top:50%!important;margin-top:-6px}
+
+li.withimage a:hover{background-image:url('images/storetouched.png')!important;}
+
+li.withimage img{height:90px;width:90px;position:absolute;left:0px;top:0px;background-image:url('images/shopimage.png');background-repeat:repeat-x}

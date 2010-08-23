@@ -1,0 +1,24 @@
+[04/05/2009 12:27 AM] - SUCCESS!
+IPN POST Vars from gateway:
+amount1=0.00, amount3=3.00, address_status=unconfirmed, subscr_date=22:27:27 Apr 04, 2009 PDT, payer_id=LTKYBYMZEAC9S, address_street=8456 Blackburn Ave
+#9, mc_amount1=0.00, mc_amount3=3.00, charset=windows-1252, address_zip=90048, first_name=Matthew, reattempt=1, address_country_code=US, address_name=Inc House Hosting, notify_version=2.7, subscr_id=S-38M66509P8706793C, custom=1eGLEQ7Pnc8d9G6, payer_status=verified, business=store@outlandentertainment.com, address_country=United States, address_city=Los Angeles, verify_sign=AZfvgqztJYtnK4OBP5xyx65lPiDVAbm6RdMqfMfBjLRvLI1H2FCoO55I, payer_email=theunlisted@gmail.com, payer_business_name=Inc House Hosting, last_name=Jacobs, address_state=CA, receiver_email=store@outlandentertainment.com, recurring=1, txn_type=subscr_cancel, item_name=Pro Subscription w/Ads, mc_currency=USD, item_number=PFSUB-001, residence_country=US, period1=7 D, period3=1 M, 
+IPN Response from gateway Server:
+ HTTP/1.1 200 OK
+Date: Sun, 05 Apr 2009 05:27:30 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5tmI8CMv6NkD2mCrhZAuO4MGZ_TIjCWikbPD7GSvPzIiKBpE-V7PQXfUej4BI-JOcoYYF7QuhFpoeCRFua7G-u2Ykjmd5aatzln4OYUA8Bj4YuVnAmZcBhuJGEYK6SHWlHXQvm%7cgL3YA_y6MFRfz8sbE8XGd0qGNwuohgHAg2p1AFPETj4FJVG2_7nnpwGkBkDvODuX9Owpvm%7cSSOmTulawNxNQ4zyoItszMtiRjdnge8xZtyOsJDUNjkJKW9MG7Pj_B-F9o8LEbCAyoX8X0%7c1238909250; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 03-Apr-2019 05:27:30 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 31-Mar-2029 05:27:30 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+

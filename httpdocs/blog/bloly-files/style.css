@@ -1,0 +1,58 @@
+body{background:#ffffff;color:#000000;font-family:Georgia,Times New Roman,Times;margin-left:5%;margin-right:5%;}
+label {cursor:hand; }
+.error {color:#ffffcc; background:#ee0000; font-weight:bold;}
+.blog_title,A:link.blog_title,A:visited.blog_title,A:hover.blog_title,A:hover.blog_title { color:#cccccc; font-family:Arial Black; text-decoration:none; font-size:28px;}
+.blog_slogan {font-size:10pt; color:#000000; padding:0; margin:0; font-family:Arial;}
+.pright {border-top:0px; border-left:1px; border-right:0px; border-bottom:0px; border-style:solid; border-color:#999999;}
+A,A:active,A:link,A:visited,A:hover,A:active,A:visited{text-decoration:underline;cursor:pointer;color:#3366cc;}
+A:hover{color:#0000cc;text-decoration:none;}
+.msg1,.msg2 {border-top:0; border-left:0; border-right:0; border-bottom:4px; border-style:dotted; border-color:#f0f0f0; padding-top:20px; padding-bottom:20px;}
+.msg_hdr1,.msg_hdr2,.post_reply,.ui_header,.ui_posts_header { color:#990000; font-size:large; }
+.post_reply{padding-top:20px;}
+.msg_author1,A:link.msg_author1,A:visited.msg_author1,A:hover.msg_author1,
+.msg_author2,A:link.msg_author2,A:visited.msg_author2,A:hover.msg_author2,
+.msg_info1,.msg_info2,.ui_post1,.ui_post2,.welcome
+	{color:#999999; text-decoration:none; font-size:small; }
+.ui_time {font-family:Courier;}
+A:hover.msg_author1,A:hover.msg_author2 { text-decoration:underline; }
+.msg_body1,.msg_body2,.ui_text,.ui_posts_text {padding-top:10px; padding-bottom:10px; text-align:justify;}
+.comments { margin-top:20px; margin-left:7%;}
+.comment1,.comment2 { text-align:justify; border-left:0; border-right:0; border-top:0; border-bottom:1; border-color:#cccccc; border-style:solid; padding-top:10px; padding-bottom:10px; }
+.comment1 { background:#ffffff; }
+.comment2 { background:#f8f8f8; }
+.comment_author1,A:link.comment_author1,A:visited.comment_author1,A:hover.comment_author1,
+.comment_author2,A:link.comment_author2,A:visited.comment_author2,A:hover.comment_author2
+	{color:#990000; text-decoration:none; font-size:small; }
+.comment_info1,.comment_info2
+	{color:#999999; text-decoration:none; font-size:small; }
+A:hover.comment_author1,A:hover.comment_author2 { text-decoration:underline; }
+.t_reply { width:100%; }
+.next_t {text-align:right; padding-right:40px; color:#cccccc;}
+.page_this { font-size:larger; font-weight:bold; }
+.admin {padding-right:50px; text-align:right;}
+.admin_link,A:link.admin_link,A:visited.admin_link,A:hover.admin_link
+	{color:#669966; text-decoration:none; font-size:small; font-family:Arial Narrow,Arial;}
+.calendar {background:#ffffff; border-top:1px; border-left:1px; border-right:1px; border-bottom:1px; border-style:dotted; border-color:#000000; padding:6px;}
+.calendar,.cal_table,.cal_month_link,.cal_year_link,.cal_tr_hdr,.cal_td_hdr,
+.cal_tr_dweek,.cal_td_dweek
+	{font-family:Arial; font-size:14px;}
+.cal_td_dweek {font-weight:bold; color:#999999; }
+.cal_month_link,A:link.cal_month_link,A:visited.cal_month_link,A:hover.cal_month_link,
+.cal_year_link,A:link.cal_year_link,A:visited.cal_year_link,A:hover.cal_year_link
+	{color:#999999; text-decoration:none; padding-left:2px; padding-right:2px; }
+.cal_today {background:#f0f0f0; border-top:1px; border-left:1px; border-right:1px; border-bottom:1px; border-style:solid; border-color:#999999;}
+.cal_select {background:#fff0f0; border-top:1px; border-left:1px; border-right:1px; border-bottom:1px; border-style:solid; border-color:#ff0000;}
+.cal_day,A:link.cal_day,A:visited.cal_day,A:hover.cal_day
+	{color:#000000; text-decoration:none; font-weight:bold;}
+.cal_none {color:#666666; text-decoration:none;}
+.archive_title,.search_title {color:#990000;font-size:larger;}
+.arch_num {font-family:Arial; color:#cccccc;}
+.arch_link,A:link.arch_link,A:visited.arch_link,A:hover.arch_link {color:#666666; text-decoration:none;}
+A:hover.arch_link {color:#000000;}
+.search_t {width:100%; background:#ffffff; border:1px; border-color:#eeeeee; border-style:inset;}
+.search_b {width:40px; background:#f0f0f0; border:1px; border-color:#eeeeee; border-style:outset;}
+.cpr,.cprl,A:link.cprl,A:visited.cprl,A:hover.cprl {color:#333333; text-align:center; text-decoration:none; font-size:11px; font-family:Arial;}
+
+.p_link,A:link.p_link,A:visited.p_link,A:hover.p_link
+	{color:#3366cc; text-decoration:none; border-top:0px; border-left:0px; border-right:0px; border-bottom:1px; border-style:dashed; border-color:#3366cc;}
+A:hover.p_link{border-color:#ffffff;}

@@ -1,0 +1,136 @@
+/* This is the H1 title used in the sample PHP files */
+	.sampleTitle {
+		text-align:center;
+	}
+/* This is one product grid cell (the box that contains each product image and text) */
+	.gridCell {
+		float:left;
+		text-align:center;
+		position:relative;
+		overflow:hidden;
+	}
+/* This is the style given to the product image link by default */
+	.gridCell .realviewLink {
+		border:1px solid #AFD0F8;
+		display:block;
+		padding:0px;
+	}
+/* This is the style given to the product image itself by default */
+	.gridCell .realviewImage {
+		border:2px;
+	}
+/* This is the style given to the inside of the image link when hovering over the image */
+	.gridCell .realviewLink:hover .realviewImage {
+		border:2px solid #AFD0F8!important;
+	}
+/* This is the style given to the outside of the image link when hovering over the image */
+	.gridCell .realviewLink:hover {
+		border:1px solid #88a2c1!important;
+	}
+/* This is the style given to the text underneath the image (title, description, price...) */
+	.gridCellInfo {
+		text-align:center;
+		font-size:.75em;
+	}
+/* Centers text under the product  */
+	.gridCellInfo a, .gridCellInfo a span {
+		text-align:center;
+	}
+/* This is the main container for the grid of products */
+	.allGrids {
+		text-align:center;
+		width:100%;
+	}
+/* Centers the grid of products inside allGrids */
+	.centerGrids {
+		 margin-left: auto;
+		 margin-right: auto;
+	}
+	.error {
+		border:1px solid;
+		padding:18px;
+		margin-bottom:23px;
+	}
+/* The currently selected sort method */
+	.selectedSort, .selectedSort a {
+		text-decoration:none;
+	}
+/* The pagination links */
+	.count {
+		float:right;
+		margin-left:-2px;
+		margin-bottom:7px;
+		text-align:right;
+		position:relative;
+	}
+/* Powered by Zazzle logo */
+	.pbimg {
+		position:absolute;
+		top:-5px;
+		left:0px;
+	}
+	.pbimg img {
+		border:0px;
+	}
+/* Empty classes in case you want to change the look of the pagination and sort */
+	.count a, .sortLinks a {
+		
+	}
+	.sortLinks {
+		
+	}
+/* Used to stop product grids from floating to the left (at the end of the grid) */
+	.clearMe {
+		clear:both;
+		margin:0px;
+		padding:0px;
+	}
+/* Height of clearMe DIV */
+	.short {
+		height:10px;
+	}
+/* Fix for Mozilla browsers for floating elements...best not touch this! */
+	.clearfix:after {
+	    content: ".";
+	    display: block;
+	    height: 0;
+	    clear: both;
+	    visibility: hidden;
+	}
+	.clearfix {display: inline-block;}
+
+	/* Hides from IE-mac \*/
+	* html .clearfix {height: 1%;}
+	.clearfix {display: block;}
+	/* End hide from IE-mac */
+
+/* Empty class in case you want to style the currently selected page number */
+	.current {
+		
+	}
+/* The product description text. To show more than one line of the description, increase the height. */	
+	.productDescription {		
+		cursor: default;
+		text-decoration: none;
+		position:relative;
+		overflow:hidden;
+		height:15px;
+	}
+/* The product title text */
+	.productTitle {
+		display:block;
+		height:15px;
+		overflow:hidden;
+		font-weight:bold; 
+	}
+/* Product price text */
+	.productPrice {
+		cursor: default;
+		text-decoration: none;
+		font-size: 8pt;	
+	}
+/* The pagination arrows (previous/next)*/
+	.paginationArrows {
+		text-decoration: none;	
+	}
+	

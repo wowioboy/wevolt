@@ -1,0 +1,44 @@
+======================================================================================
+- Version 3.0.2 [27.11.2009]
+======================================================================================
+1. Feature: [added] possibility to manage Events: Add/Edit and Delete
+2. Feature: [added] possibility to add new event or select from the existing
+3. Feature: [added] possibility to define displaying time format: 24 or AM/PM
+4. Feature: [added] multi-lingual support - possibility of translation  to other languages
+ 
+1. Feature: [improved] minor changes in CSS styles 
+2. Feature: [improved] added possibility to set color sunday SetSundayColor(true);
+3. Feature: [improved] added possibility to add event from Weekly View
+
+1. Bud: [fixed] displaying wrong week day in Weekly View
+2. Bud: [fixed] displaying wrong weekly link in Monthly View
+3. Bud: [fixed] in Weekly View navigation links
+4. Bud: [fixed] in displaying date info fir Weekly View (Month Year - Month Year)
+5. Bud: [fixed] in displaying error info debug for Debug Mode
+
+
+======================================================================================
+- Version 3.0.1 [17.10.2009]
+======================================================================================
+1. Feature: [added] possibility to drag Add Event form<DIV>
+2. Feature: [added] HTML template for Add Event form
+3. Feature: [added] smart caching of pages for better performance
+
+1. Feature: [improved] autofocus on first enabled field in Add Event form
+2. Feature: [improved] minor changes in design of Add Event form and calendar styles
+
+
+======================================================================================
+- Version 2.0.1 [05.10.2009]
+======================================================================================
+
+1. Feature: [added] possibility to define default view by SetDefaultView()
+2. Feature: [added] possibility to show number of week by ShowWeekNumberOfYear()
+3. Feature: [added] possibility to change form submission type - "get"/"post" (default)
+4. Feature: [added] possibility to show debug info by Debug(true)
+5. Feature: [added] navigation to Daily View
+6. Feature: [added] new CSS template - "green"
+7. Feature: [added] possibility to add and delete events from database
+
+1. Bud: [fixed] wrong displaying actual day in Yearly View
+

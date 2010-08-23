@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+	<!--
+#modrightside {
+	width: 6px;
+	background-image:url(http://www.wevolt.com/templates/modules/standard/module_new_RS.png);
+	background-repeat:repeat-y;
+}
+
+#modleftside {
+	width: 6px;
+	background-image:url(http://www.wevolt.com/templates/modules/standard/module_new_LS.png);
+	background-repeat:repeat-y;
+	background-color:#FFFFFF;
+}
+
+
+
+.boxcontent {
+	color:#000000;
+	background-color:#FFFFFF;
+}
+
+#modbottom {
+	height:8px;
+	background-image:url(http://www.wevolt.com/templates/modules/standard/module_new_B.png);
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+
+#modbottomright{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/templates/modules/standard/module_new_BR.png);
+	background-repeat:no-repeat;
+	background-position:bottom right;
+}
+#modbottomleft{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/templates/modules/standard/module_new_BL.png);
+	background-repeat:no-repeat;
+	background-position:bottom left;
+}
+#modtop {
+	height:19px;
+	background-image:url(http://www.wevolt.com/templates/modules/standard/header_new_T.png);
+	background-repeat:repeat-x;
+}
+#modtopleft{
+	width:20px;
+	height:19px; 
+	background-image:url(http://www.wevolt.com/templates/modules/standard/header_new_TL.png);
+	background-repeat:no-repeat;
+	background-position:top left;
+}
+
+#modtopright{
+	width:20px;
+	height:19px; 
+	background-image:url(http://www.wevolt.com/templates/modules/standard/header_new_TR.png);
+	background-repeat:no-repeat;
+	background-position:top right;
+}
+#fatmodtop {
+	height:26px;
+	background-image:url(http://www.wevolt.com/templates/modules/standard/mod_fat_T.png);
+	background-repeat:repeat-x;
+	color:#15528e;
+}
+#fatmodtopleft{
+	width:20px;
+	height:26px; 
+	background-image:url(http://www.wevolt.com/templates/modules/standard/mod_fat_TL.png);
+	background-repeat:no-repeat;
+	background-position:top left;
+}
+
+#fatmodtopright{
+	width:30px;
+	height:26px; 
+	background-image:url(http://www.wevolt.com/templates/modules/standard/mod_fat_TR.png);
+	background-repeat:no-repeat;
+	background-position:top right;
+}
+.mod_title {
+color:#15528e;
+
+}
+-->

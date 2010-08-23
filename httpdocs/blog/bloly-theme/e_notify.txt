@@ -1,0 +1,15 @@
+From: "%SERVER" <webmaster@%SERVER>
+To: "%NAME" <%EMAIL>
+Subject: New comment from %POSTER
+
+Dear %NAME,
+
+There is a new comment in your blog.
+User %POSTER wrote:
+%TEXT
+
+%REFERER
+
+Truly yours,
+Bloly Blog
+http://www.bloly.com

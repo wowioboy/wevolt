@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Web Comics Community, powered by Panel Flow, Coming in December 08'"></meta>
+<meta name="keywords" content="Webcomics, Comics, Flash, Panel Flow, Animation, Reviews, Open Source"></meta>
+<title>NEED COMICS | COMING SOON | POWERED BY PANEL FLOW</title>
+<script src="scripts/swfobject.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div align="center"><img src="images/coming.jpg" width="600" height="200" />
+<br />
+
+<div id="logo">
+		<strong>You need to upgrade your Flash Player or turn on Javascript<br /></strong></div>
+<script type="text/javascript">
+		// <![CDATA[s
+
+		var so = new SWFObject("http://www.panelflow.com/pf_logo_powered.swf", "images", "223", "150", "8.0.23", "#FFFFFF", true);
+		so.write("logo");
+
+		// ]]>
+	</script></div>
+</div>
+</body>
+</html>

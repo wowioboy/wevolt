@@ -1,0 +1,122 @@
+/*-----------------------------
+RESET STYLES
+-----------------------------*/
+
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6{
+	margin:0;
+	padding:3;
+	-webkit-text-size-adjust:none; /* This stops the iPhone from automatically changing the size of the text when you flip the phone */
+	}
+body{
+	font-size: 62.5%; /* 62.5% means 1em = 10px */
+	background-color:#fff3e5;
+	color:#000000;
+	}
+ol, dl, dd, dt{
+	list-style:none;
+	padding:0;
+	margin:0;
+	}
+a{
+	text-decoration:none;
+	}
+ 
+/*-----------------------------
+	SITE SPECIFIC STYLES
+-----------------------------*/
+
+body{
+	background:#fff3e5;
+	font-family: Helvetica; /* Helvetica is on the iPhone already, so you may as well take advantage */
+	}
+p{
+	font-size:12px;
+	padding-bottom:8px;
+	}
+a{
+	color:#000000;
+	text-decoration:none;
+	}
+
+/*-----------------------------
+	HEADINGS
+-----------------------------*/
+
+h1{
+	display:block;
+	width:112px;
+	height:41px;
+	
+	text-indent:-5000px;
+	}
+
+/*-----------------------------
+	BASIC LAYOUT
+-----------------------------*/
+
+#page_wrapper{
+	padding-top:20px;
+	background:#fff3e5;
+	overflow:auto;
+	}
+
+/*-----------------------------
+	ORIENTATION CLEVERNESS
+-----------------------------*/
+
+#content_left,
+#content_right,
+#content_normal,
+#content_flipped{
+	display:none;
+	}
+.show_normal,
+.show_flipped{
+	width:320px;
+	}
+.show_left,
+.show_right{
+	width:480px;
+	}
+
+.show_left #content_left,
+.show_right #content_right,
+.show_normal #content_normal,
+.show_flipped #content_flipped{
+	display:block;
+	}
+	
+.spacer {
+height:6px;
+}
+#featuredheader{
+font-weight:bold;
+font-size:14px;
+text-align:left;
+color:#000000;
+}
+#featurelist {
+color:#000000;
+}
+.topmenu {
+background-color:#fee0be;
+text-align:center;
+
+}
+
+.topmenu a:link {
+font-size:10px;
+}
+
+.topmenu a:hover {
+font-size:10px;
+}
+
+li.bullet {
+list-style-image:url(../images/radiobtn2.jpg);
+}
+
+.legal {
+
+text-align:center;
+}

@@ -1,0 +1,194 @@
+<data bg="test_comic/bg.jpg" id="test_comic" >
+	
+	<page>
+		<asset>test_comic/BTLC01_letters_pg19a.jpg</asset>
+		<thumb>test_comic/BTLC01_letters_pg19a_thumb.jpg</thumb>
+	</page>
+	
+	<toc>
+		<thumb>toc.jpg</thumb>
+	</toc>
+	
+	<page>
+		<title>Chapter 1: The 1st chapter</title>
+		<asset>test_comic/CVBK1PG1_sm_80.jpg</asset>
+		<thumb>test_comic/CVBK1PG1_thumb.jpg</thumb>
+	</page>
+	<page>
+		<title></title>
+		<asset>test_comic/CVBK1PG1_sm_80.jpg</asset>
+		<thumb>test_comic/CVBK1PG1_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title>Chapter 2: Test SWF & FLV</title>
+		<asset>test_comic/tester.swf</asset>
+		<thumb></thumb>
+	</page>
+	
+	<page>
+		<asset>test_comic/tango.flv</asset>
+		<thumb>test_comic/tango.png</thumb>
+	</page>
+	
+	<page>
+		<asset>test_comic/CVBK1PG1_sm_80.jpg</asset>
+		<thumb>test_comic/CVBK1PG1_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<asset>test_comic/CVBK1PG2_sm_80.jpg</asset>
+		<thumb>test_comic/CVBK1PG2_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title>Chapter 3: The 2nd chapter</title>
+		<asset>test_comic/CVBK1PG4_sm.jpg</asset>
+		<thumb>test_comic/CVBK1PG4_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title>Chapter 4: The 2nd chapter</title>
+		<asset>test_comic/CVBK1PG5_sm.jpg</asset>
+		<thumb>test_comic/CVBK1PG5_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>test_comic/CVBK1PG6_sm.jpg</asset>
+		<thumb>test_comic/CVBK1PG6_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>test_comic/CVBK1PG7_sm.jpg</asset>
+		<thumb>test_comic/CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>test_comic/CVBK1PG7_sm.jpg</asset>
+		<thumb>test_comic/CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+	<page>
+		<title/>
+		<asset>CVBK1PG7_sm.jpg</asset>
+		<thumb>CVBK1PG7_thumb.jpg</thumb>
+	</page>
+	
+</data>

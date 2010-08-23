@@ -1,0 +1,7 @@
+[08-Apr-2009 03:00:39] PHP Warning:  imap_open() [<a href='function.imap-open'>function.imap-open</a>]: Couldn't open stream {mail.thewcms.com/pop3:110/notls}INBOX in /home/panel/public_html/classes/class.emailtodb_v0.9.php on line 81
+[08-Apr-2009 03:00:39] PHP Warning:  imap_num_msg(): supplied argument is not a valid imap resource in /home/panel/public_html/classes/class.emailtodb_v0.9.php on line 136
+[08-Apr-2009 03:15:38] PHP Warning:  imap_open() [<a href='function.imap-open'>function.imap-open</a>]: Couldn't open stream {mail.thewcms.com/pop3:110/notls}INBOX in /home/panel/public_html/classes/class.emailtodb_v0.9.php on line 81
+[08-Apr-2009 03:15:38] PHP Warning:  imap_num_msg(): supplied argument is not a valid imap resource in /home/panel/public_html/classes/class.emailtodb_v0.9.php on line 136
+[08-Apr-2009 03:40:35] PHP Warning:  imap_open() [<a href='function.imap-open'>function.imap-open</a>]: Couldn't open stream {mail.thewcms.com/pop3:110/notls}INBOX in /home/panel/public_html/classes/class.emailtodb_v0.9.php on line 81
+[08-Apr-2009 03:40:35] PHP Warning:  imap_num_msg(): supplied argument is not a valid imap resource in /home/panel/public_html/classes/class.emailtodb_v0.9.php on line 136
+[10-Apr-2009 01:20:01] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/panel/public_html/cron/grabemail.php on line 16

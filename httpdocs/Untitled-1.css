@@ -1,0 +1,186 @@
+#top { 
+								outline:none; 
+								background-color:#000000;
+							}#bottomcontrols { 
+									outline:none;
+									display:block;  
+							}#mpl {
+								outline:none;
+								display:block;  
+							}#pfreader {
+								outline:none;
+								display:block;  
+							}#pagediv {
+								outline:none;
+								display:block;  
+							}#bubble_tooltip{
+							width:300px;
+							position:absolute;
+						    display:none;
+							z-index:3;
+						}#bubble_tooltip .bubble_top{
+								background-image: url('/panelflow/images/bubble_top.png');
+								background-repeat:no-repeat;
+								height:16px;	
+							}#bubble_tooltip .bubble_middle{
+							background-image: url('/panelflow/images/bubble_middle.png');
+							background-repeat:repeat-y;	
+							background-position:bottm left;
+							padding-left:7px;
+							padding-right:7px;
+					}#bubble_tooltip .bubble_middle span{
+									position:relative;
+									top:-8px;
+									font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+									font-size:11px;
+							}#bubble_tooltip .bubble_bottom{
+							background-image: url('/panelflow/images/bubble_bottom.png');
+							background-repeat:no-repeat;
+							background-repeat:no-repeat;	
+							height:44px;
+							position:relative;
+							top:-6px;
+						}#facebox .body {
+							  padding: 10px;
+							  background: #FFFFFF;
+							  width: 370px;
+						}#facebox .b {
+						  background:url('/panelflow/scripts/facebox/b.png);
+						}#facebox .tl {
+						  background:url('/panelflow/scripts/facebox/tl.png);
+						}#facebox .tr {
+						  background:url('/panelflow/scripts/facebox/tr.png);
+						}#facebox .bl {
+						  background:url('/panelflow/scripts/facebox/bl.png);
+						}#facebox .br {
+						  background:url('/panelflow/scripts/facebox/br.png);
+						}.tabactive {
+							height:12px;
+							background-color:#f58434;
+							text-align:center;
+							padding:5px;
+							cursor:pointer;font-style:normal;font-size:14px;
+							width:100px;
+							color:#FFFFFF;
+					}.tabinactive { 
+								height:12px;
+								background-color:#dc762f;
+								text-align:center;
+								padding:5px;
+								cursor:pointer;font-style:normal;font-size:14px;
+								width:100px;
+								color:#FFFFFF;
+					}.tabhover{
+								height:12px;
+								background-color:#ffab6f;
+								text-align:center;
+								padding:5px;
+								cursor:pointer;font-style:normal;font-size:14px;
+								width:100px;
+								color:#000000;
+					}.peeltabactive {
+							height:10px;
+							background-color:#f58434;
+							text-align:center;
+							padding:5px;
+							cursor:pointer;
+							font-size:10px;
+							width:50px;
+							color:#FFFFFF;
+					}.peeltabinactive {
+							height:10px;
+							background-color:#dc762f;
+							text-align:center;
+							padding:5px;
+							cursor:pointer;
+							font-size:10px;
+							width:50px;
+							color:#FFFFFF;
+					}.peeltabhover{
+                            height:10px;
+                            background-color:#ffab6f;
+                            text-align:center;
+                            padding:5px;
+                            cursor:pointer;
+                            font-size:10px;
+                            width:50px;
+                            color:#000000;
+					}#projectmodrightside {background-image:url(/templates/skins/PFPSK-000239/images/ModRightSideImage.jpg);
+                            		  background-repeat:repeat-y;width: 11px;
+					}#projectmodleftside {background-image:url(/templates/skins/PFPSK-000239/images/ModLeftSideImage.jpg);
+                            		  background-repeat:repeat-y;width: 11px;
+					
+					}#projectmodtop {background-image:url(/templates/skins/PFPSK-000239/images/ModTopImage.png);
+                            		  background-repeat:repeat-x;height:13px;
+					}.projectboxcontent {background-color:#FFFFFF;color:#000000;font-size:12px;}#projectmodbottom { background-image:url(/templates/skins/PFPSK-000239/images/ModBottomImage.png);
+                            		background-repeat:repeat-x;height:13px;
+					
+					}#projectmodbottomleft {background-image:url(/templates/skins/PFPSK-000239/images/ModBottomLeftImage.png);
+                            background-repeat:none;height:13px;
+                            	width:11px;
+					}#projectmodtopleft {background-image:url(/templates/skins/PFPSK-000239/images/ModTopLeftImage.png);
+                            		background-repeat:none;height:13px;
+                            width:11px; 
+					}#projectmodtopright {background-image:url(/templates/skins/PFPSK-000239/images/ModTopRightImage.png);
+                           			 background-repeat:none;height:13px;
+                            width:11px; 
+					}#projectmodbottomright { background-image:url(/templates/skins/PFPSK-000239/images/ModBottomRightImage.png);
+                            	  background-repeat:none;height:13px;
+                            width:11px; 
+					}#bubblerightside {background-image:url(/templates/skins/PFPSK-000239/images/ModRightSideImage.jpg);
+                           			 background-repeat:repeat-y;width:11px; 
+					}#bubbleleftside {background-image:url(/templates/skins/PFPSK-000239/images/ModLeftSideImage.jpg);
+                            		background-repeat:repeat-y;width:11px;
+					}#bubbletop {background-image:url(/templates/skins/PFPSK-000239/images/ModTopImage.png);
+									background-repeat:repeat-x;height:13px;
+					}#bubble_tooltip_content {background-color:#FFFFFF;color:#000000;font-size:12px;}#bubblebottom {background-image:url(/templates/skins/PFPSK-000239/images/ModBottomImage.png);
+                            		background-repeat:repeat-x;height:13px;
+                            
+					}#bubblebottomleft {background-image:url(/templates/skins/PFPSK-000239/images/ModBottomLeftImage.png);
+                           		 background-repeat:none;height:13px;
+                            width:11px;
+					}#bubbletopleft{background-image:url(/templates/skins/PFPSK-000239/images/ModTopLeftImage.png);
+                           			 background-repeat:none;height:13px;
+                            width:11px;
+					}#bubbletopright{background-image:url(/templates/skins/PFPSK-000239/images/ModTopRightImage.png);
+                           			 background-repeat:none;height:13px;
+                            	 width:11px;
+					}#bubblebottomright{background-image:url(/templates/skins/PFPSK-000239/images/ModBottomRightImage.png);
+                            		  background-repeat:none;height:13px;
+                            width:11px;
+					}#ControlBar{background-image:url(/templates/skins/PFPSK-000239/images/ControlBarImage.jpg);
+                            		background-repeat:repeat-x;
+                            		height:px;background-color:#000000;font-size:12px;font-style:normal;}#AuthorComment{color:#;
+                            	  text-transform:none;background-color:#FFF347;font-size:globalpx;font-weight:bold;}#LinksBox {text-transform:none;
+                                   padding:2px;background-color:#FFF347; 
+                            		font-size:12px;
+                            		color:#000000;font-weight:bold;}.modheader{text-transform:none;
+                                  padding:2px;background-color:#FFF347; 
+                           		  font-size:12px;
+                            	  text-align:left;
+								  color:#000000;font-weight:bold;}#ComicSynopsis{text-transform:none;
+							     padding:3px;color:#000000;background-color:#FFF347;font-size:globalpx;font-weight:bold;}#ComicInfo{text-transform:none;
+								padding:3px;color:#000000;font-size:globalpx;font-weight:bold;}#UserComments{text-transform:none;
+                           			 padding:3px;color:# 000000;background-color:#FFF347;font-size:globalpx;font-weight:bold;}#ComicSynopsis{text-transform:none;
+                           			 padding:3px;color:#000000;font-size:12px;font-weight:bold;}.latestpageheader  {text-transform:none;
+                            color:#000000;background-color:#000000;
+                            font-size:12px;font-weight:bold;}.latestpageheader a:link{
+                            text-transform:none;
+                            padding:3px;
+                            color:#000000;background-color:#000000;
+                            font-size:12px;font-weight:bold;}.latestpageheader a:visited{text-transform:none;
+                            padding:3px;
+                            color:#000000;background-color:#000000;
+                            font-size:12px;font-weight:bold;}.blogtitle {
+                            font-size:14px;
+                            font-weight:bold;
+					}.blogdate {
+							font-size:12px;
+					}.globalheader{
+                            text-transform:none;
+                            padding:3px;
+                            text-align:left;
+                            color:#000000;background-color:#000000;
+                            font-size:12px;font-weight:bold;}.global_button {padding:3px;background-color:#000000;color:#000000;font-size:12px;font-style:normal;}#FirstButton{ }#NextButton{ }#BackButton{ }#LastButton{ padding:5px;}.pagelinks { font-style:normal;color:#ffffff;}.pagelinks a{ font-style:normal;color:#ffffff;}.pagelinks a:link{ font-style:normal;color:#ffffff;}.pagelinks a:visited { font-style:normal;color:#ffffff;}.pagelinks a:hover{ font-style:normal;color:#ff0000;}.buttonlinks { font-style:normal;color:#000000;}.global_button a{ font-style:normal;color:#000000;}.global_button a:link{ font-style:normal;color:#000000;}.global_button a:visited{ font-style:normal;color:#ffffff;}.global_button a:hover{ font-style:normal;color:#ffffff;}</style>
+
+<style>

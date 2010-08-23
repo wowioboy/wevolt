@@ -1,0 +1,78 @@
+body, html {
+margin:0px;
+padding:0px;
+background-color:#FFFFFF;
+font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+color:#000000;
+font-size:10px;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+.spacer {
+height:10px;
+}
+
+.header {
+font-size:14px;
+font-weight:bold;
+padding-left:10px;
+}
+
+.featurelist {
+padding-left:5px;
+font-size:12px;
+text-align:left;
+}
+.notlogged {
+text-align:center;
+font-size:10px;
+}
+
+.rightwrapper{
+text-align:left;
+padding-right:5px;
+}
+
+.leftwrapper{
+/* padding-left:18px;*/
+text-align:left;
+padding-right:10px;
+}
+
+.username {
+font-weight:bold;
+}
+
+.notespacer{
+height:3px;
+}
+.commentdate {
+font-size:10px;
+}
+
+.nocomments{
+font-size:14px;
+font-weight:bold;
+padding:20px;
+text-align:center;
+}
+
+.infotext{
+font-size:10px;
+}
+.comicinfo {
+font-weight:bold;
+font-size:10px;
+}
+
+.authornote {
+font-weight:bold;
+font-size:12px;
+}

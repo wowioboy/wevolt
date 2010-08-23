@@ -1,0 +1,17 @@
+From: "%SERVER" <webmaster@%SERVER>
+To: "%NAME" <%EMAIL>
+Subject: Your password for %SERVER blog!
+
+Dear %NAME,
+
+Your registration information is below.
+
+Your   login  is: %EMAIL
+Your password is: %PASSWORD
+
+You may login to your account at
+%REFERER
+
+Truly yours,
+Bloly Blog
+http://www.bloly.com

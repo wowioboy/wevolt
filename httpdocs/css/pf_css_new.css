@@ -1,0 +1,2506 @@
+
+
+html {width:100%;height:100%; margin:0px; padding:0px;}
+body {width:100%;height:100%;font-family: Arial, Helvetica, sans-serif; font-size:12px;   margin:0px; padding:0px;}
+.wizardheadlines {
+font-size:14px;
+color:#000000;
+
+}
+h2 {
+	font-size:16px;	
+}
+/* YUI CSS Carosel */
+/**
+ * Additional styles for the controls.
+ */
+.jcarousel-control {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.feed_title {
+color:#0054a6;	
+font-size:10px;
+}
+.feed_title a:link{
+color:#0054a6;	
+font-size:10px;
+}
+.feed_title a:hover {
+color:#000000;	
+font-size:10px;
+text-decoration:underline;
+}
+.feed_title a:active {
+color:#0054a6;	
+font-size:10px;
+}
+
+.blue_links a:link {
+	color:#1b8fff;
+	font-size:12px;	
+}
+.blue_links a:hover {
+	color:#ffffff;
+	font-size:12px;	
+	text-decoration:underline;
+}
+
+.blue_links a:visited {
+	color:#1b8fff;
+	font-size:12px;	
+}
+
+.yellow_links a:link {
+	color:#febe38;
+	font-size:12px;	    
+}
+.yellow_links a:hover {
+	color:#ffffff;
+	font-size:12px;	
+	text-decoration:underline;
+}
+
+.yellow_links a:visited {
+	color:#febe38;
+	font-size:12px;	
+}
+
+.sidebar_nav a:link {
+	font-size:12px;
+	color:#FFF;	
+	line-height:18px;
+}
+.sidebar_nav a:hover {
+	font-size:12px;
+	color:#FFF;	
+	text-decoration:underline;
+	line-height:18px;
+}
+.sidebar_nav a:visited {
+	font-size:12px;
+	color:#FFF;	
+	line-height:18px;
+}
+
+
+.sidebar_sub_nav a:link {
+	font-size:12px;
+	color:#7bbeff;	
+	line-height:18px;
+}
+.sidebar_sub_nav a:hover {
+	font-size:12px;
+	color:#7bbeff;	
+	text-decoration:underline;
+	line-height:18px;
+}
+.sidebar_sub_nav a:visited {
+	font-size:12px;
+	color:#7bbeff;	
+	line-height:18px;
+}
+
+
+.feed_text {
+	color:#000;
+	font-size:10px;
+}
+.feed_date {
+	color:#b1b1b1;
+	font-size:10px;
+	
+}
+.spot_title{
+	color:#58595b;
+	font-size:12px;
+	font-weight:bold;	
+}
+.spot_text{
+	color:#58595b;
+	font-size:10px;
+}
+
+.sidebar_spot_text{
+	color:#a7a9ac;
+	font-size:10px;
+}
+.sidebar_spot_title{
+	color:#7bbeff;
+	font-size:12px;
+}
+
+
+.jcarousel-control a {
+    font-size: 75%;
+    text-decoration: none;
+    padding: 0 5px;
+    margin: 0 0 5px 0;
+    border: 1px solid #fff;
+    color: #eee;
+    background-color: #4088b8;
+    font-weight: bold;
+}
+
+.jcarousel-control a:focus,
+.jcarousel-control a:active {
+    outline: none;
+}
+
+.jcarousel-scroll {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.jcarousel-scroll form {
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel-scroll select {
+    font-size: 75%;
+}
+
+#mycarousel-next,
+#mycarousel-prev {
+    cursor: pointer;
+    margin-bottom: -10px;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+div.workarea { padding:10px; float:left }
+
+ul.draglist { 
+    position: relative;
+    width: 200px; 
+    height:240px;
+    background: #f7f7f7;
+    border: 1px solid gray;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+ul.draglist li {
+    margin: 1px;
+    cursor: move;
+    zoom: 1;
+}
+
+ul.draglist_alt { 
+    position: relative;
+    width: 200px; 
+    list-style: none;
+    margin:0;
+    padding:0;
+    /*
+       The bottom padding provides the cushion that makes the empty 
+       list targetable.  Alternatively, we could leave the padding 
+       off by default, adding it when we detect that the list is empty.
+    */
+    padding-bottom:20px;
+}
+
+ul.draglist_alt li {
+    margin: 1px;
+    cursor: move; 
+}
+
+.yui-overlay { position:absolute; }
+	.yui-overlay .hd {padding:0px; }
+	.yui-overlay .bd { padding:0px; }
+	.yui-overlay .ft { padding:0px; }
+
+	#ctx { background:orange;width:100px;height:25px; }
+	
+	#example {height:15em;}
+  div.yui-b p {
+            
+                margin: 0 0 .5em 0;
+                color: #999;
+            
+            }
+            
+            div.yui-b p strong {
+            
+                font-weight: bold;
+                color: #000;
+            
+            }
+            
+            div.yui-b p em {
+
+                color: #000;
+            
+            }            
+            
+            h1 {
+
+                font-weight: bold;
+                margin: 0 0 1em 0;                
+                padding: .25em .5em;
+                background-color: #ccc;
+
+            }
+
+            #drawer_container1,#drawer_container2 {
+                
+                position: static;
+                
+            }
+			/*
+				For IE 6: trigger "haslayout" for the anchor elements in the root Menu by 
+				setting the "zoom" property to 1.  This ensures that the selected state of 
+				MenuItems doesn't get dropped when the user mouses off of the text node of 
+				the anchor element that represents a MenuItem's text label.
+			*/
+
+			#drawer_container1.yuimenuitemlabel,#drawer_container2.yuimenuitemlabel {
+			
+				_zoom: 1;
+			
+			}
+
+			#drawer_container1,#drawer_container2 .yuimenu .yuimenuitemlabel {
+
+				_zoom: normal;
+
+			}
+			
+			.yuimenuitem-selected {
+			background-image:url(http://www.wevolt.com/images/drawer_normal_hover.jpg);
+			height:33px;
+			width:241px;
+			
+			}
+
+
+/*TOP TEN SELECTOR */
+
+.arrow_select_on {
+	background-image:url(http://www.wevolt.com/images/arrow_selector.png);	
+	height:20px;
+	width:82px;
+	background-repeat:no-repeat;
+	color:#ffffff;
+	text-align:left;
+	padding-left:15px;
+	padding-top:2px;
+	
+}
+
+.arrow_select_off {
+	height:20px;
+	width:82px;
+	color:#555555;
+	cursor:pointer;
+	text-align:left;
+	padding-left:15px;
+	padding-top:2px;
+}
+
+/*TAB CSS */
+.norm_tab_btn {
+background-image:url(http://www.wevolt.com/images/tab_btn_off.png);
+background-repeat:no-repeat;
+width:74px;
+height:17px;
+cursor:pointer;
+}
+
+.norm_tab_btn_over {
+background-image:url(http://www.wevolt.com/images/tab_btn_over.png);
+background-repeat:no-repeat;
+width:74px;
+height:17px;
+cursor:pointer;
+}
+
+/*
+WIZARD BOX CSS
+*/
+#wizardBox_T {
+				background-image:url(http://www.wevolt.com/images/wizard_box_T.png);
+				height:8px;
+}
+
+.wizardboxcontent {
+				color:#ffffff;
+				background-image:url(http://www.wevolt.com/images/wizard_box_C.png);
+				font-size:12px;
+}
+					
+#wizardBox_B {
+				background-image:url(http://www.wevolt.com/images/wizard_box_B.png);
+				height:8px;
+					 
+}
+					
+#wizardBox_TL {
+			width:8px;
+			height:8px; 
+			background-image:url(http://www.wevolt.com/images/wizard_box_TL.png);
+			background-repeat:no-repeat;
+}
+					
+#wizardBox_TR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/wizard_box_TR.png);
+							background-repeat:no-repeat;
+}
+					
+#wizardBox_BR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/wizard_box_BR.png);
+							background-repeat:no-repeat;
+}
+#wizardBox_BL{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/wizard_box_BL.png);
+							background-repeat:no-repeat;
+}
+
+
+.content_bg {
+background-image:url(http://www.wevolt.com/images/panel/content_bg.png); 
+background-repeat:repeat-y;
+width:1058px; 
+
+}
+.shadow_bg {
+background-image:url(http://www.wevolt.com/images/shadow_edges.png); 
+background-repeat:repeat-y;
+width:1058px; 
+
+}
+#control_left_cap {
+background-image:url(http://www.wevolt.com/images/panel/left_cap.png); 
+background-repeat:no-repeat;
+width:5px;
+height:37px;	
+}
+
+#control_right_cap {
+background-image:url(http://www.wevolt.com/images/panel/right_cap.png); 
+background-repeat:no-repeat;
+width:5px;
+height:37px;	
+}
+
+.control_bg {
+background-image:url(http://www.wevolt.com/images/panel/control_bg.png); 
+background-repeat:repeat-x;
+height:37px;	
+font-size:10px; 
+color:#ffffff;
+}
+
+.xp_bg {
+background-image:url(http://www.wevolt.com/images/panel/control_xp_bg.png); 
+background-repeat:repeat-x;
+height:37px;	
+font-size:10px; 
+color:#ffffff;
+}
+
+.control_button {
+background-image:url(http://www.wevolt.com/images/panel/control_button_bg.png); 
+background-repeat:repeat-x;
+height:25px; 
+font-size:10px; 
+color:#ffffff;
+width:103px;
+text-align:center;		
+}
+
+.control_button a:link {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+
+.control_button a:hover {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+
+.control_button a:visited {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+
+.sub_nav_links a:link {
+font-size:10px; 
+color:#898989;
+text-align:center;		
+}
+
+.sub_nav_links a:hover {
+font-size:10px; 
+color:#000000;
+text-align:center;
+text-decoration:underline;		
+}
+
+.sub_nav_links a:visited {
+font-size:10px; 
+color:#898989;
+text-align:center;		
+}
+
+.control_divider {
+background-image:url(http://www.wevolt.com/images/panel/control_button_seperator.png); 
+background-repeat:repeat-x;
+height:25px; 
+width:5px;
+}
+
+#notification_bar {
+background-image:url(http://www.wevolt.com/images/panel/notification_bg.png); 
+background-repeat:repeat-x;
+font-size:10px; 
+color:#000;
+height:13px;
+}
+
+#string_buttons {
+background-image:url(http://www.wevolt.com/images/panel/string_buttons_bg.png); 
+background-repeat:no-repeat;
+height:37px;	
+	
+}
+
+/*MAIN NAV */
+
+.main_nav_buttons a:link {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+
+.main_nav_buttons a:hover {
+font-size:10px; 
+color:#000000;
+text-align:center;
+text-decoration:underline;		
+}
+
+.main_nav_buttons a:visited {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+.main_nav_sub_buttons a:link {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+
+.main_nav_sub_buttons a:hover {
+font-size:10px; 
+color:#000000;
+text-align:center;
+text-decoration:underline;		
+}
+
+.main_nav_sub_buttons a:visited {
+font-size:10px; 
+color:#ffffff;
+text-align:center;		
+}
+
+.main_nav_divider {
+background-image:url(http://www.wevolt.com/images/main_nav_divider.png); 
+background-repeat:repeat-x;
+height:30px; 
+width:1px;
+}
+.main_nav_buttons {
+background-image:url(http://www.wevolt.com/images/main_button_bg.png); 
+background-repeat:repeat-x;
+height:30px; 
+font-size:10px; 
+color:#ffffff;
+padding-left:5px;
+padding-right:5px;
+text-align:center;		
+}
+.main_nav_sub_divider {
+background-image:url(http://www.wevolt.com/images/sub_nav_divider.png); 
+background-repeat:repeat-x;
+height:30px; 
+width:1px;
+}
+.main_nav_sub_buttons {
+background-image:url(http://www.wevolt.com/images/sub_nav_bg.png); 
+background-repeat:repeat-x;
+height:30px; 
+font-size:10px; 
+color:#ffffff;
+padding-left:5px;
+padding-right:5px;
+text-align:center;		
+}
+
+/*
+GREY CMS BOX
+*/
+#grey_cmsBox_T {
+				background-image:url(http://www.wevolt.com/images/cms/grey_cms_box_T.png);
+				height:8px;
+}
+
+.grey_cmsboxcontent {
+				color:#5b5c5c;
+				background-color:#eeeeee;
+				font-size:12px;
+}
+					
+#grey_cmsBox_B {
+				background-image:url(http://www.wevolt.com/images/cms/grey_cms_box_B.png);
+				height:8px;
+					 
+}
+					
+#grey_cmsBox_TL {
+			width:8px;
+			height:8px; 
+			background-image:url(http://www.wevolt.com/images/cms/grey_cms_box_TL.png);
+			background-repeat:no-repeat;
+}
+					
+#grey_cmsBox_TR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/grey_cms_box_TR.png);
+							background-repeat:no-repeat;
+}
+					
+#grey_cmsBox_BR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/grey_cms_box_BR.png);
+							background-repeat:no-repeat;
+}
+#grey_cmsBox_BL{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/grey_cms_box_BL.png);
+							background-repeat:no-repeat;
+}
+
+/*
+BLUE CMS BOX
+*/
+#blue_cmsBox_T {
+				background-image:url(http://www.wevolt.com/images/cms/blue_cms_box_T.png);
+				height:8px;
+}
+
+.blue_cmsboxcontent {
+				color:#5b5c5c;
+				background-color:#bcc5cf;
+				font-size:12px;
+}
+					
+#blue_cmsBox_B {
+				background-image:url(http://www.wevolt.com/images/cms/blue_cms_box_B.png);
+				height:8px;
+					 
+}
+					
+#blue_cmsBox_TL {
+			width:8px;
+			height:8px; 
+			background-image:url(http://www.wevolt.com/images/cms/blue_cms_box_TL.png);
+			background-repeat:no-repeat;
+}
+					
+#blue_cmsBox_TR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/blue_cms_box_TR.png);
+							background-repeat:no-repeat;
+}
+					
+#blue_cmsBox_BR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/blue_cms_box_BR.png);
+							background-repeat:no-repeat;
+}
+#blue_cmsBox_BL{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/blue_cms_box_BL.png);
+							background-repeat:no-repeat;
+}
+
+
+/*
+CMS WRAPPER BOX
+*/
+#cms_wrapper_T {
+				background-image:url(http://www.wevolt.com/images/cms/cms_wrapper_T.png);
+				height:8px;
+}
+
+.cms_wrappercontent {
+				color:#5b5c5c;
+				background-color:#eeeeee;
+				font-size:12px;
+}
+					
+#cms_wrapper_B {
+				background-image:url(http://www.wevolt.com/images/cms/cms_wrapper_B.png);
+				height:8px;
+					 
+}
+					
+#cms_wrapper_TL {
+			width:8px;
+			height:8px; 
+			background-image:url(http://www.wevolt.com/images/cms/cms_wrapper_TL.png);
+			background-repeat:no-repeat;
+}
+					
+#cms_wrapper_TR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/cms_wrapper_TR.png);
+							background-repeat:no-repeat;
+}
+					
+#cms_wrapper_BR{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/cms_wrapper_BR.png);
+							background-repeat:no-repeat;
+}
+#cms_wrapper_BL{
+							width:8px;
+							height:8px; 
+							background-image:url(http://www.wevolt.com/images/cms/cms_wrapper_BL.png);
+							background-repeat:no-repeat;
+}
+
+/*
+SPOTLIGHT CSS
+*/
+.yui-carousel{
+visibility:hidden;overflow:hidden;position:relative;text-align:left;zoom:1; z-index:98; /*background:url(http://www.wevolt.com/images/slider_bg.png); background-repeat:no-repeat;*/width:300px; height:175px;
+}
+ 
+.yui-carousel.yui-carousel-visible{visibility:visible;} 
+
+.yui-carousel-content{overflow:hidden;position:relative;text-align:center;}
+
+.yui-carousel-element li{list-style:none;margin:1px;overflow:hidden;padding:0;position:absolute;text-align:center;}
+
+.yui-carousel-vertical .yui-carousel-element li{display:block;float:none;}
+
+.yui-log .carousel{background:#f2e886;}
+
+.yui-carousel-nav{zoom:1; height:20px;}
+
+.yui-carousel-nav:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+.yui-carousel-button-focus{
+
+}
+.yui-carousel-element li { 
+	    height: 155px; 
+	    width: 215px; 
+		padding-left:5px;
+		padding-bottom:10px;
+		color:#000000;
+		font-size:12px;
+	
+		background:url(http://www.wevolt.com/images/spot_bag.jpg);
+		 background-repeat:repeat-y;
+	} 
+  #spotlight_container .item {
+        display: inline;
+      
+        overflow: hidden;
+  
+        width: 280px;
+		
+	padding-left:5px;
+
+
+    }
+
+
+.yui-carousel-min-width{min-width:147px;}
+
+.yui-carousel-element{overflow:hidden;position:relative;margin:0 auto;padding:0;text-align:left;*margin:0;}
+
+.yui-carousel-horizontal .yui-carousel-element{width:320000px;}
+
+.yui-carousel-vertical .yui-carousel-element{height:320000px;}
+
+.yui-skin-wevolt .yui-carousel-nav select{position:static;}
+
+.yui-carousel .yui-carousel-item-selected{}
+
+.yui-skin-wevolt .yui-carousel,.yui-skin-wevolt .yui-carousel-vertical{}
+
+.yui-skin-wevolt .yui-carousel-nav{background:url(http://www.wevolt.com/images/spotlight_header.png); background-repeat:no-repeat; padding:3px;text-align:right; margin:0px; height:19px;}
+
+.yui-skin-wevolt .yui-carousel-button{background:url(http://www.wevolt.com/images/sprites.png) no-repeat 0 -600px;float:right;height:16px;margin-right:10px;margin-top:5px;overflow:hidden;width:14px;}
+
+.yui-skin-wevolt .yui-carousel-vertical .yui-carousel-button{background-position:0 -800px;}
+
+.yui-skin-wevolt .yui-carousel-button-disabled{background-position:0 -2000px;}
+
+.yui-skin-wevolt .yui-carousel-vertical .yui-carousel-button-disabled{background-position:0 -2100px;}
+
+.yui-skin-wevolt .yui-carousel-button input,.yui-skin-wevolt .yui-carousel-button button{background-color:transparent;border:0;cursor:pointer;display:block;height:16px;margin:-2px 0 0 -2px;padding:0 0 0 25px;}
+
+.yui-skin-wevolt span.yui-carousel-first-button{background-position:0 -550px;margin-left:-100px;margin-right:23px;*margin:5px 5px 5px -90px;}
+
+.yui-skin-wevolt .yui-carousel-vertical span.yui-carousel-first-button{background-position:0 -750px;}
+
+.yui-skin-wevolt span.yui-carousel-first-button-disabled{background-position:0 -1950px;}
+
+.yui-skin-wevolt .yui-carousel-vertical span.yui-carousel-first-button-disabled{background-position:0 -2050px;}
+
+.yui-skin-wevolt .yui-carousel-nav ul{float:right;height:19px;margin:0;margin-left:-220px;margin-right:40px;*margin-left:-160px;*margin-right:0;padding:0;}
+
+.yui-skin-wevolt .yui-carousel-min-width .yui-carousel-nav ul{*margin-left:-170px;}
+
+.yui-skin-wevolt .yui-carousel-nav select{position:relative;*right:50px;top:4px;}
+
+.yui-skin-wevolt .yui-carousel-vertical .yui-carousel-nav select{position:static;}
+
+.yui-skin-wevolt .yui-carousel-vertical .yui-carousel-nav ul,.yui-skin-wevolt .yui-carousel-vertical .yui-carousel-nav select{float:none;margin:0;*zoom:1;}
+
+.yui-skin-wevolt .yui-carousel-nav ul li{background:url(http://www.wevolt.com/images/sprites.png) no-repeat 0 -650px;cursor:pointer;float:left;height:9px;list-style:none;margin:10px 0 0 5px;overflow:hidden;padding:0;width:9px;}
+
+.yui-skin-wevolt .yui-carousel-nav ul:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+
+.yui-skin-wevolt .yui-carousel-nav ul li a{display:block;width:100%;height:100%;text-indent:-10000px;text-align:left;overflow:hidden;}
+
+.yui-skin-wevolt .yui-carousel-nav ul li.yui-carousel-nav-page-focus{}
+
+.yui-skin-wevolt .yui-carousel-nav ul li.yui-carousel-nav-page-selected{background-position:0 -700px;}
+
+.yui-skin-wevolt .yui-carousel-item-loading{background:url(http://yui.yahooapis.com/2.8.0r4/build/carousel/assets/skins/sam/ajax-loader.gif) no-repeat 50% 50%;position:absolute;text-indent:-150px;}
+
+
+/* WEVOLT LATEST SPOTLIGHT */
+		
+/* Easy Slider */
+
+	#slider ul, #slider li{
+		margin:0;
+		padding:0;
+		list-style:none;
+		}
+	
+	#slider li, #slider2 li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+		width:405px;
+		height:220px;
+		overflow:hidden; 
+		}	
+	#prevBtn, #nextBtn,
+	#slider1next, #slider1prev{ 
+		display:block;
+		width:30px;
+		height:77px;
+		position:absolute;
+		left:-30px;
+		top:71px;
+		z-index:1000;
+		}	
+	#nextBtn, #slider1next{ 
+		left:696px;
+		}														
+	#prevBtn a, #nextBtn a,
+	#slider1next a, #slider1prev a{  
+		display:block;
+		position:relative;
+		width:30px;
+		height:77px;
+		background:url(../images/btn_prev.gif) no-repeat 0 0;	
+		}	
+	#nextBtn a, #slider1next a{ 
+		background:url(../images/btn_next.gif) no-repeat 0 0;	
+		}	
+		
+	/* numeric controls */	
+
+	#LateNav{
+	
+		}
+	#LateNav span{
+
+		}
+	#LateNav span a{
+		background:url(http://www.wevolt.com/images/scroll_dot.png) no-repeat 0 0;	
+		}
+	#LateNav span.current a{
+		background:url(http://www.wevolt.com/images/scroll_dot_active.png) no-repeat 0 0;	
+		}
+	#LateNav span a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
+
+/*
+TOOLTIPS CSS
+*/
+.yui-overlay,.yui-panel-container{visibility:hidden;position:absolute;z-index:2;}.yui-panel{position:relative;}.yui-panel-container form{margin:0;}.mask{z-index:1;display:none;position:absolute;top:0;left:0;right:0;bottom:0;}.mask.block-scrollbars{overflow:auto;}.masked select,.drag select,.hide-select select{_visibility:hidden;}.yui-panel-container select{_visibility:inherit;}.hide-scrollbars,.hide-scrollbars *{overflow:hidden;}.hide-scrollbars select{display:none;}.show-scrollbars{overflow:auto;}.yui-panel-container.show-scrollbars,.yui-tt.show-scrollbars{overflow:visible;}.yui-panel-container.show-scrollbars .underlay,.yui-tt.show-scrollbars .yui-tt-shadow{overflow:auto;}.yui-panel-container.shadow .underlay.yui-force-redraw{padding-bottom:1px;}.yui-effect-fade .underlay,.yui-effect-fade .yui-tt-shadow{display:none;}.yui-tt-shadow{position:absolute;}.yui-override-padding{padding:0!important;}.yui-panel-container .container-close{overflow:hidden;text-indent:-10000em;text-decoration:none;}.yui-overlay.yui-force-redraw,.yui-panel-container.yui-force-redraw{margin-bottom:1px;}.yui-skin-wevolt .mask{background-color:#000;opacity:.25;filter:alpha(opacity=25);}.yui-skin-wevolt .yui-panel-container{padding:0 1px;*padding:2px;}.yui-skin-wevolt .yui-panel{position:relative;left:0;top:0;border-style:solid;border-width:1px 0;border-color:#808080;z-index:1;*border-width:1px;*zoom:1;_zoom:normal;}.yui-skin-wevolt .yui-panel .hd,.yui-skin-wevolt .yui-panel .bd,.yui-skin-wevolt .yui-panel .ft{border-style:solid;border-width:0 1px;border-color:#808080;margin:0 -1px;*margin:0;*border:0;}.yui-skin-wevolt .yui-panel .hd{border-bottom:solid 1px #ccc;}.yui-skin-wevolt .yui-panel .bd,.yui-skin-wevolt .yui-panel .ft{background-color:#F2F2F2;}.yui-skin-wevolt .yui-panel .hd{padding:0 10px;font-size:93%;line-height:2;*line-height:1.9;font-weight:bold;color:#000;background:url(http://yui.yahooapis.com/2.8.0r4/build/assets/skins/sam/sprite.png) repeat-x 0 -200px;}.yui-skin-wevolt .yui-panel .bd{padding:10px;}.yui-skin-wevolt .yui-panel .ft{border-top:solid 1px #808080;padding:5px 10px;font-size:77%;}.yui-skin-wevolt .container-close{position:absolute;top:5px;right:6px;width:25px;height:15px;background:url(http://yui.yahooapis.com/2.8.0r4/build/assets/skins/sam/sprite.png) no-repeat 0 -300px;cursor:pointer;}.yui-skin-wevolt .yui-panel-container .underlay{right:-1px;left:-1px;}.yui-skin-wevolt .yui-panel-container.matte{padding:9px 10px;background-color:#fff;}.yui-skin-wevolt .yui-panel-container.shadow{_padding:2px 4px 0 2px;}.yui-skin-wevolt .yui-panel-container.shadow .underlay{position:absolute;top:2px;left:-3px;right:-3px;bottom:-3px;*top:4px;*left:-1px;*right:-1px;*bottom:-1px;_top:0;_left:0;_right:0;_bottom:0;_margin-top:3px;_margin-left:-1px;background-color:#000;opacity:.12;filter:alpha(opacity=12);}.yui-skin-wevolt .yui-dialog .ft{border-top:none;padding:0 10px 10px 10px;font-size:100%;}.yui-skin-wevolt .yui-dialog .ft .button-group{display:block;text-align:right;}.yui-skin-wevolt .yui-dialog .ft button.default{font-weight:bold;}.yui-skin-wevolt .yui-dialog .ft span.default{border-color:#304369;background-position:0 -1400px;}.yui-skin-wevolt .yui-dialog .ft span.default .first-child{border-color:#304369;}.yui-skin-wevolt .yui-dialog .ft span.default button{color:#fff;}.yui-skin-wevolt .yui-dialog .ft span.yui-button-disabled{background-position:0 -1500px;border-color:#ccc;}.yui-skin-wevolt .yui-dialog .ft span.yui-button-disabled .first-child{border-color:#ccc;}.yui-skin-wevolt .yui-dialog .ft span.yui-button-disabled button{color:#a6a6a6;}.yui-skin-wevolt .yui-simple-dialog .bd .yui-icon{background:url(http://yui.yahooapis.com/2.8.0r4/build/assets/skins/sam/sprite.png) no-repeat 0 0;width:16px;height:16px;margin-right:10px;float:left;}.yui-skin-wevolt .yui-simple-dialog .bd span.blckicon{background-position:0 -1100px;}.yui-skin-wevolt .yui-simple-dialog .bd span.alrticon{background-position:0 -1050px;}.yui-skin-wevolt .yui-simple-dialog .bd span.hlpicon{background-position:0 -1150px;}.yui-skin-wevolt .yui-simple-dialog .bd span.infoicon{background-position:0 -1200px;}.yui-skin-wevolt .yui-simple-dialog .bd span.warnicon{background-position:0 -1900px;}.yui-skin-wevolt .yui-simple-dialog .bd span.tipicon{background-position:0 -1250px;}.yui-skin-wevolt .yui-tt .bd{position:relative;top:0;left:0;z-index:1;color:#ffffff;padding:5px 5px;border-color:#fed800 ;border-width:1px;border-style:solid;background-color:#195692;}.yui-skin-wevolt .yui-tt.show-scrollbars .bd{overflow:auto;}.yui-skin-wevolt .yui-tt-shadow{top:2px;right:-3px;left:-3px;bottom:-3px;background-color:#000;}.yui-skin-wevolt .yui-tt-shadow-visible{opacity:.12;filter:alpha(opacity=12);}
+
+.action_pop {
+
+    width: 110px; /* Cosmetic */
+  background-color:#195692;
+  padding: 2px;
+  color:#ffffff;
+
+  position: absolute;
+  font-size:10px;
+  text-align:center;
+  border:solid 2px #fed800;
+}
+
+.action_pop a:link{
+color:#ffffff;
+
+}
+.action_pop a:hover{
+color:#fed800;
+
+}
+.action_pop a:visited{
+color:#ffffff;
+
+}
+.mod_title{
+font-size:14px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+color:#FFFFFF;
+
+}
+
+#updateBox_T {
+background-color:#e9eef4;
+height:8px;
+}
+
+.updateboxcontent {
+	color:#000000;
+	background-color:#e9eef4;
+}
+
+#updateBox_B {
+background-color:#e9eef4;
+height:8px;
+ 
+}
+
+
+#updateBox_TL{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/update_wrapper_TL.png);
+	background-repeat:no-repeat;
+}
+
+#updateBox_TR{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/update_wrapper_TR.png);
+	background-repeat:no-repeat;
+}
+
+#updateBox_BR{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/update_wrapper_BR.png);
+	background-repeat:no-repeat;
+}
+#updateBox_BL{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/update_wrapper_BL.png);
+	background-repeat:no-repeat;
+}
+#flashreader {width:100%;height:100%;}
+
+.blue_med_header {
+color:#1b5894; 
+font-size:14px;
+}
+
+.small_blue_title {
+color:#1b5894; 
+font-size:10px;
+}
+.small_text {
+color:#000000; 
+font-size:10px;
+}
+
+.blue_text {
+color:#175490; 
+font-size:12px;
+}
+.blue_text_med {
+color:#175490; 
+font-size:14px;
+}
+.blue_box {
+	border:1px solid #175490;
+	width:283px; 
+	padding:10px; 
+	color:#175490;
+}
+
+.white_box {
+	border:1px solid #ffffff;
+	padding:5px; 
+	color:#ffffff;
+	font-size:10px;
+}
+
+.blue_button {
+background-image:url(http://www.wevolt.com/images/button_bg.jpg);
+width:102px;
+height:21px;
+color:#FFFFFF;
+font-size:11px;
+text-align:center;
+cursor:pointer;
+font-weight:bold;
+line-height:21px;
+}
+
+.blue_button_noclick {
+background-image:url(http://www.wevolt.com/images/button_bg.jpg);
+width:102px;
+height:21px;
+color:#FFFFFF;
+font-size:11px;
+text-align:center;
+font-weight:bold;
+line-height:21px;
+}
+.blue_med {
+
+color:#15528e; 
+font-size:14px; 
+font-weight:bold;
+}
+.blue_lg {
+
+color:#15528e; 
+font-size:16px; 
+font-weight:bold;
+}
+.legal {
+font-size:10px;
+color:#999999;
+
+
+}
+.legal a:link {
+font-size:10px;
+color:#999999;
+}
+.legal a:hover {
+font-size:10px;
+color:#999999;
+text-decoration:underline;
+}
+.legal a:visited {
+font-size:10px;
+color:#999999;
+}
+
+
+.feed_item_title {
+text-align:left;
+}
+
+.feed_item_description {
+text-align:left;
+font-size:12px;
+}
+.info_text {
+color:#000000; 
+font-size:12px;
+}
+.quoted {
+background-color:#e5e5e5; 
+border:#000000 1px solid;
+padding:5px;
+
+}
+.search_colum {
+font-size:12px;
+text-align:left;
+}
+
+.pagelinksright{
+font-size:12px;
+color:#000000;
+text-align:right;
+}
+
+.pagelinksright a:link{
+font-size:12px;
+color:#0099FF;
+}
+
+.pagelinksright a:hover{
+font-size:12px;
+color:#000000;
+}
+
+.pagelinksright a:visited{
+font-size:12px;
+color:#0033FF;
+}
+.pagelinks{
+font-size:12px;
+color:#ffffff;
+text-align:right;
+}
+
+.pagelinks a:link{
+font-size:12px;
+color:#ffffff;
+}
+
+.pagelinks a:hover{
+font-size:12px;
+color:#fed800;
+text-decoration:underline;
+}
+
+.pagelinks a:visited{
+font-size:12px;
+color:#ffffff;
+}
+.sender_name {
+ 	font-size:12px;
+	color:#235c90;
+	font-weight:bold;
+	text-align:left;
+ }
+ .updated_date {
+ font-size:10px;
+ font-style:italic;
+ color:#4d91cf;
+ 
+ }
+ .messageinfo {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ text-align:left;
+ }
+ 
+ .messageinfo a:link{
+  font-size:12px;
+  color:#235c90;
+ 
+ }
+ 
+ .messageinfo a:hover {
+  font-size:12px;
+  color:#0066FF;
+  text-decoration:underline;
+ }
+ 
+ .messageinfo a:visited {
+ font-size:12px;
+   color:#235c90;
+ }
+ 
+  .messageinfo_black {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ }
+ 
+ .messageinfo_black a:link{
+  font-size:12px;
+  color:#235c90;
+ 
+ }
+ 
+ .messageinfo_black a:hover {
+  font-size:12px;
+  color:#0066FF;
+  text-decoration:underline;
+ }
+ 
+ .messageinfo_black a:visited {
+ font-size:12px;
+   color:#235c90;
+ }
+
+ 
+ 
+  .messageinfo_warning {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#fdd700;
+ }
+ 
+ .messageinfo_warning a:link{
+  font-size:12px;
+  color:#ffffff;
+ 
+ }
+ 
+ .messageinfo_warning a:hover {
+  font-size:12px;
+  color:#ffffff;
+  text-decoration:underline;
+ }
+ 
+ .messageinfo_warning a:visited {
+ font-size:12px;
+   color:#ffffff;
+ }
+ 
+  .messageinfo_white {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#ffffff;
+ }
+ 
+ .messageinfo_white a:link{
+  font-size:12px;
+  color:#fdd700;
+ 
+ }
+ 
+  
+ .messageinfo_white a:hover {
+  font-size:12px;
+  color:#fdd700;
+  text-decoration:underline;
+ }
+ 
+ .messageinfo_white a:visited {
+ font-size:12px;
+   color:#fdd700;
+ }
+
+.light_blue_text {
+	
+color:#7ab6ec;
+font-size:12px;	
+}
+ .sender_name a:link {
+ 	font-size:12px;
+	color:#235c90;
+	font-weight:bold;
+	text-align:left;
+ 
+ }
+  .sender_name a:visited {
+ 	font-size:12px;
+	color:#235c90;
+	font-weight:bold;
+	text-align:left;
+ 
+ }
+  .sender_name a:hover {
+ 	font-size:12px;
+	color:#000000;
+	font-weight:bold;
+	text-align:left;
+	text-decoration:underline;
+ 
+ }
+ .profileInfoHeader {
+ color:#5783ab;
+ font-size:12px;
+ text-align:right;
+ width:145px;
+ vertical-align:top;
+ padding:3px 10px 3px 3px;
+ 
+ }
+ 
+ .profileInfobox {
+ width:246px;
+ text-align:left;
+ padding-top:3px;
+ padding-bottom:3px;
+
+ }
+ .profilePrivacy {
+ padding:3px;
+  vertical-align:top;
+  text-align:left;
+ }
+
+.navbuttons {
+cursor:pointer;
+border:none;
+
+}
+
+.nav_links {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+
+ }
+ .nav_links a:link {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#888888;
+ }
+  .nav_links a:visited {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#888888;
+ }
+  .nav_links a:hover {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#000000;
+ }
+ 
+ .nav_links_white {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+
+ }
+ .nav_links_white a:link {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#ffffff;
+ }
+  .nav_links_white a:visited {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#ffffff;
+ }
+  .nav_links_white a:hover {
+ font-family:Verdana, Arial, Helvetica, sans-serif;
+ font-size:12px;
+ color:#000000;
+ }
+ #mainpop {
+  position: absolute;
+ 
+  }
+
+#mainpop a:link{
+color:#ffffff;
+font-size:12px;
+line-height:18px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+
+}
+#mainpop a:hover{
+color:#fcd501;
+font-size:12px;
+line-height:18px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+
+}
+#mainpop a:visited{
+color:#ffffff;
+font-size:12px;
+line-height:18px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+#popupmenu {
+  width: 110px; /* Cosmetic */
+  background-color:#195692;
+  padding: 2px;
+  color:#ffffff;
+
+  position: absolute;
+  font-size:10px;
+  text-align:center;
+  border:solid 2px #fed800;
+}
+#popclose {
+  width: 200px; /* Cosmetic */
+  position: absolute;
+  z-index:100;
+  height:600px;
+
+}
+#popclosetop {
+  width: 500px; /* Cosmetic */
+  position: absolute;
+  z-index:100;
+  height:20px;
+
+}
+#popclosebottom {
+  width: 500px; /* Cosmetic */
+  position: absolute;
+  z-index:100;
+  height:20px;
+
+}
+
+
+#popupmenu a:link{
+color:#ffffff;
+
+}
+#popupmenu a:hover{
+color:#fed800;
+
+}
+#popupmenu a:visited{
+color:#ffffff;
+
+}
+#my_volt_frame_T {
+height:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_T.png);
+	background-repeat:repeat-x;
+}
+
+.voltframecontent {
+	color:#000000;
+	background-color:#cfdcea;
+}
+
+#my_volt_frame_B {
+height:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_B.png);
+	background-repeat:repeat-x;
+}
+#my_volt_frame_R{
+width:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_R.png);
+	background-repeat:repeat-y;
+}
+
+#my_volt_frame_L{
+width:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_L.png);
+	background-repeat:repeat-y;
+}
+
+#my_volt_frame_BL{
+	width:14px;
+	height:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_TL.png);
+	background-repeat:no-repeat;
+}
+
+#my_volt_frame_TL{
+	width:14px;
+	height:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_TL.png);
+	background-repeat:no-repeat;
+}
+
+#my_volt_frame_TR{
+	width:14px;
+	height:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_TR.png);
+	background-repeat:no-repeat;
+}
+
+#my_volt_frame_BR{
+	width:14px;
+	height:14px; 
+	background-image:url(http://www.w3volt.com/images/my_volt_frame_BR.png);
+	background-repeat:no-repeat;
+}
+
+ span.checkbox {
+width: 18px;
+height: 17px;
+padding: 0 0px 0 0;
+background: url(http://www.w3volt.com/images/checkbox.png) no-repeat;
+display: block;
+clear: left;
+float: left;
+}
+
+span.radio {
+width: 19px;
+ height: 25px;
+padding: 0 5px 0 0;
+background: url(http://www.w3volt.com/images/radio.gif) no-repeat;
+display: block;
+clear: left;
+float: left;
+}
+span.select {
+position: absolute;
+width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+height: 21px;
+padding: 0 24px 0 8px;
+color: #fff;
+font: 12px/21px arial,sans-serif;
+background: url(select.gif) no-repeat;
+overflow: hidden;
+}
+
+#string_subtitle {
+
+font-size:9px;
+text-transform:lowercase;
+}
+
+#string_title {
+
+font-size:10px;
+text-transform:uppercase;
+
+}
+
+
+#currentstatus {
+font-size:12px;
+padding-bottom:5px;
+}
+
+.sidebar-title {
+font-size:12px;
+font-weight:bold;
+
+}
+.warning {
+color:#ebbf19;
+font-size:12px;
+text-align:center;
+padding-bottom:5px;
+
+}
+
+.boxoff {
+font-size:10px;
+background-color:#efdb60;
+cursor:pointer;
+color:000000;
+padding:5px;
+}
+
+
+.boxon {
+font-size:10px;
+background-color:#ebbf19;
+cursor:pointer;
+color:000000;
+padding:5px;
+}
+
+.marked {
+background-image:url(http://www.wevolt.com/images/string_unmarked.png); 
+background-repeat:no-repeat;
+width:92px;
+height:42px;
+cursor:pointer;
+text-align:center;
+color:#000000;
+
+}
+.marked a:link{
+color:#000000;
+}
+.marked a:hover{
+color:#ffffff;
+}
+.marked a:visited{
+color:#000000;
+}
+
+.unmarked {
+background-image:url(http://www.wevolt.com/images/string_marked.png); 
+background-repeat:no-repeat;
+width:92px;
+height:42px;
+color:#FFFFFF;
+cursor:pointer;
+text-align:center;
+
+}
+.unmarked a:link{
+color:#FFFFFF;
+}
+.unmarked a:hover{
+color:#000000;
+}
+.unmarked a:visited{
+color:#FFFFFF;
+}
+.menubar {
+padding:5px;
+
+}
+
+
+.menubar a {
+font-size:12px;
+color:#000000;
+text-decoration:none;
+}
+
+
+.menubar a:link {
+font-size:12px;
+color:#000000;
+text-decoration:none;
+}
+
+.menubar a:visited {
+font-size:12px;
+color:#000000;
+text-decoration:none;
+}
+
+.menubar a:hover {
+font-size:12px;
+color:#FF6600;
+text-decoration:underline;
+}
+
+
+/* MENU NEW */
+.menubar2 {
+padding:3px;
+color:#ffffff;
+}
+
+
+.menubar2 a {
+font-size:12px;
+color:#ffffff;
+text-decoration:none;
+}
+
+
+.menubar2 a:link {
+font-size:12px;
+color:#ffffff;
+text-decoration:none;
+}
+
+.menubar2 a:visited {
+font-size:12px;
+color:#ffffff;
+text-decoration:none;
+}
+
+.menubar2 a:hover {
+font-size:12px;
+color:#FF6600;
+text-decoration:underline;
+}
+
+.content_box{display:block}
+.content_box *{
+  display:block;
+  height:1px;
+  overflow:hidden;
+  font-size:.01em;
+  background:#ffd9b4}
+.content_box1{ 
+  margin-left:3px;
+  margin-right:3px;
+  padding-left:1px;
+  padding-right:1px;
+  border-left:1px solid #ffe7cf;
+  border-right:1px solid #ffe7cf;
+  background:#ffdfc0}
+.content_box2{
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:1px;
+  padding-left:1px;
+  border-left:1px solid #ffefe0;
+  border-right:1px solid #ffefe0;
+  background:#ffddbd}
+.content_box3{
+  margin-left:1px;
+  margin-right:1px;
+  border-left:1px solid #ffddbd;
+  border-right:1px solid #ffddbd;}
+.content_box4{
+  border-left:1px solid #ffe7cf;
+  border-right:1px solid #ffe7cf}
+.content_box5{
+  border-left:1px solid #ffdfc0;
+  border-right:1px solid #ffdfc0}
+.content_boxfg{
+  background:#ffd9b4}
+
+.usermenu {
+padding-right:50px;
+padding-bottom:3px;
+}
+
+.usermenu a:link {
+	color:#FF6600;
+}
+
+.usermenu a:visited {
+	color:#FF6600;
+}
+
+.usermenu a:hover {
+	color:#000000;
+}
+
+
+.usermenu2 {
+padding-bottom:3px;
+color:#FFFFFF
+}
+
+.usermenu2 a:link {
+	color:#FF6600;
+}
+
+.usermenu2 a:visited {
+	color:#FF6600;
+}
+
+.usermenu2 a:hover {
+	color:#ffffff;
+}
+
+
+.inspector {
+		font-size: 11px;
+	}
+
+	
+#boxes {
+		font-family: Arial, sans-serif;
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		width: 700px;
+	}
+	#boxes li {
+		cursor: move;
+		position: relative;
+		float: left;
+		margin: 2px 2px 15px 2px;
+		width: 110px;
+		height: 110px;
+		border: 1px solid #000;
+		text-align: center;
+		padding-top: 2px;
+		background-color: #eeeeff;
+	}
+.posttitle{
+text-align:left;
+font-size:16px;
+
+}
+.posttitle a{
+font-size:16px;
+color:#000000;
+}
+
+.posttitle a:link{
+font-size:16px;
+color:#000000;
+text-decoration:none;
+text-transform:uppercase;
+}
+.posttitle a:hover{
+font-size:16px;
+color:#839cbe;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+.posttitle a:visited{
+font-size:16px;
+color:#839cbe;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+.blogdate {
+text-align:left;
+font-size:10px;
+color:#333333;
+}
+.blogtitle {
+text-align:center;
+font-size:18px;
+font-weight:bold;
+}
+
+.blogroll {
+text-align:left;
+padding:10px;
+}
+
+.blogdate a {
+text-align:left;
+font-size:10px;
+color:#ff9a2a;
+}
+
+.blogdate a:link {
+text-align:left;
+font-size:10px;
+color:#ff9a2a;
+}
+
+.blogdate a:hover {
+text-align:left;
+font-size:10px;
+color:#ffc482;
+}
+
+
+
+.blogpost {
+	text-align:left;
+	color:#000000;
+}
+
+.blogspacer {
+	border-bottom:dashed 1px #a2b7b3;
+	height:5px;
+	width:98%;
+}
+.tabactive {
+height:12px;
+background-color:#fed800;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-size:12px;
+color:#000000;
+}
+.tabinactive {
+height:12px;
+background-color:#337aae;
+text-align:center;
+padding:5px;
+cursor:pointer;
+color:#FFFFFF;
+font-size:12px;
+}
+.tabhover{
+height:12px;
+background-color:#fed800;
+color:#000000;
+text-align:center;
+padding:5px;
+cursor:pointer;
+font-size:12px;
+text-decoration:underline;
+}
+#profilemodcenter {
+	height:16px;
+	background-color:#959595;
+	text-align:right;
+}
+
+.profiletabactive {
+	background-color:#2d6ab0;
+	text-align:center;
+	padding:3px;
+	cursor:pointer;
+	font-size:10px;
+	color:#FFFFFF;
+}
+
+.profiletabinactive {
+
+	background-color:#7b7b7b;
+	text-align:center;
+	cursor:pointer;
+	color:#FFFFFF;
+	padding:3px;
+	font-size:10px;
+}
+
+.profiletabhover{
+	background-color:#cbcbcb;
+	color:#000000;
+	text-align:center;
+	padding:3px;
+	cursor:pointer;
+	font-size:10px;
+}
+
+.availtabactive {
+	height:21px;
+	width:86px;
+	text-align:center; 
+	padding:2px;
+	background-image:url(../templates/modules/standard/active_tab.png);
+	background-repeat:no-repeat;
+	cursor:pointer;
+	font-weight:bold;
+	font-size:10px;
+}
+
+.availtabinactive {
+	height:21px;
+	width:86px;
+	background-repeat:no-repeat;
+	background-image:url(../templates/modules/standard/inactive_tab.png);
+	text-align:center;
+	padding:2px;
+	font-size:10px;
+	color:#999999;
+}
+
+.profiletabhover{
+	height:16px;
+	background-color:#cbcbcb;
+	color:#000000;
+	text-align:center;
+	padding:5px;
+	cursor:pointer;
+}
+
+
+.modulebg {
+background-color:#0066FF;
+}
+
+
+.finishtab {
+	height:16px;
+	background-color:#6aac58;
+	text-align:center;
+	padding:5px;
+	cursor:pointer;
+	color:#000000;
+}
+
+.finishtabhover {
+	height:16px;
+	background-color:#ffffff;
+	text-align:center;
+	padding:5px;
+	cursor:pointer;
+	color:#000000;
+	border:#000000 solid 1px;
+}
+
+#profilemodtopright {
+width:16px;
+height:16px; 
+background-image:url(../images/profile_mod_header_tr_grey.png);
+background-repeat:no-repeat;
+}
+#profilemodtopleft {
+width:16px;
+height:16px; 
+background-image:url(../images/profile_mod_header_tl_grey.png);
+background-repeat:no-repeat;
+}
+#profilemodcontent {
+color:#000000;
+background-color:#e5e5e5;
+padding:5px;
+}
+.profilemodheadertext {
+font-size:14px;
+color:#000000;
+font-weight:bold;
+}
+
+.profilemodheadertextsmall {
+font-size:12px;
+color:#FFFFFF;
+}
+
+/*
+#modrightside {
+width: 11px;
+background-image:url(../images/right_side.jpg);
+background-repeat:repeat-y;
+
+}
+
+#modleftside {
+width: 11px;
+background-image:url(../images/left_side.jpg);
+background-repeat:repeat-y;
+
+}
+
+#modtop {
+height:13px;
+background-image:url(../images/mod_top.png);
+background-repeat:repeat-x;
+}
+
+#modtopleft{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_top_left.png);
+background-repeat:no-repeat;
+}
+
+#modtopright{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_top_right.png);
+background-repeat:no-repeat;
+}
+.boxcontent {
+color:#000000;
+background-color:#FFFFFF;
+}
+
+#modbottom {
+height:13px;
+background-image:url(../images/mod_bottom.png);
+background-repeat:repeat-x;
+
+}
+
+#modbottomleft{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_bottom_left.png);
+background-repeat:no-repeat;
+}
+
+
+
+#modbottomright{
+width:11px;
+height:13px; 
+background-image:url(../images/mod_bottom_right.png);
+background-repeat:no-repeat;
+}
+
+
+/*---PROFILE CONTENT BOX -----*/
+*/
+#content_modrightside {
+width: 26px;
+background-image:url(/images/right_side_profile.png);
+background-repeat:repeat-y;
+
+}
+
+.content_modheader {
+color:#ff7c1a;
+padding-left:5px;
+font-weight:bold;
+font-size:14px;
+
+}
+
+#content_modleftside {
+width: 26px;
+background-image:url(/images/left_side_profile.png);
+background-repeat:repeat-y;
+
+}
+
+#content_modtop {
+height:26px;
+background-image:url(/images/profile_top_line.png);
+background-repeat:repeat-x;
+}
+
+#content_modtopleft{
+width:26px;
+height:26px; 
+background-image:url(/images/top_left_profile.png);
+background-repeat:no-repeat;
+}
+
+#content_modtopright{
+width:26px;
+height:26px; 
+background-image:url(/images/top_right_profile.png);
+background-repeat:no-repeat;
+}
+.content_boxcontent {
+color:#000000;
+background-color:#FFFFFF;
+}
+
+#content_modbottom {
+height:26px;
+background-image:url(/images/profile_bottom_line.png);
+background-repeat:repeat-x;
+
+}
+
+#content_modbottomleft{
+width:26px;
+height:26px; 
+background-image:url(/images/bottom_left_profile.png);
+background-repeat:no-repeat;
+}
+
+
+
+#content_modbottomright{
+width:26px;
+height:26px; 
+background-image:url(/images/bottom_right_profile.png);
+background-repeat:no-repeat;
+}
+
+
+.shortdescription {
+text-align:left;
+}
+
+.listheader{
+font-weight:bold;
+font-size:14px;
+padding-left:21px;
+text-align:left;
+}
+
+.featuredheader{
+font-weight:bold;
+font-size:14px;
+text-align:left;
+}
+
+
+.favs{
+font-weight:bold;
+font-size:14px;
+text-align:left;
+}
+
+
+.contentdiv {
+text-align:center;
+padding-left:20px;
+}
+
+.contenttext {
+
+text-align:left;
+padding-left:15px;
+padding-right:15px;
+}
+.featuresheader{
+font-weight:bold;
+font-size:14px;
+padding-left:20px;
+text-align:left;
+}
+
+ul {
+text-align:left;
+}
+.tweets ul {
+margin:0px;
+padding:0px;	
+}
+
+li {
+list-style-type:none;
+margin:0px;
+padding:0px;
+}
+
+.featurediv {
+
+}
+
+.featurelist {
+padding-right:20px;
+}
+
+
+#contentfooter {
+background-image:url(../../outland/images/content_footer.gif);
+height:30px;
+} 
+
+.menu {
+padding-top:5px;
+padding-right:15px;
+text-align:right;
+}
+
+li.bullet {
+list-style-image:url(../images/radiobtn2.jpg);
+}
+
+.slug {
+padding-right:15px;
+font-size:14px;
+font-weight:bold;
+}
+
+.logindiv {
+padding-left:25px;
+text-align:left;
+}
+
+.contentwrapper {
+padding-left:35px;
+padding-right:30px;
+
+}
+
+.mainlogindiv {
+
+text-align:left;
+}
+
+.loginwrapper {
+float:left;
+width:240px;
+padding-left:25px;
+}
+
+.featurewrapper {
+float:right;
+width:450px;
+padding-right:15px;
+
+}
+.logo {
+padding-left:15px;
+width: 202px;
+float:left;
+}
+
+.hidden { display:none; }
+.showing { display:block; }
+.error { margin:25px auto; text-align:center; font-size:1.2em; color:#f00; font-weight:bold; }
+#cropWrap { margin:10px 0 0 0; }
+#wait { padding:15px 0 0 0; text-align:center; }
+div.info { width:500px; font-size:1.2em; margin:15px auto 30px auto; line-height:1.7em; border:1px solid #ccc; background:#fff; padding:20px; }
+div.info h1 { font-size:1.6em; border-bottom:1px solid #000; padding:0 0 6px 0; margin:0 0 10px 0; }
+div.info p { margin:0 0 1.2em 0; }
+
+
+/* INITIAL UPLOAD FORM */
+
+form#imigUpload { display:block; border:1px solid #ccc; background:#fff; padding:20px; }
+form legend { font-size:1.4em; font-weight:bold; letter-spacing:1px; }
+form label { display:block; font-size:1.1em; margin:0 0 4px 0; }
+form input { }
+form div.select { clear:both; padding:5px 0; }
+form select { display:block; border:1px solid #ccc; background:#fafafa; }
+form div#submit, form div#wait { cursor:pointer}
+
+ .delfav input
+{
+color: #000;
+background: #ffffff;
+border: 1px solid  #ffa20f;
+font-size:10px;
+height:23px;
+width:60px;
+vertical-align:middle;
+}
+
+
+.delfav input:hover
+{
+color: #ffa20f;
+background: #ffffff;
+border: 1px solid  #000000;
+font-size:10px;
+height:23px;
+width:60px;
+}
+
+/* FORMS WHICH STORE EDITING DATA */
+form.frmCrop legend, form.frmResize legend { display:none; }
+
+
+/* RESIZE TRACK AND HANDLE */
+#resizeTrack { width:200px; height:5px; background:transparent url(../images/bg_track.gif) left top no-repeat; margin:0 0 20px 0; }
+#resizeHandle { cursor:move; width:5px; height:10px; background:transparent url(../images/bg_handle.gif) left top no-repeat; }
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+.spacer {
+height:10px;
+}
+
+.medspacer {
+height:5px;
+}
+
+.smspacer {
+height:2px;
+}
+
+.lgspacer {
+height:15px;
+}
+
+
+.creatorwrapper {
+padding-left:10px;
+
+}
+
+.imageName {
+padding-top:10px;
+font-size:14px;
+color:white;
+}
+
+a {
+	text-decoration:none;
+}
+
+.modtext {
+padding-left:5px;
+color:#FFFFFF;
+} 
+
+.modheader {
+color:#FFFFFF;
+padding-left:5px;
+font-weight:bold;
+}
+
+.pagination {
+text-align:right;
+}
+
+.infoheader {
+color:#000000;
+padding-left:10px;
+font-weight:bold;
+}
+
+.infotext {
+padding-left:10px;
+color:#000000;
+padding-right:10px;
+} 
+
+#modtext a:active {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:visited {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:hover {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:focus {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+#modtext a:link {color:#CCCCCC; font-size: 10px; text-decoration: none;}
+
+.locationwrapper {
+padding-left:5px;
+}
+
+
+
+.header {
+font-size:14px;
+font-weight:bold;
+}
+.notlogged {
+text-align:center;
+font-size:10px;
+}
+
+.rightwrapper{
+text-align:left;
+padding-right:10px;
+}
+
+.leftwrapper{
+/* padding-left:18px;*/
+text-align:left;
+padding-right:20px;
+}
+
+.bugwrapper{
+padding-left:18px;*/
+text-align:left;
+padding-right:20px;
+}
+
+.bugtext{
+
+}
+
+.bugtextheader{
+font-size:14px;
+font-weight:bold;
+
+}
+
+.bugtextsubheader{
+font-size:12px;
+font-weight:bold;
+
+}
+
+.username {
+font-size:10px;
+font-weight:bold;
+}
+
+.notespacer{
+height:3px;
+}
+.commentdate {
+font-size:10px;
+font-weight:100;
+font-style:italic;
+}
+
+.recdescription {
+font-size:10px;
+font-weight:100;
+padding-left:5px;
+}
+
+.rectitle {
+font-size:10px;
+font-weight:bold;
+
+}
+.nocomments{
+font-size:14px;
+font-weight:bold;
+padding:20px;
+text-align:center;
+}
+
+.infotext{
+font-size:10px;
+font-weight:100;
+}
+
+.comment{
+font-size:10px;
+font-weight:100;
+}
+.comicinfo {
+font-weight:bold;
+font-size:10px;
+color:#000000;
+}
+
+.genres {
+padding-left:10px;
+}
+
+.question {
+font-size:14px;
+font-weight:bold;
+}
+
+.errormsg {
+padding-left:25px;
+padding-right:25px;
+color:#FF6600;
+font-size:12px;
+}
+
+.answer {
+padding-top:5px;
+padding-bottom:5px;
+}
+
+.pageheader {
+font-weight:bold;
+font-size:16px;
+text-align:left;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.pageheader a:link {
+font-size:16px;
+color:#0066FF;
+
+}
+
+.pageheader a:hover {
+font-size:16px;
+color:#FFFFFF;
+
+}
+
+.pageheader a:visited {
+font-size:16px;
+color:#0066FF;
+
+}
+
+
+.stepheader {
+font-weight:bold;
+font-size:14px;
+text-align:center;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.joined {
+font-size:9px;
+}
+
+
+.comictitle {
+font-weight:bold;
+font-size:14px;
+}
+
+.comictitlelist {
+font-weight:bold;
+font-size:10px;
+}
+
+.pages {
+font-size:10px;
+}
+
+.updated {
+font-size:8px;
+}
+.comments {
+padding-left:10px;
+font-size:10px;
+}
+
+.authornote {
+font-weight:bold;
+font-size:12px;
+}
+
+.questions {
+padding-left:10px;
+}
+
+.questions a {
+color:#999999;
+text-decoration:none;
+}
+.questions a:link {
+color:#333333;
+}
+.questions a:hover{
+color:#fea46a;
+}
+
+.pagelink {
+color:#fda46a;
+text-decoration:none
+}

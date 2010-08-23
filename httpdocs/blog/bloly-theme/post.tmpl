@@ -1,0 +1,9 @@
+<include /bloly-theme/page_header.tmpl>
+<%g_result%><%comments%>
+<div class=post_reply>Post reply</div>
+<form action="<%URL_SELF%>" method=post name=editor onSubmit="javascript:return Send(this)">
+<input type=hidden name=reply value=1>
+<%authentication%>
+<include /bloly-theme/editor.tmpl>
+</form>
+<include /bloly-theme/page_footer.tmpl>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<title>Pirobox 1.2 black</title>
+</head>
+<!--////// page .css  \\\\\\\-->
+
+<!--//////END\\\\\\\-->
+
+
+<!--////// CHOOSE ONE OF THE 3 PIROBOX STYLES  \\\\\\\-->
+<link href="http://www.wevolt.com/css/lightbox_black.css" media="screen" title="black" rel="stylesheet" type="text/css" />
+<!--<link href="css_pirobox/white/style.css" media="screen" title="white" rel="stylesheet" type="text/css" />
+<link href="css_pirobox/black/style.css" media="screen" title="black" rel="stylesheet" type="text/css" />-->
+<!--////// END  \\\\\\\-->
+
+<!--////// INCLUDE THE JS AND PIROBOX OPTION IN YOUR HEADER  \\\\\\\-->
+<script type="text/javascript" src="http://www.wevolt.com/scripts/jquery-1.3.2.min.js"></script>
+
+<script type="text/javascript" src="http://www.wevolt.com/js/piroBox.1_2_min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$().piroBox({
+			my_speed: 600, //animation speed
+			bg_alpha: 0.5, //background opacity
+			radius: 4, //caption rounded corner
+			scrollImage : false, // true == image follows the page, false == image remains in the same open position
+			pirobox_next : 'piro_next', // Nav buttons -> piro_next == inside piroBox , piro_next_out == outside piroBox
+			pirobox_prev : 'piro_prev',// Nav buttons -> piro_prev == inside piroBox , piro_prev_out == outside piroBox
+			close_all : '.piro_close',// add class .piro_overlay(with comma)if you want overlay click close piroBox
+			slideShow : 'slideshow', // just delete slideshow between '' if you don't want it.
+			slideSpeed : 4 //slideshow duration in seconds(3 to 6 Recommended)
+	});
+});
+</script>
+<!--////// END  \\\\\\\-->
+
+
+<body>
+<div class="main_content_demo"><h1></h1>
+<h2>Shadow style [default] you can change pirobox style</h2>
+<div style="float:left; width:900px; display:block;">
+<h3 id="examples">Single image</h3>
+
+
+<!--////// BELOW THE PART OF CODE YOU HAVE TO REPLACE  WITH THE URLs OF YOUR IMAGES \\\\\\\-->
+
+
+<div class="demo"><a href="images/1_b.jpg" class="pirobox" title="Single image"><img src="images/1.jpg"  /></a></div>
+<!--////// CLASS pirobox FOR SINGLE IMAGE \\\\\\\-->
+
+<table><tr>
+<td><a href="http://studio.wevolt.com/images/sample_photorealistic.jpg" class="pirobox_gall" title="Sample Photorealistic"><img src="http://studio.wevolt.com/images/sample_photorealistic_thumb.jpg" border="2" vspace="5" hspace="5" class="linkthumb"></a></td>
+<td><a href="http://studio.wevolt.com/images/sureeal.jpg"  class="pirobox_gall" title="Sample Surreal"><img src="http://studio.wevolt.com/images/sureeal_thumb.jpg" border="2" vspace="5" hspace="5" class="linkthumb"></a></td>
+<td><a href="http://studio.wevolt.com/images/pencils_tp.jpg"   class="pirobox_gall" title="Sample Pencils"><img src="http://studio.wevolt.com/images/pencils_thumb.jpg" border="2" vspace="5" hspace="5" class="linkthumb"></a></td>
+</tr>
+<tr>
+<td><a href="http://studio.wevolt.com/images/ObritalDrop-Screenshot.jpg"  class="pirobox_gall" title="Sample Digital Painting"><img src="http://studio.wevolt.com/images/ObritalDrop-Screenshot_thumb.jpg" border="2" vspace="5" hspace="5" class="linkthumb"></a></td>
+<td><a href="http://studio.wevolt.com/images/crash.jpg"  class="pirobox_gall" title="Cartoon Humor"><img src="http://studio.wevolt.com/images/crash_thumb.jpg" border="2" vspace="5" hspace="5" class="linkthumb"></a></td>
+<td><a href="http://studio.wevolt.com/images/comic_book.jpg"  class="pirobox_gall" title="Sample Comic Book"><img src="http://studio.wevolt.com/images/comic_book_thumb.jpg" border="2" vspace="5" hspace="5" class="linkthumb"></a></td>
+</tr>
+</table>
+
+<h3>Image Errore</h3>
+<div class="demo"><a href="images/7_bb.jpg" class="pirobox" title="wrong URL"><img src="images/7.jpg"  /></a></div>
+<!--////// WRONG URL \\\\\\\-->
+</div>
+ 
+
+<!--////// END  \\\\\\\-->
+<!--////// THAT'S IT :) for any question about pirobox ///////////> diegovalobra@gmail.com <\\\\\\\\\\   -->
+</div>
+</body>
+</html>

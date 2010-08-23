@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Banner 
+	bannerWidth=""
+	bannerHeight=""
+	bannerBackgroundColor="FFF3E5"
+
+	textSize="14"
+	textColor="000000"
+	textAreaWidth=""
+	textLineSpacing="0"	
+	textLetterSpacing="-0.5"	
+	textMarginLeft="12"
+	textMarginBottom="5"
+	textBackgroundBlur="true"
+	textBackgroundColor="FFFFFF"
+	textBackgroundTransparency="20"	
+		
+	transitionType="1"
+	transitionRandomEffects="no"
+	transitionDelayTimeFixed="2" 
+	transitionDelayTimePerWord=".5"
+	transitionSpeed="8"
+	transitionBlur="yes"		
+	
+	showTimerClock="yes"
+	showNextButton="yes"
+	showBackButton="no"
+	showNumberButtons="yes"
+	showNumberButtonsAlways="no"
+	showNumberButtonsHorizontal="no"
+	showNumberButtonsAscending="yes"
+	showPlayPauseOnTimer="no"
+	
+	alignButtonsLeft="no"
+	alignTextTop="no"
+	
+	autoPlay="yes"	
+	imageResizeToFit="yes"
+	imageRandomizeOrder="no"
+	
+	>
+	
+	<item buttonLabel=""
+		image="images/slide_one.jpg" 
+		link="http://www.panelflow.com/register/"
+		target="_parent"
+		delay=""
+		textBlend="no"><![CDATA[All FREE accounts come with hosting on <a href='http://www.needcomics.com' target='_blank'><font color='#CCFF66'>needcomics.com</font></a> and access to the basic CMS! 
+	]]></item>
+
+	<item buttonLabel=""
+		image="images/slide_two.jpg" 
+		link="http://www.panelflow.com/register/"
+		target="_parent"
+		delay=""
+		textBlend="no"><![CDATA[Create your own skins, or find premade skins from the community.
+	]]></item>
+
+	<item buttonLabel=""
+		image="images/slide_three.jpg" 
+		link="http://www.panelflow.com/register/"
+		target="_parent"
+		delay=""
+		textBlend="no"><![CDATA[Run the ads you want. Start monetizing your traffic.
+	]]></item>
+
+	<item buttonLabel=""
+	image="images/slide_four.jpg" 
+		link="http://www.panelflow.com/register/"
+		target="_parent"
+		delay=""
+		textBlend="no"><![CDATA[The store component easily integrates with your PayPal account.
+	]]></item>
+
+	<item buttonLabel=""
+		image="images/slide_five.jpg" 
+		link="http://www.panelflow.com/register/"
+	target="_parent"
+		delay=""
+		textBlend="no"><![CDATA[For a Full list of current Panel Flow Features <a href='http://forum.panelflow.com/index.php?topic=5.0' ><font color='#CCFF66'>CLICK HERE</font></a>
+	]]></item>
+
+	
+	
+	
+</Banner>
+

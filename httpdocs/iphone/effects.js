@@ -1,0 +1,2 @@
+<!--
+if(navigator.userAgent.indexOf('iPhone')!=-1){addEventListener("load",function(){setTimeout(hideURLbar,0)},false)}function hideURLbar(){window.scrollTo(0,0.9)}if(document.images){preload_image=new Image(25,25);preload_image.src="Images/menutouched.png"}if(document.images){preload_image2=new Image(25,25);preload_image2.src="Images/storetouched.png"}

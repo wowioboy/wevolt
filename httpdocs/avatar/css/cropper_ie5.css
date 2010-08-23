@@ -1,0 +1,2 @@
+/* fix IE 5 box model */
+.imgCrop_handle { width:8px; height:8px; wid\th:6px; hei\ght:6px; }

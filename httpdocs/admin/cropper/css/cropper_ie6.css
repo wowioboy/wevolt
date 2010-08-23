@@ -1,0 +1,7 @@
+/* FIX MARCHING ANTS IN IE */
+
+.imgCrop_marqueeHoriz, .imgCrop_marqueeVert { background:transparent; filter:Invert; }
+.imgCrop_marqueeNorth { border-top:1px dashed #000; }
+.imgCrop_marqueeEast  { border-right:1px dashed #000; }
+.imgCrop_marqueeSouth { border-bottom:1px dashed #000; }
+.imgCrop_marqueeWest  { border-left:1px dashed #000; }
