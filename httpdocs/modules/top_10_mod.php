@@ -9,6 +9,7 @@ if ($mVersion ==2) {
 		
 		
 	}
+	$string = '';
 if ($mVersion!=2) 
 $string = '<table><tr>';
 if ($ModContent == 'forums') {

@@ -35,11 +35,13 @@ $Site->drawModuleCSS();
            loading_text: "loading tweets..."
         });
         $('.ten_select').click(function(){
-            var tabId = '#' + $(this).attr('tab') + '-tab';
-            $('.ten_select').removeClass('arrow_select_on').addClass('arrow_select_off');
-            $(this).addClass('arrow_select_on');
-            $('.ten_tab').css('display', 'none');
-            $(tabId).css('display', 'block');
+            if ($(this) != $('.arrow_select_on')) {
+	            var tabId = $(this).attr('tab') + '-tab';
+	            $('.arrow_select_on').removeClass('arrow_select_on').addClass('arrow_select_off');
+	            $(this).removeClass('arrow_select_off').addClass('arrow_select_on');
+	            $('.ten_tab[id!=' + tabId + ']').hide();
+	            $('#' + tabId).show();
+            } 
         });
     });
 </script>
@@ -142,11 +144,11 @@ $Site->drawModuleCSS();
          <div align="left">
          <img src="http://www.wevolt.com/images/top_ten_header.png" /><br />
     </div>
-                            <table><tr><td >
+                            <table><tr><td width="860px">
                                 <div id="comics-tab" class="ten_tab">
-                                  <? 
-                                $ModContent = 'comics';
+                                  <?php 
                                 $mVersion = 2;
+                                $ModContent = 'comics';
                                 include('modules/top_10_mod.php');?>
                                 </div>
                               <div id="blog-tab" class="ten_tab" style="display:none;">
