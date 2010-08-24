@@ -9,7 +9,7 @@
 		if (window.frames["home_300"] != null)
 			window.frames["home_300"].location='/includes/home_300_ad_inc.php'; 	
 			
-	<? } else if ($IsProject){?>
+	<? } else if (($IsProject) || ($ProjectForum)){?>
 		if (window.frames["top_ads"] != null)
 		    window.frames["top_ads"].location='/includes/publisher_top_banner_inc.php?project=<? echo $SafeFolder;?>';
 		 if (parent.window.frames["left_ads"] != null)

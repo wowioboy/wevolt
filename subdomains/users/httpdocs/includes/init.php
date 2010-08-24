@@ -25,6 +25,11 @@ if ($_SESSION['username'] == 'matteblack') {
 		
 		//Matt Choi $_SESSION['userid'] ='fe8c15fe351'; 
 		
+		//The Unwanted$_SESSION['userid']='5e1b18c4c6a6d3153e';
+		
+		//Arcana $_SESSION['userid'] = '3ef8154155';
+		
+		
 }
 
 include $_SERVER['DOCUMENT_ROOT'].'/classes/defineThis.php';
@@ -32,6 +37,7 @@ include FUNCTIONS.'global.php';
 include INCLUDES.'db.class.php';
 include CLASSES.'tracker.php';
 include CLASSES.'user.php';
+include_once(CLASSES . 'WideImage/WideImage.php');
 
 /*
 if(($_COOKIE['cookmail'] != '') && ($_COOKIE['cookpass'] != '')){

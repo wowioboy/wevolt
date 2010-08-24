@@ -1,5 +1,5 @@
 <?
-include_once('/classes/defineThis.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/classes/defineThis.php');
   $dbname = 'mydb';
   
   /** A PHP class to access MySQL database with convenient methods

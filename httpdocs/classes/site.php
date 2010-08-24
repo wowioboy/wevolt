@@ -385,6 +385,14 @@
 			$xp = $users->getxp($db, $username);
 			$xpWidth = (int) floor(132 * $xp->percent);
 			?>
+			<script>
+			$(document).ready(function(){
+				$('.drawer').mouseleave(function(){
+					$(this).slideUp();
+				});
+			});
+			
+			</script>
 			<style>
 			.xpbar {
 				background:-webkit-gradient(
@@ -482,7 +490,7 @@ background:-moz-linear-gradient(
 				echo '</table>';
 				echo '</div>';
            
-                echo '<div id="drawerProHolder" style="position:relative;left:60px;">';
+                echo '<div id="drawerProHolder" style="position:relative;left:0px;">';
 						include_once($_SERVER['DOCUMENT_ROOT'] . '/components/_drawers.php');
                     $drawers = new Drawers;
                     $drawers->getDrawers();
@@ -537,7 +545,9 @@ background:-moz-linear-gradient(
 			echo '</table>';
 		}
 		
-		public function drawHeaderSide($width=315) {
+		public function drawHeaderSide($width=315) 
+		{
+		
 			echo '<table width="'.$width.'" cellpadding="0" cellspacing="0">';
 				echo '<tr>';
 					echo '<td background="http://www.wevolt.com/images/sidebar_top_bg.png" style="background-repeat:no-repeat; height:94px;" valign="top">';
@@ -580,7 +590,103 @@ background:-moz-linear-gradient(
 			echo '</table>';
 		}
 		
-		public function drawSiteNavWide($width=980) {
+		public function drawSiteNavWide($width=980) 
+		{
+			?>
+			<style>
+			.result {
+				padding:10px;
+				background-color:#999;
+				border:1px solid #000;
+				background:-webkit-gradient(
+						    linear,
+						    left bottom,
+						    left top,
+						    color-stop(0.08, rgb(153,153,153)),
+						    color-stop(0.77, rgb(238,238,238))
+						);
+				background:-moz-linear-gradient(
+							    center bottom,
+							    rgb(153,153,153) 8%,
+							    rgb(238,238,238) 77%
+							);
+				background:filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#eeeeee, endColorstr=#999999);
+				background:-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#eeeeee, endColorstr=#999999, GradientType=1);
+				color:#000;
+			}
+			.topless {
+				border-top-style:none;
+			}
+			.result img {
+				border:none;
+			}
+			#search_results {
+				width:300px;
+				position:absolute;
+				z-index:99;
+				display:none;
+			}
+			</style>
+			<script>
+			$(document).ready(function(){
+				var preventBlur = false;
+				$('#search_results').mouseenter(function() {
+					preventBlur = true;
+				});
+				$('#search_results').mouseleave(function() {
+					preventBlur = false;
+				});
+				$('#keywords').blur(function(){
+					if (!preventBlur) {
+						$('#search_results').fadeOut('fast');
+					}
+				});
+				$('#keywords').focus(function(){
+					var search = $.trim($(this).val());
+					if (search != '') {
+						$('#search_results').fadeIn('fast');
+					}
+				});
+				$('#keywords').keyup(function(){
+					var search = $.trim($(this).val());
+					if (search != '') {
+						$.getJSON('/ajax/search.php', {search: search}, function(data) {
+							var html = '';
+							var i = 0;
+							$.each(data, function() {
+								this.thumb = this.thumb.replace('/\\/', '');
+								if (this.thumb.charAt(0) == '/') {
+									this.thumb = 'http://www.wevolt.com' + this.thumb;
+								}
+								if (this.type == 'user') {
+									var link = 'http://users.wevolt.com/' + this.name + '/';
+								} else {
+									var link = 'http://www.wevolt.com/' + this.name + '/';
+								}
+								var style = (i != 0) ? 'result topless' : 'result';
+								html += '<a class="search_link" href="' + link + '">' + 
+									     '<div class="' + style + '">' +
+										  '<table width="100%" cellspacing="10">' +
+										    '<tr>' +
+										      '<td rowspan="2" width="50"><img width="50" height="50" src="' + this.thumb + '" /></td>' +
+										      '<td align="left"><b>' + this.type + '</b></td>' + 
+										    '</tr>' +
+										      '<td align="left">' + this.name + '</td>' + 
+										    '</tr>' + 
+										  '</table>' + 
+										'</div>' + 
+										 '</a>';
+								i++;
+							});
+							$('#search_results').html(html).show();
+						});
+					} else {
+						$('#search_results').fadeOut('fast');
+					}
+				});
+			});
+			</script>
+			<?php 
 			 echo '<table cellpadding="0" cellspacing="0" width="'.$width.'"><tr>';
 			echo '<td class="main_nav_buttons"><a href="">COMICS</a></td>';
             echo '<td class="main_nav_divider"></td>';
@@ -596,7 +702,12 @@ background:-moz-linear-gradient(
 			 echo '<td class="main_nav_sub_divider"></td>';
 			echo '<td class="main_nav_sub_buttons"><a href="http://www.wevolt.com/calendar.php">EVENTS</a></td>';
 			echo '<td class="main_nav_sub_divider"></td>';
-			echo '<td class="main_nav_sub_buttons" width="300"><input type="text" style="width:99%;" name="keywords" id="keywords"></td>';
+			?>
+			<td class="main_nav_sub_buttons" width="300">
+			  <input type="text" style="width:99%;" name="keywords" id="keywords">
+			  <div id="search_results"></div>
+			</td>
+			<?php 
 			echo '<td class="main_nav_sub_buttons" width="71"><img src="http://www.wevolt.com/images/search_btn_new.png"></td>';
 			echo '<td class="main_nav_sub_buttons"></td>';
             echo '</tr>';

@@ -378,9 +378,14 @@ $(document).ready(function() {
 			<? }?>
 	
 	<script type="text/javascript">
-	function string_init() {
+	function string_init() 
+	{
+		var offset = $('#showstring').offset();
+		var x = offset.left;
+		var y = offset.top + 28;
+		
 			// Build overlay1 based on markup, initially hidden, fixed to the center of the viewport, and 300px wide
-			YAHOO.wevolt.container.string = new YAHOO.widget.Overlay("string", { xy:[stringx,stringy],
+			YAHOO.wevolt.container.string = new YAHOO.widget.Overlay("string", { xy:[x,y],
 																					  visible:false,
 																					  width:"109px" } );
 			YAHOO.wevolt.container.string.render();

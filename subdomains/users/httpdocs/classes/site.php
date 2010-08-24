@@ -58,7 +58,91 @@
 		
 		}
 		
-		public function drawLatestModule($Order) 
+		public function drawSpotLight($type,$template='home') {
+				$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
+				$query = "SELECT * from spotlight";
+				$query .= " where Published=1 and SpotlightType='$type' "; 
+				if ($_SESSION['userid'] != '')
+					$query .= " and LoggedIn=1 "; 
+				if (($_SESSION['overage'] == 'N') || ($_SESSION['overage'] == ''))
+					$query .= " and Rating !='a' ";
+				$query .= " order by RAND()";
+				$SpotArray = $db->queryUniqueObject($query);
+				
+				if (($type == 'user') || ($type == 'creator')) {
+					$FollowType = 'user';
+					$query = "select count(*) from follows where user_id='".$_SESSION['userid']."' and follow_id='".$SpotArray->ContentID."' and type='user'";
+					$IsFollowing = $db->queryUniqueValue($query);
+					
+					$query = "select count(*) from follows where follow_id='".$SpotArray->ContentID."' and type='user'";
+					$NumFollowers = $db->queryUniqueValue($query);
+						
+						$query = "SELECT avatar as thumb, realname as title, level as rank
+						          from users where encryptid='".$SpotArray->ContentID."'";
+					
+				} else if ($type == 'project') {
+					$FollowType = 'project';
+					$query = "select count(*) from follows where user_id='".$_SESSION['userid']."' and follow_id='".$SpotArray->ContentID."' and type='project'";
+					$IsFollowing = $db->queryUniqueValue($query);
+					
+					$query = "select count(*) from follows where follow_id='".$SpotArray->ContentID."' and type='project'";
+					$NumFollowers = $db->queryUniqueValue($query);
+					$query = "SELECT thumb, title, ProjectType
+						          from projects where ProjectID='".$SpotArray->ContentID."'";
+					
+				}
+				$SpotInfo = $db->queryUniqueObject($query);
+				
+				if ($template == 'side') {
+					echo '<table><tr>';
+					echo '<td valign="top">';
+					echo '<div class="sidebar_spot_title">';
+					echo $SpotInfo->title;
+					echo '</div>';
+					echo '<div class="sidebar_spot_text" align="right">';
+					echo $SpotInfo->ProjectType.'<br/>';
+					if ($SpotInfo->rank != '')
+					echo 'Rank '.$SpotInfo->rank.'<br/>';
+					if ($NumFollowers != 0)
+						echo 'Fans '.$NumFollowers;
+					echo '</div>';
+					echo '</td>';
+					echo '<td valign="top" width="90" align="center">';
+					echo '<a href="'.$SpotArray->Link.'">';
+					echo '<img src="'.$SpotInfo->thumb.'" border="0" width="66" height="66"></a><br/>';
+					if (($IsFollowing == 0) &&($_SESSION['userid'] != '')) {
+						echo '<a href="javascript:void(0)" onclick="follow_content(\''.$SpotArray->ContentID.'\',\''.$FollowType.'\',\'follow_'.$type.'\');">';	
+						echo '<img src="http://www.wevolt.com/images/follow_button.png" id="follow_'.$type.'" border="0">';
+						echo '</a><br/>';
+						
+					}
+					
+					echo '</td>';
+					echo '</tr></table>';
+					
+				} else {
+					echo '<a href="'.$SpotArray->Link.'">';
+					echo '<img src="'.$SpotInfo->thumb.'" border="0"></a><br/>';
+					if (($IsFollowing == 0) &&($_SESSION['userid'] != '')) {
+						echo '<a href="javascript:void(0)" onclick="follow_content(\''.$SpotArray->ContentID.'\',\''.$FollowType.'\',\'follow_'.$type.'\');">';	
+						echo '<img src="http://www.wevolt.com/images/follow_button.png" id="follow_'.$type.'" border="0">';
+						echo '</a><br/>';
+						
+					}
+					echo '<div style="height:5px;"></div><div class="spot_title">';
+					echo $SpotInfo->title;
+					echo '</div>';
+					echo '<div class="spot_text">';
+					echo 'Rank '.$SpotInfo->rank.'<br/>';
+					if ($NumFollowers != 0)
+						echo 'Fans '.$NumFollowers;
+					echo '</div>';
+				}
+				
+				
+		}
+		
+		public function drawLatestModule($Order, $big = false) 
 		{
 				$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 				$query = "SELECT * from latest_mod where IsActive = 1";
@@ -67,10 +151,13 @@
 				$query .= " order by $Order limit 6";
 				$db->query($query);
 				echo '<div id="slider">';
+				if ($big) {
+					$style = 'width="680px" height="250px"';
+				}
 				while ($line = $db->FetchNextObject()) {
                 	echo '<div style="visibility:hidden;">' .
                 		 '<a href="' . $line->Link . '">' . 
-                		 '<img src="'.$line->Thumb.'" border="0" />' .
+                		 "<img src=\"{$line->Thumb}\" border=\"0\" $style />" .
                 		 '</a>' .
                 		 '</div>';
 				}            
@@ -288,6 +375,347 @@
 			</div>
 			<?php 
 		}
+		
+		
+		public function drawControlPanel($width=981) 
+		{
+			$db = new DB();
+			$users = new Users();
+			$username = trim($_SESSION['username']);
+			$xp = $users->getxp($db, $username);
+			$xpWidth = (int) floor(132 * $xp->percent);
+			?>
+			<script>
+			$(document).ready(function(){
+				$('.drawer').mouseleave(function(){
+					$(this).slideUp();
+				});
+			});
+			
+			</script>
+			<style>
+			.xpbar {
+				background:-webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.24, rgb(99,155,207)),
+    color-stop(0.8, rgb(32,70,116))
+);
+background:-moz-linear-gradient(
+    center top,
+    rgb(99,155,207) 24%,
+    rgb(32,70,116) 80%
+);
+				background-color:#639bcf;
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:0;
+				width:<?php echo $xpWidth; ?>px;
+			}
+			</style>
+			<?php 
+			echo '<table cellpadding="0" cellspacing="0" border="0" width="'.$width.'">';
+            echo '<tr>';
+            echo '<td id="control_left_cap"></td>';
+            echo '<td class="control_bg" style="width:36px;">';
+            echo '<a href="http://users.wevolt.com/'.trim($_SESSION['username']).'/"><img src="'.$_SESSION['avatar'].'" width="34" height="34" border="0"/></a></td>';
+			//XP METER
+			?>
+            <td class="xp_bg" style="width:132px;"> 
+              <div style="position:relative;height:100%;">
+                <div class="xpbar"></div>
+                
+                  <table width="100%" height="100%" style="position:absolute;">
+                    <tr>
+                      <td align="left" valign="top">
+                        <?php echo $username; ?>
+                      </td>
+                      <td align="right" valign="bottom"><span style="font-size:20px;">4</span></td>
+                    </tr>
+                  </table>
+              </div> 
+            </td>
+            <?php 
+				//MAIN CONTROL BUTTONS
+			echo '<td class="control_bg">';
+            echo '<table cellpadding="0" cellspacing="0" width="100%"><tr>';
+			echo '<td class="control_button"><a href="http://users.wevolt.com/myvolt/'.trim($_SESSION['username']).'/">MYvolt</a></td>';
+            echo '<td class="control_divider"></td>';
+            echo '<td class="control_button"><a href="http://www.wevolt.com/cms/admin/">Projects</a></td>';
+			echo '<td class="control_divider"></td>';
+            echo '<td class="control_button"><a href="http://users.wevolt.com/myvolt/'.trim($_SESSION['username']).'/?t=network">Contacts</a></td>';
+            echo '<td class="control_divider"></td>';
+            echo '<td class="control_button"><a href="http://users.wevolt.com/myvolt/'.trim($_SESSION['username']).'/?t=volts">Volt Manager</a></td>';
+            echo '<td class="control_divider"></td>';
+            echo '<td width="100" class="control_button"></td>'; 
+            echo '</tr>';
+            echo '<tr>';
+			//NOTIFICATION
+            echo '<td colspan="9" id="notification_bar"></td>';
+            echo '</tr></table>';
+            echo '</td>';
+			//STRING BUTTONS
+			echo '<td id="string_buttons" style="width:71px;" valign="top" align="center">';
+            echo '<img tooltip="Mark pages on your string with this button" tooltip_position="right" src="http://www.wevolt.com/images/panel/control_clip_btn.png"  onclick="mark_page(\''.$_SESSION['currentStringID'].'\',\''.$_SESSION['CurrentMarkStatus'].'\');" id="mark_button" class="navbuttons"/>';?><? echo '<span id="string_button_on"><img tooltip="This the trail of sites you visit on WEvolt" tooltip_position="right" src="http://www.wevolt.com/images/panel/control_string_btn.png" id="showstring" onclick="toggle_string_button(\'on\');" class="navbuttons" /></span>';
+			echo '<span id="string_button_off" style="display:none;"><img src="http://www.wevolt.com/images/panel/control_string_btn.png" id="hidestring" onclick="toggle_string_button(\'off\');hide_layer(\'popupmenu\', event);" class="navbuttons"/></span>';
+            echo '</td>';
+            echo '<td class="control_bg" style="width:190px;" align="center">';
+            echo '<div id=\'drawer_set_1\'>';
+				echo '<table width="97%"><tr><td align="center">'; 
+				$D = 1;
+				echo '<span id="drawer_'.$D.'_on"><img src="http://www.wevolt.com/images/panel/control_drawer_'.$D.'.png" id="showdrawer'.$D.'"  onclick="$(\'.drawer[id!=drawer_'. $D .']\').slideUp();$(\'#drawer_'.$D.'\').slideToggle();" style="cursor:pointer;"  tooltip="Open your WEvolt drawer" tooltip_position="right"/></span>';
+		
+				echo '</td>';
+				echo '<td align="center">';
+				
+				$D = 2;
+				echo '<span id="drawer_'.$D.'_on"><img src="http://www.wevolt.com/images/panel/control_drawer_'.$D.'.png" id="showdrawer'.$D.'"  onclick="$(\'.drawer[id!=drawer_'. $D .']\').slideUp();$(\'#drawer_'.$D.'\').slideToggle();" style="cursor:pointer;"  tooltip="Open your WEvolt drawer" tooltip_position="right"/></span>';
+			
+				echo '</td>';
+				
+				echo '<td align="center">';
+
+				$D = 3;
+				echo '<span id="drawer_'.$D.'_on"><img src="http://www.wevolt.com/images/panel/control_drawer_'.$D.'.png" id="showdrawer'.$D.'"  onclick="$(\'.drawer[id!=drawer_'. $D .']\').slideUp();$(\'#drawer_'.$D.'\').slideToggle();" style="cursor:pointer;"  tooltip="Open your WEvolt drawer" tooltip_position="right"/></span>';
+
+				echo '</td>';
+				echo '<td align="center">';
+				
+				$D = 4;
+				echo '<span id="drawer_'.$D.'_on"><img src="http://www.wevolt.com/images/panel/control_drawer_'.$D.'.png" id="showdrawer'.$D.'"  onclick="$(\'.drawer[id!=drawer_'. $D .']\').slideUp();$(\'#drawer_'.$D.'\').slideToggle();" style="cursor:pointer;"  tooltip="Open your WEvolt drawer" tooltip_position="right"/></span>';
+				echo '</td>';
+				echo '</tr>';
+				echo '</table>';
+				echo '</div>';
+           
+                echo '<div id="drawerProHolder" style="position:relative;left:0px;">';
+						include_once($_SERVER['DOCUMENT_ROOT'] . '/components/_drawers.php');
+                    $drawers = new Drawers;
+                    $drawers->getDrawers();
+   
+				echo '</div>'; 
+                echo '</td>';
+                echo '<td id="control_right_cap"></td>';
+           		echo '</tr>';
+                echo '</table>';
+        	   
+			
+			
+		}
+		
+		public function drawHeaderWide($width=981) {
+			echo '<table width="'.$width.'"><tr>';
+			echo '<td>&nbsp;';
+			echo '<a href="http://www.wevolt.com"><img src="http://www.wevolt.com/images/new_logo_with_tag.png" border="0"></a>';
+			echo '</td>';
+			echo '<td width="240">';
+			echo '</td>';
+			echo '<td>';
+				echo '<table width="352""><tr>';
+				echo '<td width="182">';
+				echo '</td>';
+				echo '<td>';
+					echo '<a href="http://www.wowio.com" target="_blank"><img src="http://www.wevolt.com/images/wowio_button.png" border="0"></a>';
+				echo '</td>';
+				echo '<td>';
+					echo '<a href="http://www.drunkduck.com" target="_blank"><img src="http://www.wevolt.com/images/drunkduck_button.png" border="0"></a>';
+				echo '</td>';
+				echo '<td>';
+					echo '<a href="http://www.wowiotv.com" target="_blank"><img src="http://www.wevolt.com/images/wowiotv_button.png" border="0"></a>';
+				echo '</td>';
+				echo '</tr>';
+				
+				echo '<tr>';
+				echo '<td class="sub_nav_links" colspan="4" align="right">';
+					echo '<a href="http://www.wevolt.com/tutorial/?tid=1">GET STARTED</a>&nbsp;&nbsp;&nbsp;';
+					if (isset($_SESSION['userid'])) {
+                		echo '<a href="http://www.wevolt.com/logout.php">LOGOUT</a>&nbsp;&nbsp;&nbsp;';
+					} else {
+						echo '<a href="javascript:void(0)" onclick="pop_login(\''.urlencode($_SESSION['refurl']).'\');return false;">LOGIN</a>&nbsp;&nbsp;&nbsp;';
+					} 
+					echo '<a href="http://www.wevolt.com/wevolt.php">ABOUT</a>&nbsp;&nbsp;&nbsp;';
+					echo '<a href="http://www.wevolt.com/contact.php">CONTACT</a>&nbsp;&nbsp;&nbsp;';
+					echo '<a href="http://www.wevolt.com/register.php?a=pro">GO PRO</a>';
+				echo '<td>';
+				echo '</tr></table>';
+			echo '</td>';
+			echo '</tr>';
+			echo '</table>';
+		}
+		
+		public function drawHeaderSide($width=315) 
+		{
+		
+			echo '<table width="'.$width.'" cellpadding="0" cellspacing="0">';
+				echo '<tr>';
+					echo '<td background="http://www.wevolt.com/images/sidebar_top_bg.png" style="background-repeat:no-repeat; height:94px;" valign="top">';
+						echo '<table cellpadding="0" cellspacing="0"  width="'.$width.'">';
+							echo '<tr>';
+								echo '<td valign="top" colspan="2" style="padding-left:5px;padding-top:5px" align="left">';
+									echo '<span class="blue_links"><a href="http://www.wevolt.com/tutorial/?tid=1">GET STARTED</a></span>&nbsp;&nbsp;&nbsp;';
+									echo '<span class="blue_links">';
+									if (isset($_SESSION['userid'])) {
+										echo '<a href="http://www.wevolt.com/logout.php">LOGOUT</a>';
+									} else {
+										echo '<a href="javascript:void(0)" onclick="pop_login(\''.urlencode($_SESSION['refurl']).'\');return false;">LOGIN</a>';
+									} 
+									echo '</span>&nbsp;&nbsp;&nbsp;';
+									echo '<span class="yellow_links"><a href="http://www.wevolt.com/register.php?a=pro">GO PRO</a></span>&nbsp;&nbsp;&nbsp;';
+								echo '</td>';
+							echo '</tr>';
+							echo '<tr>';
+								echo '<td valign="top" align="right" style="padding-top:3px;">';
+									echo '<a href="http://www.wevolt.com"><img src="http://www.wevolt.com/images/sidebar_logo.png" border="0"></a>';
+								echo '</td>';
+								echo '<td width="90" align="right" style="padding-right:20px;">';
+									echo '<div class="spacer"></div>';
+									echo '<span class="sidebar_nav"><a href="">COMICS</a></span><br/>';
+									echo '<span class="sidebar_nav"><a href="http://www.wevolt.com/cms/admin/">CREATE</a></span><br/>';
+									echo '<span class="sidebar_nav"><a href="">COMMUNITY</a></span><br/>';
+									echo '<span class="sidebar_sub_nav"><a href="http://www.wevolt.com/tutorials.php">TUTORIALS</a></span><br/>';
+									echo '<span class="sidebar_sub_nav"><a href="http://www.wevolt.com/forum/">FORUM</a></span><br/>';
+									echo '<span class="sidebar_sub_nav"><a href="http://www.wevolt.com/blog.php">BLOG</a></span><br/>';
+									echo '<span class="sidebar_sub_nav"><a href="http://www.wevolt.com/calendar.php">EVENTS</a></span>';
+								echo '</td>';
+							echo '</tr>';
+							echo '<tr>';
+								echo '<td style="padding-left:5px;"><div class="spacer"></div><input type="text" style="width:195px;" name="keywords" id="keywords"></td>';
+								echo '<td width="90" align="center"><div class="spacer"></div><img src="http://www.wevolt.com/images/search_btn_new.png"></td>';
+							echo '</tr>';
+						echo '<table>';
+					echo '</td>';
+				echo '</tr>';
+			echo '</table>';
+		}
+		
+		public function drawSiteNavWide($width=980) 
+		{
+			?>
+			<style>
+			.result {
+				padding:10px;
+				background-color:#999;
+				border:1px solid #000;
+				background:-webkit-gradient(
+						    linear,
+						    left bottom,
+						    left top,
+						    color-stop(0.08, rgb(153,153,153)),
+						    color-stop(0.77, rgb(238,238,238))
+						);
+				background:-moz-linear-gradient(
+							    center bottom,
+							    rgb(153,153,153) 8%,
+							    rgb(238,238,238) 77%
+							);
+				background:filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#eeeeee, endColorstr=#999999);
+				background:-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#eeeeee, endColorstr=#999999, GradientType=1);
+				color:#000;
+			}
+			.topless {
+				border-top-style:none;
+			}
+			.result img {
+				border:none;
+			}
+			#search_results {
+				width:300px;
+				position:absolute;
+				z-index:99;
+				display:none;
+			}
+			</style>
+			<script>
+			$(document).ready(function(){
+				var preventBlur = false;
+				$('#search_results').mouseenter(function() {
+					preventBlur = true;
+				});
+				$('#search_results').mouseleave(function() {
+					preventBlur = false;
+				});
+				$('#keywords').blur(function(){
+					if (!preventBlur) {
+						$('#search_results').fadeOut('fast');
+					}
+				});
+				$('#keywords').focus(function(){
+					var search = $.trim($(this).val());
+					if (search != '') {
+						$('#search_results').fadeIn('fast');
+					}
+				});
+				$('#keywords').keyup(function(){
+					var search = $.trim($(this).val());
+					if (search != '') {
+						$.getJSON('/ajax/search.php', {search: search}, function(data) {
+							var html = '';
+							var i = 0;
+							$.each(data, function() {
+								this.thumb = this.thumb.replace('/\\/', '');
+								if (this.thumb.charAt(0) == '/') {
+									this.thumb = 'http://www.wevolt.com' + this.thumb;
+								}
+								if (this.type == 'user') {
+									var link = 'http://users.wevolt.com/' + this.name + '/';
+								} else {
+									var link = 'http://www.wevolt.com/' + this.name + '/';
+								}
+								var style = (i != 0) ? 'result topless' : 'result';
+								html += '<a class="search_link" href="' + link + '">' + 
+									     '<div class="' + style + '">' +
+										  '<table width="100%" cellspacing="10">' +
+										    '<tr>' +
+										      '<td rowspan="2" width="50"><img width="50" height="50" src="' + this.thumb + '" /></td>' +
+										      '<td align="left"><b>' + this.type + '</b></td>' + 
+										    '</tr>' +
+										      '<td align="left">' + this.name + '</td>' + 
+										    '</tr>' + 
+										  '</table>' + 
+										'</div>' + 
+										 '</a>';
+								i++;
+							});
+							$('#search_results').html(html).show();
+						});
+					} else {
+						$('#search_results').fadeOut('fast');
+					}
+				});
+			});
+			</script>
+			<?php 
+			 echo '<table cellpadding="0" cellspacing="0" width="'.$width.'"><tr>';
+			echo '<td class="main_nav_buttons"><a href="">COMICS</a></td>';
+            echo '<td class="main_nav_divider"></td>';
+            echo '<td class="main_nav_buttons"><a href="http://www.wevolt.com/cms/admin/">CREATE</a></td>';
+			echo '<td class="main_nav_divider"></td>';
+            echo '<td class="main_nav_buttons"><a href="">COMMUNITY</a></td>';
+            echo '<td class="main_nav_divider"></td>';
+            echo '<td class="main_nav_sub_buttons"><a href="http://www.wevolt.com/tutorials.php">TUTORIALS</a></td>';
+            echo '<td class="main_nav_sub_divider"></td>';
+			echo '<td class="main_nav_sub_buttons"><a href="http://www.wevolt.com/forum/">FORUM</a></td>';
+			 echo '<td class="main_nav_sub_divider"></td>';
+			echo '<td class="main_nav_sub_buttons"><a href="http://www.wevolt.com/blog.php">BLOG</a></td>';
+			 echo '<td class="main_nav_sub_divider"></td>';
+			echo '<td class="main_nav_sub_buttons"><a href="http://www.wevolt.com/calendar.php">EVENTS</a></td>';
+			echo '<td class="main_nav_sub_divider"></td>';
+			?>
+			<td class="main_nav_sub_buttons" width="300">
+			  <input type="text" style="width:99%;" name="keywords" id="keywords">
+			  <div id="search_results"></div>
+			</td>
+			<?php 
+			echo '<td class="main_nav_sub_buttons" width="71"><img src="http://www.wevolt.com/images/search_btn_new.png"></td>';
+			echo '<td class="main_nav_sub_buttons"></td>';
+            echo '</tr>';
+           echo '</table>';
+			
+			
+		}
+		
 		public function drawUserPanelPro() 
 		{
 				echo '<div class="spacer"></div>';
@@ -437,6 +865,8 @@
 				$Count = ($Total - 3);
 				echo '<div id="drawer_set_'.$set.'">';
 				echo '<table cellpadding="0" cellspacing="0" border="0"><tr>';
+
+
 				echo '<td background="http://www.wevolt.com/images/drawer_nav_bg.png" width="177" height="52"  style="background-repeat:no-repeat;" align="center">';
 				while ($Count <= $Total) {
 					echo '<span id="drawer_'.$Count.'_on"><img src="http://www.wevolt.com/images/drawer_'.$Count.'_button.png" id="showdrawer'.$Count.'" onclick="$(\'.drawer[id!=drawer_'. $Count .']\').slideUp();$(\'#drawer_'.$Count.'\').slideToggle();" style="cursor:pointer;" onmouseover="roll_over(\'showdrawer'.$Count.'\', \'http://www.wevolt.com/images/drawer_'.$Count.'_button_over.png\')" onmouseout="roll_over(\'showdrawer'.$Count.'\', \'http://www.wevolt.com/images/drawer_'.$Count.'_button.png\')" tooltip="Open your WEvolt drawer"/></span>';
