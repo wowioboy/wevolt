@@ -46,7 +46,10 @@ function window_wizard(action){
 		$(this).modal({width:624, height:416,src:"/connectors/feed_wizard.php"}).open(); 
 	
 }
-
+function rate_project(projectid){
+		
+		$(this).modal({width:700, height:467,src:"/connectors/rate_project.php?id="+projectid}).open(); 
+}
 function edit_wevolt_window(module){
 
 		$(this).modal({width:624, height:416,src:"/connectors/edit_wevolt_window.php?window="+module}).open(); 
@@ -121,6 +124,14 @@ function share_project(itemid,title){
 	$(this).modal({width:624, height:416,src:"/connectors/share_project.php?id="+itemid+"&refer="+escape(usermail)+"&title="+escape(title)}).open(); 
 };
 
+function share_content(itemid,title,type){
+	if (usermail == null)
+		var usermail = '';
+	if (type == null)
+		var type = '';
+	$(this).modal({width:624, height:416,src:"/connectors/share_project.php?id="+itemid+"&refer="+escape(usermail)+"&title="+escape(title)+"&type="+escape(type)}).open(); 
+};
+
 function view_event(action, id) {
 	$(this).modal({width:700, height:467,src:"http://www.wevolt.com/connectors/view_event.php?id="+id+"&action="+action}).open(); 
 	
@@ -136,4 +147,15 @@ function new_wizard(wiztype, id, type, contenttype) {
 		update_excite(id,type,contenttype);
 	}
 }
+
+//JOBS WIZARDS
+function suggest_position(id) {
+	$(this).modal({width:624, height:416,src:"http://www.wevolt.com/connectors/suggest_position.php?id="+id}).open(); 
+}
+
+function apply_position(posid,element) {
+	$(this).modal({width:624, height:416,src:"http://www.wevolt.com/connectors/apply_position.php?pid="+posid+"&elem="+element}).open(); 
+	//document.getElementById(element).innerHTML = 'You have applied';
+}
+
 

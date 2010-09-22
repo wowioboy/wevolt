@@ -1,6 +1,6 @@
 <?php 
-include 'includes/init.php';
-$PageTitle = 'wevolt | SUPRISE - YOU WON A PRIZE!';
+include_once($_SERVER['DOCUMENT_ROOT'].'/includes/init.php'); 
+$PageTitle .= 'SUPRISE - YOU WON A PRIZE!';
 $TrackPage = 0;
 
 $ShowCongrats = false;
@@ -42,23 +42,37 @@ if (($_SESSION['suprise_code'] != '') && ($_SESSION['userid'] != '')) {
 	}
 
 }
-include 'includes/header_template_new.php';
+require_once('includes/pagetop_inc.php');
 $Site->drawModuleCSS();
 ?>
-<div align="left">
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
+
+<div align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="<? echo $TemplateWrapperWidth;?>">
   <tr>
-    <? if ($_SESSION['IsPro'] == 1) {
-           $_SESSION['noads'] = 1;
-		?>
-    <td valign="top" style="padding:5px; color:#FFFFFF;width:60px;"><? include 'includes/site_menu_popup_inc.php';?></td>
-    <? } else {?>
-    <td width="<? echo $SideMenuWidth;?>" valign="top"><? include 'includes/site_menu_inc.php';?></td>
-    <? }?>
-    <td  valign="top"  <? if ($_SESSION['IsPro'] == 1) {?>align="center"<? }?>><? if ($_SESSION['noads'] != 1) {?>
-       <div style="padding-left:13px;"> <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id-"top_ads"></iframe></div>
-      <? }?>
-        <div style="padding:10px;">
+    <td valign="top" align="center">
+    <div class="content_bg">
+		<? if ($_SESSION['userid'] != '') {?>
+            <div id="controlnav">
+                <?php $Site->drawControlPanel(); ?>
+            </div>
+        <? }?>
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+       
+       
+        <div id="header_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+    
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+   <div style="padding:10px;">
              <div align="left"> <img src="http://www.wevolt.com/images/wevolt_suprise.png" /></div>
         <div class="messageinfo_white" style="padding-left:40px;" align="left">
 
@@ -82,9 +96,14 @@ Now go find a NEW suprise!<div class="spacer"></div>
 <? }?>
 
 </div>
-      </div></td>
+      </div>
+
+	</td>
   </tr>
+ 
 </table>
 </div>
+  
+<?php require_once('includes/pagefooter_inc.php'); ?>
 
-<?php include 'includes/footer_template_new.php';?>
+

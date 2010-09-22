@@ -1,25 +1,25 @@
 .jcarousel-skin-tango .jcarousel-container {
     -moz-border-radius: 0px;
-	height:512px;
-
-    background: #F0F6F9;
-	background-image:url(http://www.w3volt.com/images/string_bg_new.jpg);
+	height:40px;
+	margin:0px;
+	padding:0px;
+	background-image:url(http://www.wevolt.com/images/string_bg_2.png);
 	background-repeat:no-repeat;
 }
 
 .jcarousel-skin-tango .jcarousel-container-horizontal {
-padding-left:30px;
-    width: 106px;
+	padding-left:25px;
+    width: 914px;
 }
 
 .jcarousel-skin-tango .jcarousel-container-vertical {
-padding-left:13px;
+
     width: 93px;
 	height:512px;
 }
 
 .jcarousel-skin-tango .jcarousel-clip-horizontal {
- width: 610px;
+ width: 900px;
 }
 
 .jcarousel-skin-tango .jcarousel-clip-vertical {
@@ -28,14 +28,16 @@ padding-left:13px;
 }
 
 .jcarousel-skin-tango .jcarousel-item {
-    width: 80px;
-    height: 45px;
+    width: 120px;
+    height: 40px;
 
 }
 
 .jcarousel-skin-tango .jcarousel-item-horizontal {
-    margin-right: 10px;
+margin-right:3px;
 	text-align:center;
+	 width: 160px;
+    height: 40px;
 }
 
 .jcarousel-skin-tango .jcarousel-item-vertical {
@@ -54,7 +56,7 @@ padding-left:13px;
  */
 .jcarousel-skin-tango .jcarousel-next-horizontal {
     position: absolute;
-	top:2px;
+
     right: 5px;
     width: 20px;
     height: 47px;

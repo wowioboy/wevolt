@@ -1,6 +1,6 @@
 <?php 
 header( 'Content-Type: text/javascript' );
-include '../includes/init.php';
+include $SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 $DB = new DB();
 
 if ($_GET['id'] == '')

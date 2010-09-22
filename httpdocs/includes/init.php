@@ -29,6 +29,12 @@ if ($_SESSION['username'] == 'matteblack') {
 		
 		//Arcana $_SESSION['userid'] = '3ef8154155';
 		
+		//IAN$_SESSION['userid'] = '99c5e07b237';
+		//KILLERZEES$_SESSION['userid'] = '571e0f7e46c';
+		
+		//72 Demons$_SESSION['userid'] ='97af4fb322bb4a0';
+		
+
 		
 }
 
@@ -142,10 +148,21 @@ if ($IsCMS) {
 	$CreatorProjects = $CMS->getCreatorProjects();
 	if ((sizeof($CreatorProjects) > 0) && ($_SESSION['IsPro'] == 0))
 		$CreateComic = false;
-	else 
+	else  
 		$CreateComic = true;
 	$AssistantProjects =  $CMS->getAssistantProjects();
+	
+	$AdminAuth = false;
+	
+	if (in_array($ProjectID,$CreatorProjects))
+		$AdminAuth = true;
+	
+	if (in_array($ProjectID,$AssistantProjects))
+		$AdminAuth = true;
 
+	if ((!$AdminAuth) && ($ProjectSet == 1))
+		header("location:/cms/admin/");
+		
 }
 
 

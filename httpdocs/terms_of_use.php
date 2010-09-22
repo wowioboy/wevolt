@@ -1,48 +1,57 @@
-<?php include 'includes/init.php';
-$PageTitle = 'wevolt | terms of use';
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'].'/includes/init.php'); 
+$PageTitle .= 'Terms of Use';
 $TrackPage = 1;
-include 'includes/header_template_new.php';?>
-<link rel="stylesheet" type="text/css" href="http://www.wevolt.com/css/standard_modules_css.css">
+require_once('includes/pagetop_inc.php');
+$Site->drawModuleCSS();
+?>
 
-<div align="left">
-
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
+<div align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="<? echo $TemplateWrapperWidth;?>">
   <tr>
-    <? if ($_SESSION['IsPro'] == 1) {
-$_SESSION['noads'] = 1;
-		?>
-    <td valign="top" bgcolor="#1a5793" style="padding:5px; color:#FFFFFF;"><? include 'includes/site_menu_popup_inc.php';?>
-    </td>
-  </tr>
-  <tr>
-    <? } else {?>
-    <td width="<? echo $SideMenuWidth;?>" valign="top"><? include 'includes/site_menu_inc.php';?>
-    </td>
-    <? }?>
-    <td  valign="top"  <? if ($_session['ispro'] == 1) {?>align="center"<? }?>><? if ($_SESSION['noads'] != 1) {?>
-       <div style="padding-left:13px;"> <iframe src="/includes/top_banner_inc.php?home=1" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no"></iframe></div>
-      <? }?>
-        <div style="padding:10px;">
-          <div class="spacer"></div>
-<table><tr>
-<td>
-<table width="728" border="0" cellpadding="0" cellspacing="0" height="">
-<tbody><tr>
-	<td id="modtopleft"></td>
-
-	<td id="modtop" width="688" align="left"></td><td id="modtopright" align="right" valign="top"></td>
-
-</tr>
-<tr>
-
-	
-	<td colspan="3" valign="top">
-	
-	<table width="100%" border="0" cellpadding="0" cellspacing="0">
-	<tbody><tr>
-	<td id="modleftside"></td>
-	<td class="boxcontent">
-	Last Modified: Jan 01, 2010<br />
+    <td valign="top" align="center">
+    <div class="content_bg">
+		<? if ($_SESSION['userid'] != '') {?>
+            <div id="controlnav">
+                <?php $Site->drawControlPanel(); ?>
+            </div>
+        <? }?>
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+       
+       
+        <div id="header_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+    
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+     <div class="content_bg" id="content_wrapper">
+         <!--Content Begin -->
+         <div class="spacer"></div>
+         <table cellspacing="0" cellpadding="0" width="<? echo $SiteTemplateWidth;?>">
+             <tr>
+              <? if ($_SESSION['noads'] != 1) {?>
+                <td valign="top" style="padding-left:10px;" width="300">
+                
+                <!-- LEFT AD BOX -->
+                
+                <div id="left_ad_div" style="background-color:#FFF;width:300px;" align="center">
+                  <? $Site->drawVideoBoxAd();?>
+                </div>
+                
+                 
+                </td>
+                   <?  }?>      
+                <td valign="top" style="padding-left:10px;padding-top:20px;">
+            
+Last Modified: Jan 01, 2010<br />
 
 <strong>TERMS OF USE</strong><br />
 
@@ -94,28 +103,22 @@ This Website's terms of use are governed by and construed in accordance with Cal
 We may change these terms of use from time to time. We will post any such changes on this Website. For that reason, we encourage you to periodically review these Terms of Use to keep yourself informed of any changes.<br />
 <br />
 
+                </td>
+            
+            </tr>
+         </table>       
+    <!--Content End -->
+    </div>
+
 	</td>
-	<td id="modrightside"></td>
-
-	</tr>
-    <tr>
-	<td id="modbottomleft"></td>
-	<td id="modbottom"></td>
-	<td id="modbottomright"></td>
-</tr>
-	</tbody></table>
-	
-	</td>
-</tr>
-
-
-
-</tbody></table>
-			</div>
-</td>
-</tr>
+  </tr>
+  <tr>
+      <td style="background-image:url(http://www.wevolt.com/images/bottom_frame_no_blue.png); background-repeat:no-repeat;width:1058px;height:12px;">
+      </td>
+  </tr>
 </table>
 </div>
+  
+<?php require_once('includes/pagefooter_inc.php'); ?>
 
-<?php include 'includes/footer_template_new.php';?>
 

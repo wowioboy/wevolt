@@ -581,7 +581,7 @@ flush();
  ?>
 <? include $_SERVER['DOCUMENT_ROOT'].'/includes/footer_ad_scripts.php';?>
 
-<? $User->getString();?>
+<? $User->getString($SiteVersion);?>
     
 <? $Site->drawMenuExtras();?>
 <? if ($ShowBeta) {?>

@@ -100,9 +100,9 @@ function get_feed_items($ModuleID, $FeedID, $UserID) {
 	
 	/*$MenuString.="<div id='".$ModuleID."_menu' style='display:none; position:absolute;' class='action_pop'><div onmouseover=\"hide_layer('".$ModuleID."_menu', event);\" style='height:5px;'></div><table width='100%'><tr>
 							<td onmouseover=\"hide_layer('".$ModuleID."_menu', event);\" width='5'></td><td>";*/
-							
+	
 	if ($ModuleType == 'content'){
-		
+			
 		if ($ContentVariable == 'comic') {
 			
 			if ($SortVariable == 'excites') {
@@ -115,11 +115,16 @@ function get_feed_items($ModuleID, $FeedID, $UserID) {
 				
 				
 			} else {
+				
 				$query = "SELECT * from projects where Published=1 and Pages>1 and thumb!='' and ProjectType='comic' and Hosted=1 order by $SortVariable DESC LIMIT $NumberVariable ";
 				$DB->query($query);
-				
+			
 					while ($line = $DB->fetchNextObject()) {
 						$String .= '<a href="http://www.wevolt.com/'.$line->SafeFolder.'/">';
+						if ($line->WorldID=='z')
+						$String .= '<img src="'.$line->thumb.'" hspace="4" vspace="4" border="2" style="border-color:#000000;" width="'.$ThumbSize.'"></a>';
+						else
+						
 						$String .= '<img src="http://www.wevolt.com'.$line->thumb.'" hspace="4" vspace="4" border="2" style="border-color:#000000;" width="'.$ThumbSize.'"></a>';
 					}
 			}
@@ -147,7 +152,7 @@ function get_feed_items($ModuleID, $FeedID, $UserID) {
 		 $query .= $where ." order by WeModule, WePosition";
 				  
 		$DB->query($query);
-	//	print $query.'<br/>';
+		
 	//	print '<br/>';
 		$ItemCount = 0;
 		$CloseTable = 0;

@@ -17,8 +17,9 @@
 						$_SESSION['IsPro'] = 0;
 						$_SESSION['noads'] = 0;
 						$_SESSION['contentwidth'] = 728;
+						$_SESSION['IsSuperFan'] = 0;
 						$_SESSION['ProInvite'] = 0;
-
+						$_SESSION['sidebar'] = 'open';
 						if ($_SESSION['currentreader'] != '')
 							$_SESSION['readerstyle'] = $_SESSION['currentreader'];
 						else
@@ -34,8 +35,8 @@
 			public function getUserInfo($UserID) {
 					$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 					$query = "select us.*, u.overage, u.email, u.avatar, u.username,
-							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='hosted') as IsPro,
-							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='fan') as IsSuperFan  
+							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='hosted' and ((s.Temp=0) or ((s.Temp=1) and (s.Expires>=NOW())))) as IsPro,
+							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='fan' and ((s.Temp=0) or ((s.Temp=1) and (s.Expires>=NOW())))) as IsSuperFan  
          					  from users_settings as us
 							  join users as u on u.encryptid = us.UserID
 							  where us.UserID ='$UserID'"; 
@@ -46,8 +47,8 @@
 						$query ="INSERT into users_settings (UserID) values ('".$_SESSION['userid']."')";
 						$db->execute($query);
 							$query = "select us.*, u.overage, u.email, u.avatar, u.username,
-							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='hosted') as IsPro,
-							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='fan') as IsSuperFan  
+							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='hosted' and ((s.Temp=0) or ((s.Temp=1) and (s.Expires>=NOW())))) as IsPro,
+							  (select count(*) from pf_subscriptions as s where s.UserID=us.UserID and s.Status='active' and s.SubscriptionType='fan' and ((s.Temp=0) or ((s.Temp=1) and (s.Expires>=NOW())))) as IsSuperFan  
          					  from users_settings as us
 							  join users as u on u.encryptid = us.UserID
 							  where us.UserID ='$UserID'"; 
@@ -64,7 +65,10 @@
 					$_SESSION['avatar'] = $UserSettingsArray->avatar; 
 					$_SESSION['readerstyle'] = $UserSettingsArray->ReaderStyle;
 					$_SESSION['tooltips'] = $UserSettingsArray->ToolTips;
-
+					$_SESSION['sidebar'] = $UserSettingsArray->sidebar;
+					
+					if ($_SESSION['sidebartoggle'] != '')
+						$_SESSION['sidebar'] = $_SESSION['sidebartoggle'];
 					if ($_SESSION['newflashpages'] != '') { 
 						$_SESSION['flashpages'] = $_SESSION['newflashpages'];
 						$_SESSION['newflashpages'] = '';
@@ -116,48 +120,71 @@
 					$db->close();
 			}
 			
-			public function getString() {
-				echo '<div id="string" style="visibility:hidden;min-width:120px;position:absolute;z-index:99;">';
-				echo '<div style="height:10px;" onmouseover="hide_layer(\'popupmenu\',event);"></div>';
-				echo '<table cellpadding="0" cellspacing="0" border="0">';
-				echo '<tr>';
-				echo '<td  onmouseover="hide_layer(\'popupmenu\',event);"></td>';
-				echo '<td>';
-				echo '<div style="background-image:url(http://www.wevolt.com/images/string_header.jpg); background-repeat:no-repeat; height:61px;width:109px;" align="center">';
-				echo '<div style="height:25px;"></div>';
-				echo '<a href="#" id="mycarousel-prev"><img src="http://www.wevolt.com/images/string_back.png" border="0"/></a></div>';
-				echo '<div id="mycarousel" class="jcarousel-skin-tango">';
-				echo '<ul>';
+			public function getString($SiteVersion=1) {
 				
-         			$this->build_string();
-       			echo '</ul>';
-				echo '</div>';
-				echo '<div style="background-image:url(http://www.wevolt.com/images/string_footer.jpg); background-repeat:no-repeat; height:48px;width:109px;" align="center">';
-				echo '<div style="height:10px;"></div>';
-				echo '<a href="#" id="mycarousel-next"><img src="http://www.wevolt.com/images/string_next.png" border="0"/></a>';
-				echo '</div>';
-				echo '</td>';
-				echo '<td  onmouseover="hide_layer(\'popupmenu\',event);"></td><td width="500" onmouseover="toggle_string_button(\'off\');" id="hidestringpanel">&nbsp;</td>';
-				echo '</tr>';
-				echo '</table>';
-				echo '<div style="height:10px;width:100px;" onmouseover="hide_layer(\'popupmenu\',event);"></div>';
-				echo '</div>';
+				if ($SiteVersion == 1) {
+					echo '<div id="string" style="visibility:hidden;min-width:120px;position:absolute;z-index:99;">';
+					echo '<div style="height:10px;" onmouseover="hide_layer(\'popupmenu\',event);"></div>';
+					echo '<table cellpadding="0" cellspacing="0" border="0">';
+					echo '<tr>';
+					echo '<td  onmouseover="hide_layer(\'popupmenu\',event);"></td>';
+					echo '<td>';
+					echo '<div style="background-image:url(http://www.wevolt.com/images/string_header.jpg); background-repeat:no-repeat; height:61px;width:109px;" align="center">';
+					echo '<div style="height:25px;"></div>';
+					echo '<a href="#" id="mycarousel-prev"><img src="http://www.wevolt.com/images/string_back.png" border="0"/></a></div>';
+					echo '<div id="mycarousel" class="jcarousel-skin-tango">';
+					echo '<ul>';
+					
+						$this->build_string($SiteVersion);
+					echo '</ul>';
+					echo '</div>';
+					echo '<div style="background-image:url(http://www.wevolt.com/images/string_footer.jpg); background-repeat:no-repeat; height:48px;width:109px;" align="center">';
+					echo '<div style="height:10px;"></div>';
+					echo '<a href="#" id="mycarousel-next"><img src="http://www.wevolt.com/images/string_next.png" border="0"/></a>';
+					echo '</div>';
+					echo '</td>';
+					echo '<td  onmouseover="hide_layer(\'popupmenu\',event);"></td><td width="500" onmouseover="toggle_string_button(\'off\');" id="hidestringpanel">&nbsp;</td>';
+					echo '</tr>';
+					echo '</table>';
+					echo '<div style="height:10px;width:100px;" onmouseover="hide_layer(\'popupmenu\',event);"></div>';
+					echo '</div>';
+				} else {
+					
+					echo '<table id="string" style="visibility:hidden;min-width:120px;position:abosolute;z-index:99;" cellspacing="0" cellpadding="0">';
+						echo '<tr>';
+							echo '<td>';
+							echo '<a href="#" id="mycarousel-prev"><img src="http://www.wevolt.com/images/string_arrow_left.png" border="0"></a>';
+							echo '</td>';
+							echo '<td background="http://www.wevolt.com/images/string_bg_2.png" style="background-repeat:repeat-x; height:40px;" valign="top">';
+							echo '<div id="mycarousel" class="jcarousel-skin-tango">';
+								echo '<ul>';			
+										$this->build_string($SiteVersion);
+								echo '</ul>';
+							echo '</div>';
+							echo '</td>';
+							echo '<td>';
+							echo '<a href="#" id="mycarousel-next"><img src="http://www.wevolt.com/images/string_arrow_right.png" border="0"></a>';
+							echo '</td>';
+						echo '</tr>';
+					echo '</table>';
+				}
 		
 		}
 		
 		
-		public function build_string() {
+		public function build_string($SiteVersion=1) {
 				$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
-				$query = "SELECT ID from string_entries as se where se.UserID='".$_SESSION['userid']."' limit 50";
-				$db->query($query);
+				//$query = "SELECT ID from string_entries as se where se.UserID='".$_SESSION['userid']."' limit 50";
+				//$db->query($query);
 				$_SESSION['stringstart'] = 1;
 				$StringEntries = '';
 				$UserID = $_SESSION['userid'];
-				$query = "SELECT se.LinkID,se.IsMarked,se.ID as EntryID, se.UserID, se.LastVisited, sl.* 
+				$query = "SELECT distinct se.LinkID,se.IsMarked,se.ID as EntryID, se.UserID, se.LastVisited, sl.* 
 				              from string_entries as se
 							  join string_links as sl on se.LinkID=sl.ID
-							  where se.UserID='$UserID' and sl.Title != '' and sl.hidden != '1' group by sl.Title order by se.LastVisited DESC limit 50";
+							  where se.UserID='$UserID' and sl.Title != '' and sl.hidden != '1' order by se.LastVisited DESC limit 50";
 				$db->query($query);
+			
 				while ($line = $db->FetchNextObject()) {
 						$TitleArray = explode('|',$line->Title);
 						$StringTitle =  substr(trim($TitleArray[0]),0,11);
@@ -166,47 +193,77 @@
 						$SubTitle = trim($SubTitleArray[0]);
 						$SubSubTitle =  trim($SubTitleArray[1]);
 						if ($SubTitle != 'Home') {
-							$StringTitle = substr($SubTitle,0,11);
+							$StringTitle = trim(substr($SubTitle,0,11));
 							$SubTitle =  trim($SubTitleArray[1]);
 							$SubSubTitle =  trim($SubTitleArray[2]);
 						
 						}
-						if ($line->IsMarked != 1){
+						
+						if ($SiteVersion == 1) {
+							if ($line->IsMarked != 1){
 							$Image = 'string_unmarked.png';
 							$Class = '';
 							$Status = 'unmarked';
-						}else{
-							$Image = 'string_marked.png';
-							$Class = '';
-							$Status = 'marked';
+							}else{
+								$Image = 'string_marked.png';
+								$Class = '';
+								$Status = 'marked';
+							
+							}
 						
+						
+							echo '<li>';
+							echo '<div class="'.$Status.'" id=\'string_'.$line->EntryID.'\' onclick="mini_menu(\''.$line->Title.'\',\''.$line->Url.'\',\''.$line->EntryID.'\',\'string\',\''.$Status.'\',this, event);return false;" tooltip="'.$line->Title.'" tooltip_position="bottom">';
+							echo '<div style=\'height:2px;\'></div>';
+							echo '<div id=\'string_'.$Class.'title\'>'.$StringTitle.'&nbsp;&nbsp;&nbsp;</div>';
+						//	echo '<br/>';
+							//echo '<span id=\'string_'.$Class.'subtitle\'>'.substr($SubTitle,0,15).'&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+							echo "<div id=\"string_".$Class."subtitle\">".$SubSubTitle."&nbsp;&nbsp;&nbsp;&nbsp;</div>". 
+							
+								 "<div style=\"font-size: 8px; position: relative; left: -7px;\" class=\"messageinfo_warning\">xp: {$line->xp}</div>";
+							echo '</div>';
+							echo '</li>';
+						} else {
+							if ($line->IsMarked != 1){							
+								$Class = 'unmarked_2';
+								$Status = 'unmarked';
+							}else{
+							 
+								$Class = 'marked_2';
+								$Status = 'marked';
+						
+							}
+							echo '<li>';
+							
+							echo '<div class="'.$Class.'" id=\'string_'.$line->EntryID.'\' onclick="mini_menu(\''.$line->Title.'\',\''.$line->Url.'\',\''.$line->EntryID.'\',\'string\',\''.$Status.'\',this, event);return false;" tooltip="'.$line->Title.'" tooltip_position="bottom" style="cursor:pointer;">';
+							
+							echo '<div id=\'string_2title\'>'.$StringTitle.'</div>';
+							echo "<div id=\"string_2subtitle\">".$SubTitle."</div>". 
+							
+								 "<div style=\"font-size:8px;color:#fdd700;\">xp: {$line->xp}</div>";
+							echo '</div>';
+							echo '</li>';	
 						}
-						echo '<li>';
-						echo '<div class="'.$Status.'" id=\'string_'.$line->EntryID.'\' onclick="mini_menu(\''.$line->Title.'\',\''.$line->Url.'\',\''.$line->EntryID.'\',\'string\',\''.$Status.'\',this, event);return false;" tooltip="'.$line->Title.'">';
-						echo '<div style=\'height:2px;\'></div>';
-						echo '<div id=\'string_'.$Class.'title\'>'.$StringTitle.'&nbsp;&nbsp;&nbsp;</div>';
-					//	echo '<br/>';
-						//echo '<span id=\'string_'.$Class.'subtitle\'>'.substr($SubTitle,0,15).'&nbsp;&nbsp;&nbsp;&nbsp;</span>';
-						echo "<div id=\"string_".$Class."subtitle\">".$SubSubTitle."&nbsp;&nbsp;&nbsp;&nbsp;</div>". 
-						
-							 "<div style=\"font-size: 8px; position: relative; left: -7px;\" class=\"messageinfo_warning\">xp: {$line->xp}</div>";
-						echo '</div>';
-						echo '</li>';
 				}
 				$db->close();
 		}
 		
 		
-		public function add_string_entry($Title,$Track, $Page) 
+		public function add_string_entry($Title,$Track, $Page,$IsProject=false,$IsJob=false) 
 		{
 			$users = new Users;
 				$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
-				$PageLink = array_shift(explode("?", $Page));
+				if ($IsJob == false)
+					$PageLink = array_shift(explode("?", $Page));
+				else
+					$PageLink = $Page;
 				$UserID = $_SESSION['userid'];
-				$query = "SELECT ID from string_links where Url='$PageLink'";
+				$query = "SELECT ID from string_links where Url='$PageLink' and Title='".mysql_real_escape_string($Title)."'";
 				$LinkID = $db->queryUniqueValue($query);
+			//if ($_SESSION['username'] == 'matteblack')
+					//print $query.'<br/>';
 				if ($UserID != ''){
-					$CurrentDate = date('Y-m-d h:i:s');
+					$CurrentDate = date('Y-m-d H:i:s');
 					$Title = mysql_real_escape_string($Title);
 					if ($LinkID == '') {
 						$query = "INSERT into string_links (Title, Url, CreatedDate) values ('$Title','$PageLink','$CurrentDate')";
@@ -216,6 +273,8 @@
 					}	
 					$query = "SELECT * from string_entries where LinkID='$LinkID' and UserID='$UserID'";
 					$EntryArray =  $db->queryUniqueObject($query);
+					//if ($_SESSION['username'] == 'matteblack')
+					//print $query.'<br/>';
 					$EntryID = $EntryArray->ID;
 					$MarkStatus = $EntryArray->IsMarked;
 					if ($EntryID == '') {
@@ -236,6 +295,8 @@
 						$query = "UPDATE string_entries set LastVisited='$CurrentDate' where UserID='$UserID' and LinkID='$LinkID'";
 						$db->execute($query);
 					}
+					//if ($_SESSION['username'] == 'matteblack')
+					//	print $query.'<br/>';
 					$_SESSION['currentStringID'] = $EntryID;
 					$_SESSION['CurrentMarkStatus'] = $MarkStatus;
 				}

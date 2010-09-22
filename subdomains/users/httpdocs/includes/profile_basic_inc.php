@@ -1,3 +1,4 @@
+<img src="http://www.wevolt.com/images/personal_details.png" />
 <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             	<tr>
                                 	<td class="profileInfoHeader">Sex:
@@ -10,7 +11,7 @@
                                     <td class="profilePrivacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtSexPrivacy" value='private' <? if ($SexPrivacy == 'private') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtSexPrivacy" value='friends' <? if ($SexPrivacy == 'friends') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtSexPrivacy" value='fans' <? if ($SexPrivacy == 'fans') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtSexPrivacy" value='public' <? if ($SexPrivacy == 'public') echo 'checked';?> onChange="show_save();">
                                     </td>
                                 </tr>
-                                <tr><td colspan="3" height="5" style="background-color:#FFFFFF;"></td></tr>
+                              
                                 <tr>
                                 	<td class="profileInfoHeader">Birthday:
                                     </td>
@@ -45,7 +46,7 @@
                                     <td class="profilePrivacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtBirthdayPrivacy" value='private' <? if ($BirthdayPrivacy == 'private') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtBirthdayPrivacy" value='friends' <? if ($BirthdayPrivacy == 'friends') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtBirthdayPrivacy" value='fans' <? if ($BirthdayPrivacy == 'fans') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtBirthdayPrivacy" value='public' <? if ($BirthdayPrivacy == 'public') echo 'checked';?> onChange="show_save();">
                                     </td>
                                 </tr>
-                                <tr><td colspan="3" height="5" style="background-color:#FFFFFF;"></td></tr>
+                                
                                 <tr>
                                 	<td class="profileInfoHeader">Hometown:
                                     </td>
@@ -55,7 +56,7 @@
                                     <td class="profilePrivacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtHometownLocationPrivacy" value='private' <? if ($HometownLocationPrivacy == 'private') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtHometownLocationPrivacy" value='friends' <? if ($HometownLocationPrivacy == 'friends') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtHometownLocationPrivacy" value='fans' <? if ($HometownLocationPrivacy == 'fans') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtHometownLocationPrivacy" value='public' <? if ($HometownLocationPrivacy == 'public') echo 'checked';?> onChange="show_save();">
                                     </td>
                                 </tr>
-                                <tr><td colspan="3" height="5" style="background-color:#FFFFFF;"></td></tr>
+                               
                                 <tr>
                                 	<td class="profileInfoHeader">Current Location:
                                     </td>
@@ -65,7 +66,7 @@
                                     <td class="profilePrivacy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtLocationPrivacy" value='private' <? if ($LocationPrivacy == 'private') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtLocationPrivacy" value='friends' <? if ($LocationPrivacy == 'friends') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtLocationPrivacy" value='fans' <? if ($LocationPrivacy == 'fans') echo 'checked';?> onChange="show_save();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="txtLocationPrivacy" value='public' <? if ($LocationPrivacy == 'public') echo 'checked';?> onChange="show_save();">
                                     </td>
                                 </tr>
-                                <tr><td colspan="3" height="5" style="background-color:#FFFFFF;"></td></tr>
+                               
                                     <tr>
                                 	<td class="profileInfoHeader">Profile Blurb:
                                     </td>
@@ -76,7 +77,7 @@
                                     </td>
                                 </tr>
                                 
-                                <tr><td colspan="3" height="5" style="background-color:#FFFFFF;"></td></tr>
+                              
                                     <tr>
                                 	<td class="profileInfoHeader">Self Tags:
                                     </td>

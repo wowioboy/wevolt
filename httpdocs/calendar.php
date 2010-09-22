@@ -1,7 +1,7 @@
 <?php 
 include_once('includes/init.php'); 
 $PageTitle .= 'calendar';
-include_once('includes/header_template_new.php');
+//include_once('includes/header_template_new.php');
 $Site->drawModuleCSS();
 if ($view = $_REQUEST['view']) {
 	if ($view == 'week') {
@@ -187,23 +187,45 @@ $(document).ready(function() {
 	});
 });
 </script>
-<div align="left" style="font-style:italic">
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
+<? require_once('includes/pagetop_inc.php');
+$Site->drawModuleCSS();
+
+?>
+
+<div align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="<? echo $TemplateWrapperWidth;?>">
   <tr>
-    <? if ($_SESSION['IsPro'] == 1) {
-           $_SESSION['noads'] = 1;
-		?>
-    <td valign="top" style="padding:5px; color:#FFFFFF;width:60px;"><? include 'includes/site_menu_popup_inc.php';?></td>
-    <? } else {?>
-    <td width="<? echo $SideMenuWidth;?>" valign="top"><? include 'includes/site_menu_inc.php';?></td>
-    <? }?>
-    <td  valign="top"  <? if ($_SESSION['IsPro'] == 1) {?>align="center"<? }?>><? if ($_SESSION['noads'] != 1) {?>
-       <div style="padding-left:13px;"> <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id-"top_ads"></iframe></div>
-      <? }?>
-        <div style="padding:10px;">
-         <div id="calendar"></div>
-      </div></td>
+    <td valign="top" align="center">
+    <div class="content_bg">
+		<? if ($_SESSION['userid'] != '') {?>
+            <div id="controlnav">
+                <?php $Site->drawControlPanel(); ?>
+            </div>
+        <? }?>
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+       
+       
+        <div id="header_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+    
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+   <div style="width:<? echo $SiteTemplateWidth;?>px;">
+ <div id="calendar"></div>
+ </div>
+
+	</td>
   </tr>
+ 
 </table>
 </div>
-<?php include_once('includes/footer_template_new.php'); ?>
+  
+<?php require_once('includes/pagefooter_inc.php'); ?>

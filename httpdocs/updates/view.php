@@ -54,9 +54,10 @@ $query = "select max(u.id) as `id`
 		  and (u.live_date is null or u.live_date < now())
 		  $where 
 		  group by $group			  
-		  order by id desc
+		  order by live_date desc, date desc
 		  limit 25";
 $results = @$db->fetchCol($query);
+//var_dump($query);
 $rows = array();
 foreach ($results as $result) {
 	$query = "select 
@@ -105,6 +106,9 @@ foreach ($results as $result) {
     $subject = $row['subject'];
     $title = stripslashes($row['title']);
     $username = $row['username'];
+    if ($subject == 'series' || $subject == 'strip') {
+    	$name = $username;
+    } 
   ?>
   <table class="update" id="<?php echo $subjectId . '_' . $type . '_' . $filter; ?>">
     <tr>
@@ -118,20 +122,16 @@ foreach ($results as $result) {
           <tr>
             <td valign="middle">
 	          <b>
-              <?php if ($subject == 'series' || $subject == 'strip') : ?>
-                <?php echo $username; ?>
-              <?php else: ?>
-  	            <?php echo $name; ?>
-              <?php endif; ?>
+	          <a style="color:#000;" href="http://users.wevolt.com/<?php echo $name; ?>/"><?php echo $name; ?></a>
 	          </b>
             </td>
             <td align="right" valign="middle">
 	  		  <?php if ($_SESSION['userid']) : ?>        
 	              <button class="followButton" subjectid="<?php echo $subjectId; ?>" update_type="<?php echo $type; ?>" filter="<?php echo $filter; ?>">
-	              <?php if ($following) : ?>
+	            <?php if ($following) : ?>
 	              unfollow
 	            <?php else: ?>
-	            follow
+	              follow
 	            <?php endif; ?>
 	              </button>
 	          <?php endif; ?>

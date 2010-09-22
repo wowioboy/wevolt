@@ -1,4 +1,4 @@
-<?
+<?php 
 include $_SERVER['DOCUMENT_ROOT'].'/includes/init.php';
 $PageTitle = 'wevolt | ';
 $TrackPage = 1;
@@ -149,31 +149,52 @@ else
 	$PageTitle .= $TargetName .' Forum';
 
 $TrackPage = 1;
-include INCLUDES.'header_template_new.php';
+require_once($_SERVER['DOCUMENT_ROOT'].'/includes/pagetop_inc.php');
 $Site->drawModuleCSS();
+ if ($_SESSION['IsPro'] == 1) {
+           $_SESSION['noads'] = 1;
+		} 
 $Site->drawUpdateCSS();
 ?>
-
 <LINK href="http://www.wevolt.com/forum/css/board.css" rel="stylesheet" type="text/css">
-<div align="left">
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
-  <tr>
+<div align="center">
+<? if ($_SESSION['userid'] != '') {?>
+<div class="content_bg">
+		
+            <div id="controlnav">
+                <?php $Site->drawControlPanel('980px'); ?>
+            </div>
    
-   <td valign="top" <? if ($_SESSION['IsPro'] == 1) {?>width="60"<? } else {?>width="<? echo $SideMenuWidth;?>"<? }?>><? include INCLUDES.'site_menu_inc.php';?></td>
-    <td  valign="top"  <? if ($_SESSION['IsPro'] == 1) {?>align="center"<? }?>><? if ($_SESSION['noads'] != 1) {?>
-       <div style="padding-left:13px;"> <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id-"top_ads"></iframe></div>
-      <? }?>
-        <div style="padding:10px;">
-         <center>
-              
-		 <? 
+ </div>  
+<? }?>     
+<table cellpadding="0" cellspacing="0" border="0" width="1058">
+  <tr>
+    <td valign="top" align="center">
+    <div class="content_bg">
+		
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:980px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+        <div id="header_div" style="background-color:#FFF;width:980px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+    
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+
+      <? 
 		 
 		// if ((($_SESSION['username'] == 'matteblack') || ($_SESSION['username'] == 'jasonbadower')) && ($DebugIT == 0)) { 
 		 $ForumTitle = $ForumName; 
 		 
 		 if (substr($ForumName,strlen($ForumName)-1,1) == 's') $ForumTitle.= "'"; else $ForumTitle.= "'s";
 		if ($_GET['a'] != 'admin')
-		 $Site->drawStandardModuleTop($ForumTitle.' Forum<div style="height:3px;"></div>', $_SESSION['contentwidth'], '', 12,'');?>
+		 $Site->drawStandardModuleTop($ForumTitle.' Forum<div style="height:3px;"></div>', '980', '', 12,'');?>
            <div style="padding:10px;">
 <? 
 if ((!isset($_GET['a'])) && (!isset($_GET['c']))) 
@@ -226,17 +247,18 @@ if (($_GET['a'] == '') && ($_GET['c'] == '')) {
 ?>
 </div>
  <? 
- if ($_GET['a'] != 'admin')$Site->drawStandardModuleFooter();?>   
-  
-    		</center>
-            </div>
-            
- 	</td>
-	
-</tr>
+ if ($_GET['a'] != 'admin')$Site->drawStandardModuleFooter();?>  
+
+
+	</td>
+  </tr>
+ 
 </table>
 </div>
-<?php include INCLUDES.'footer_template_new.php';?>
+  
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/includes/pagefooter_inc.php'); ?>
+
+
 
 
 

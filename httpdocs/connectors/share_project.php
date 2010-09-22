@@ -12,7 +12,14 @@ $ReturnLink = $_SESSION['returnlink'];
 if ($ReturnLink == '')
 	$ReturnLink = $_POST['txtLink'];
 	
+if ($_GET['type'] == '')
+	$Type='project';
+else 
+	$Type=$_GET['type'];	
+	
 $Title = $_GET['title'];
+if ($_SESSION['sharelink'] == '')
+	$_SESSION['sharelink'] =  $_SESSION['refurl'];
 if ($Title == '')
 	$Title = $_POST['title'];
 	
@@ -70,32 +77,14 @@ function voltIt(ContentID,Link, Title, Type) {
 
 </script>
 <? if ($Auth) {?>
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
+  <div class="wizard_wrapper" align="center" style="width:624px; height:416px;">
 
-<div style="height:15px;"></div>
-<table width="592" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="576" align="center">
-                                        <img src="http://www.wevolt.com/images/wizard_share_header.png" vspace="8"/>
- </td><td class="wizardboxcontent"></td>
+                                        <img src="http://www.wevolt.com/images/headers/share_content_header.png" vspace="8"/>
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
-                        
-               <div style="height:10px;"></div>
-               <div class="messageinfo_white">
+               <div class="grey_text">
                	How would you like to share this content? <div style="height:10px;"></div>
                </div>
-               <table width="400" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="384" align="center">
+             
 <form method="post" action="#" name="voltform" id="voltform">
                     <a href="http://www.facebook.com/sharer.php?u=<? echo  urlencode($_SESSION['sharelink']);?>&t=<? echo  urlencode($Title);?>" target="_blank" ><img src="http://www.wevolt.com/images/fb_icon.jpg" border="0" /></a>
                     
@@ -104,17 +93,12 @@ function voltIt(ContentID,Link, Title, Type) {
 <a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent('<? echo urlencode($_SESSION['sharelink']);?>')+'&title='+encodeURIComponent('<? echo urlencode($Title);?>'), 'delicious','toolbar=no,width=550,height=550'); return false;"><img src="http://www.wevolt.com/images/del_icon.jpg" border="0" /></a>
 <a href='http://reddit.com/submit?url=<? echo  urlencode($_SESSION['sharelink']);?>&title=<? echo $Title;?>' target='_blank'><img src="http://www.wevolt.com/images/reddit_icon.png" border="0" /></a>
 <? if ($_SESSION['userid'] != '') {?>
-<a href='#' title='Post to wevolt' onclick="voltIt('<? echo $ItemID;?>','<? echo urlencode($_SESSION['sharelink']);?>','<? echo urlencode($Title);?>','project'); return false;"><img src="http://www.wevolt.com/images/V_social_media.png" border="0" /></a><? }?>
+<a href='#' title='Post to wevolt' onclick="voltIt('<? echo $ItemID;?>','<? echo urlencode($_SESSION['sharelink']);?>','<? echo urlencode($Title);?>','<? echo $Type;?>'); return false;"><img src="http://www.wevolt.com/images/V_social_media.png" border="0" /></a><? }?>
 <input type="hidden" name="txtItem" value="<? echo $ItemID;?>">
 <input type="hidden" name="txtRefer" value="<? echo $Refer;?>">
 <input type="hidden" name="txtLink" value="<? echo  $ReturnLink;?>">
 
 <input type="hidden" name="txtAction" id="txtAction" value="1">
 </form>
- </td><td class="wizardboxcontent"></td>
-
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
                      </div>
 <? } ?>

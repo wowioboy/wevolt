@@ -171,11 +171,11 @@ if ($_POST['save'] == 1) {
 								'".$CreatedDate."'
 								
 								)";	
-					print $query.'<br/>';
+				//	print $query.'<br/>';
 					$InitDB->execute($query);
 					$query ="SELECT ID from pf_jobs_positions where created_date='$CreatedDate' and job_id='$ID'";
 					$PID = $InitDB->queryUniqueValue($query);
-					print $query.'<br/>';
+					//print $query.'<br/>';
 					$Encryptid = substr(md5($PID), 0, 15).dechex($PID);
 					$IdClear = 0;
 					$Inc = 5;
@@ -264,10 +264,13 @@ function toggle_local() {
 
 function select_media(value) {
 
+document.jobform.action = '/jobs.php?task=new&media='+value;
+document.jobform.submit();
+
+<? /*
 var CurrentMedia = 
-document.contentform.templateselect.length = 0;
-					document.contentform.templateselect.options[0] = new Option("--SELECT TEMPLATE--", "lightbox", false, false);
-				if (value == 'gallery') {
+document.jobform.mediaSelect.length = 0;
+				if (value == '1') {
 					document.contentform.templateselect.options[1] = new Option("Each gallery item listed in thumbnails and enlarged image pops up in a lightbox", "lightbox", false, false);
 					document.contentform.templateselect.options[2] = new Option("Each gallery item listed in thumbnails and enlarged image is loaded in a new page", "standard", false, false);
 					document.contentform.templateselect.options[3] = new Option("Flash Gallery - Thumbnails appear on the side, image loads in center", "flash_gallery_one", false, false);
@@ -346,6 +349,7 @@ document.contentform.templateselect.length = 0;
 						document.getElementById("tempateselect_div").style.display = '';
 						document.getElementById("customdiv").style.display = 'none';
 				}
+				*/?>
 }
 
 function select_position(element,title) {
@@ -391,14 +395,7 @@ function select_position(element,title) {
 <tr>
 <td>
 <div align="left">post new job: </div><div class="spacer"></div>
-<table width="<? echo ($_SESSION['contentwidth']-50);?>" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-				  <td id="blue_cmsBox_TL"></td>
-				  <td id="blue_cmsBox_T"></td>
-				  <td id="blue_cmsBox_TR"></td></tr>
-				  <tr>
-                  <td class="blue_cmsBox_L" background="http://www.wevolt.com/images/cms/blue_cms_box_L.png" width="8"></td>
-				 
-                  <td class="blue_cmsboxcontent" valign="top" width="<? echo ($_SESSION['contentwidth']-66);?>" align="left">
+
  <table cellspacing="10"><tr><td valign="top">
           <table width="400" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 												<td id="grey_cmsBox_TL"></td>
@@ -440,8 +437,11 @@ function select_position(element,title) {
                                                 <table width="100%" cellspacing="10"><tr><td>
                                                 Media Type: &nbsp;&nbsp;
                                <?
-							   if ($_POST['mediaselect'] != '')
+							   if ($_GET['media'] != '') 
+									$MediaID =  $_GET['media'];
+								else if ($_POST['mediaselect'] != '')
 							   		$MediaID =  $_POST['mediaselect'];
+								
 								else  if ($JobArray->media_id != '')
 									$MediaID = $JobArray->media_id;
 								else 
@@ -577,18 +577,14 @@ function select_position(element,title) {
 								</tr></tbody></table>
                  <div class="spacer"></div>
                   <div id="positionDiv"></div>
-                  </td>
-                  <td class="blue_cmsBox_R" background="http://www.wevolt.com/images/cms/blue_cms_box_R.png" width="8"></td>
-				   </tr><tr><td id="blue_cmsBox_BL"></td><td id="blue_cmsBox_B"></td>
-				   <td id="blue_cmsBox_BR"></td>
-				   </tr></tbody></table> 
+                 
 </td> 
 <td>
 
 </td>
 </tr>
 </table>
-<input type="hidden" id="save" name="save" value="1" />
+<input type="hidden" id="save" name="save" value="0" />
 <input type="hidden" id="numPositions" name="numPositions" value="" />
 </form>
 <script type="text/javascript">

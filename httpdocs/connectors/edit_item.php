@@ -348,7 +348,11 @@ closeWindow();
 
 <? }?>     
         
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
+
+                                        <img src="http://www.wevolt.com/images/headers/edit_windows_header.png" vspace="5"/>
+ 
+<div align="center">
 
 <div style="height:15px;"></div>
 <table width="592" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
@@ -390,7 +394,7 @@ closeWindow();
 
 
 </form>
-                        
+           </div>             
                         </div>
            
 </body>

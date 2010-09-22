@@ -24,11 +24,30 @@ function mycarousel_initCallback(carousel) {
     });
 };
 
+if (siteversion == 2) {
+	// Ride the carousel...
+jQuery(document).ready(function() {
+								
+    jQuery("#mycarousel").jcarousel({
+        scroll: 11,
+		visible: 11,
+		vertical: false,
+		start: stringstart,
+        
+        initCallback: mycarousel_initCallback,
+        // This tells jCarousel NOT to autobuild prev/next buttons
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+		
+});
+	
+} else {
 // Ride the carousel...
 jQuery(document).ready(function() {
 								
     jQuery("#mycarousel").jcarousel({
-        scroll: 1,
+        scroll: 10,
 		visible: 10,
 		vertical: true,
 		start: stringstart,
@@ -39,4 +58,6 @@ jQuery(document).ready(function() {
         buttonPrevHTML: null
     });
 		
-});
+});	
+	
+}

@@ -203,22 +203,13 @@ function goback() {
 
 <script type="text/javascript" src="http://www.wevolt.com/scripts/global_functions.js"></script>
  <LINK href="http://www.wevolt.com/css/pf_css_new.css" rel="stylesheet" type="text/css">
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
-<div style="height:10px;"></div>
-<table width="608" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="592" align="center">
-                                        <img src="http://www.wevolt.com/images/drawers_edit_header.png" vspace="8"/>
- </td><td class="wizardboxcontent"></td>
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
-                        
-                        <div class="spacer"></div><div style="height:10px;"></div>
+                                        <img src="http://www.wevolt.com/images/headers/drawers_header.png" vspace="5"/>
+ 
+<div align="center">
+
+<div style="height:10px;"></div>
 <table cellpadding="0" cellspacing="0" border="0" width="510">
 <tr>
 <td align="center" class="messageinfo_white">
@@ -318,5 +309,5 @@ closeWindow();
 </td>
 </tr>
 </table>
-
+</div>
 </div>

@@ -456,21 +456,11 @@ parent.$.modal().close();
 
 <? }?>  
 <form method="post" id="networkform" name="networkform">
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
-<div style="height:10px;"></div>
-<table width="608" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="592" align="center">
-                                        <img src="http://www.wevolt.com/images/network_wizard_header_new.png" vspace="8"/>
- </td><td class="wizardboxcontent"></td>
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
-<? if (($_GET['step'] == '') ||  ($_GET['step'] == '1')) { ?><div class="spacer"></div>
+                                        <img src="http://www.wevolt.com/images/headers/contacts_header.png" vspace="5"/>
+<div align="center">
+<? if (($_GET['step'] == '') ||  ($_GET['step'] == '1')) { ?>
 <table width="400" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -515,7 +505,6 @@ don’t suport them.</span>
 
 <? } else if ($_GET['step'] == '2') {?>
 
-<div class="spacer"></div>
 <table width="400" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -546,7 +535,6 @@ What sort of updates do you want from them? <br />Select ALL or NONE.
 <img src="http://www.wevolt.com/images/wizard_next_btn.png" onClick="submit_form('3','<? echo $_GET['type'];?>');" class="navbuttons"/>&nbsp;&nbsp;<? }?><img src="http://www.wevolt.com/images/wizard_save_btn.png" onClick="submit_form('finish','<? echo $_GET['type'];?>');" class="navbuttons" />
 
 <? } else if ($_GET['step'] == '3') {?>
-<div class="spacer"></div>
 <table width="600" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -582,13 +570,13 @@ This step is optional, if finished, just click SAVE below.<div class="spacer"></
 <tr><td class="messageinfo_white" valign="top"><div style="height:3px;"></div>Frequency
 <div style="height:5px;"></div></td><td colspan="3" valign="top">
 <table><tr><td valign="top">
-<select name="frequency" onchange="$('.month,.day,.week').hide();$('.' + this.value).show();">
+<select name="frequency" onChange="$('.month,.day,.week').hide();$('.' + this.value).show();">
 <option value="" <?php echo ($_REQUEST['frequency'] == '') ? 'selected' : ''; ?> />One Time</option>
 <option value="day" <?php echo ($_REQUEST['frequency'] == 'day') ? 'selected' : ''; ?> /> Daily</option>
 <option value="week" <?php echo ($_REQUEST['frequency'] == 'week') ? 'selected' : ''; ?> />Weekly</option>
 <option value="month" <?php echo ($_REQUEST['frequency'] == 'month') ? 'selected' : ''; ?> />Monthly</option>
 </select></td><td>
-<span class="day week month" style=" <?php if ($_REQUEST['frequency'] == ''){?>display:none;<? }?> font-size:12px; color:#ffffff;">Interval: <input type="text" name="interval" value="<?php echo ($_REQUEST['interval']) ? $_REQUEST['interval'] : 1; ?>" style="width:25px;" maxlength="1"/></span>&nbsp;&nbsp;<span class="month week" style="<?php if (($_REQUEST['frequency'] != 'month')&&($_REQUEST['frequency'] != 'week') ){?>display:none;<? }?> font-size:12px; color:#ffffff;" >Custom: <input type="checkbox" name="custom" value="1" onchange="$('.extra').toggle();" <?php echo ($_REQUEST['custom']) ? 'checked' : ''; ?> /></span>
+<span class="day week month" style=" <?php if ($_REQUEST['frequency'] == ''){?>display:none;<? }?> font-size:12px; color:#ffffff;">Interval: <input type="text" name="interval" value="<?php echo ($_REQUEST['interval']) ? $_REQUEST['interval'] : 1; ?>" style="width:25px;" maxlength="1"/></span>&nbsp;&nbsp;<span class="month week" style="<?php if (($_REQUEST['frequency'] != 'month')&&($_REQUEST['frequency'] != 'week') ){?>display:none;<? }?> font-size:12px; color:#ffffff;" >Custom: <input type="checkbox" name="custom" value="1" onChange="$('.extra').toggle();" <?php echo ($_REQUEST['custom']) ? 'checked' : ''; ?> /></span>
 
 <div class="extra" <?php echo ($_REQUEST['custom']) ? '' : 'style="display:none;"'; ?>>
 <table class="month" style="color:#fff;font-size:12px;<?php if (($_REQUEST['frequency'] != 'month') && ($_REQUEST['custom'] == 0)) {?>display:none;<? }?>">
@@ -642,13 +630,12 @@ Week Number:
 						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
 						<td id="wizardBox_BR"></td>
 						</tr></tbody></table>
-                       
-                          <div class="spacer"></div>
+ 
 <img src="http://www.wevolt.com/images/cms/cms_grey_cancel_box.png" onClick="parent.$.modal().close();" class="navbuttons"/>&nbsp;&nbsp; 
 <img src="http://www.wevolt.com/images/wizard_back_btn.png" onClick="submit_form('2','<? echo $_GET['type'];?>');" class="navbuttons"/>&nbsp;&nbsp;<img src="http://www.wevolt.com/images/cms/cms_grey_save_box.png" onClick="submit_form('finish','<? echo $_GET['type'];?>');" class="navbuttons" />
 <? }?>
 </div>
-
+</div>
 <input type="hidden" name="txtFriendType" value="<? echo $_GET['type'];?>"/>
 <? if ($_GET['step'] != '2') {?>
 <input type="hidden" name="txtUpdates" value="<? echo $UpdateString;?>"/>

@@ -236,22 +236,12 @@ padding:0px;
 </style>
 </head>
 <body>
-<div style="background-image:url(http://www.wevolt.com/images/700_bgd.jpg); background-repeat:no-repeat; height:467px; width:700px;" align="center">
-<div class="spacer"></div>
-<table width="608" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="592" align="center">
-                                        <table width="100%"><tr><td width="75" align="left"><img src="<? echo $Thumb;?>" width="50" border="2"/></td><td align="center">
-                                        <img src="http://www.wevolt.com/images/excite_edit_header.png" vspace="8"/>
-                                        </td></tr></table>
- </td><td class="wizardboxcontent"></td>
+<div class="wizard_wrapper" align="center" style="height:467px; width:700px;">
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
+                                        <table width="650"><tr><td width="75" align="left"><img src="<? echo $Thumb;?>" width="50" border="2"/></td><td align="center">
+                                        <img src="http://www.wevolt.com/images/headers/rate_project_header.png" vspace="8"/>
+                                        </td></tr></table>
+ 
                         
 <? if ($CloseWindow == 1) {?>
 <script type="text/javascript">
@@ -265,8 +255,6 @@ parent.window.location = href;
 <? } else {?>
 
 <form name="modform" id="modform" method="post" action="#">
-                                         
-<div style="height:10px;"></div> 
 
 <table><tr><td valign="top"><table width="450" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
@@ -288,7 +276,8 @@ Review:<br />
                                         </td>
                                         <td width="10"></td>
                                         
-                                        <td valign="top"><center><img src="http://www.wevolt.com/images/wizard_done_btn.png" onclick="submit_form();" class="navbuttons" />     <img src="http://www.wevolt.com/images/wizard_cancel_btn.png" onclick="parent.$.modal().close();" class="navbuttons"/><div style="height:5px;"></div></center>
+                                        <td valign="top"><center><img src="http://www.wevolt.com/images/cms/cms_grey_save_box.png" class="navbuttons" onclick="submit_form();"/>
+                                      <img src="http://www.wevolt.com/images/cms/cms_grey_cancel_box.png" onclick="parent.$.modal().close();" class="navbuttons"/><div style="height:5px;"></div></center>
                                         <table width="200" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>

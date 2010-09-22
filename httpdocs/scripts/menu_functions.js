@@ -5,6 +5,15 @@
             */
 
  
+			function toggle_sidebar() {
+					
+					if (document.getElementById("sidebar") == null)
+						var status = 'open';
+					else 
+						var status = 'closed';
+										
+					attach_file('http://www.wevolt.com/connectors/toggle_sidebar.php?status='+status);
+			}
 			
 			function toggle_drawer(value,state,location) {
 				
@@ -148,10 +157,10 @@ function mini_menu(itemtitle, itemlink, itemid, obj, value, element, e)
 
 	var xadjust = '';
 	var yadjust = '';
-	 if (obj == 'string') {
+ if (obj == 'string') {
+	
  		var MarkStatus=document.getElementById('string_'+itemid).className;
-	//	alert(MarkStatus);
-		if (MarkStatus == 'marked') {
+		if ((MarkStatus == 'marked') || (MarkStatus == 'marked_2')) {
 			status = 'UNMARK ITEM';
 		
 		} else {
@@ -163,16 +172,16 @@ function mini_menu(itemtitle, itemlink, itemid, obj, value, element, e)
 	obj = 'popupmenu';
 
 	
-		 } else  if (obj == 'search') {
+} else  if (obj == 'search') {
 		document.getElementById("popupmenu").innerHTML = '<table><tr><td onmouseover="hide_layer(\'popupmenu\', event);" width="2"></td><td align="center"><a href="'+itemlink+'">LINK</a><br/><a href="#" onclick="hide_layer(\'popupmenu\', event);add_drawer_item(\'from_search\',\''+itemid+'\',\''+escape(itemtitle)+'\',\''+itemlink+'\');return false;">ADD TO DRAWER</a><br/><a href="#" onClick=\"add_volt(\''+itemid+'\',\'project\',\'choose\',\'\');hide_layer(\'popupmenu\', event);return false;\">VOLT IT!</a></td><td onmouseover="hide_layer(\'popupmenu\', event);" width="2"></td></tr></table><div style="height:5px;" onmouseover="hide_layer(\'popupmenu\',event);"></div>';
 			var xadjust = 300;
 			obj = 'popupmenu';
- 		} else  if (obj == 'volt') {
+} else  if (obj == 'volt') {
 		document.getElementById("popupmenu").innerHTML = '<table><tr><td onmouseover="hide_layer(\'popupmenu\', event);" width="2"></td><td align="center"><a href="'+itemlink+'">LINK</a><br/><a href="#" onclick="hide_layer(\'popupmenu\', event);add_drawer_item(\'from_volt\',\''+itemid+'\',\''+escape(itemtitle)+'\',\''+itemlink+'\');return false;">ADD TO DRAWER</a><br/><a href="#" onClick=\"add_feed_item(\''+itemid+'\',\'project\',\'wevolt\');hide_layer(\'popupmenu\', event);return false;\">POST TO W3VOLT</a><br/><a href="#" onClick=\"remove_volt(\''+itemid+'\');hide_layer(\'popupmenu\', event);return false;\">DELETE</a></td><td onmouseover="hide_layer(\'popupmenu\', event);" width="2"></td></tr></table><div style="height:5px;" onmouseover="hide_layer(\'popupmenu\',event);"></div>';
 		var xadjust = 300;
 		var yadjust = 150;
 	obj = 'popupmenu';
-		 } else if ((obj == 'main') || (obj == 'main_not_logged')){
+} else if ((obj == 'main') || (obj == 'main_not_logged')){
 		document.getElementById("mainpop").innerHTML = '<table width="500" border="0" cellspacing="0" cellpadding="0"><tr><td onmouseover="hide_layer(\'mainpop\', event);" width="8">&nbsp;</td><td background="http://www.wevolt.com/images/sub_menu_bg_no_cap.png" style="width:255px; height:189px; padding-top:35px; background-repeat:no-repeat;" valign="top"><div style="padding-left:30px;"><div style="float:left; width:100px;text-align:left;"><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/register.php?a=pro">GO PRO</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/w3forum/wevolt/">FORUM</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/blog.php">BLOG</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/tutorials.php">TUTORIALS</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/register.php">REGISTER</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/mobile.php">MOBILE</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/studio.php">STUDIO</a></div><div style="float:right; width:100px;text-align:left;"><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/wevolt.php">ABOUT</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/contact.php">CONTACT</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://store.wevolt.com/">STORE</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://calendar.wevolt.com/">CALENDAR</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/search/">WESEARCH</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://users.wevolt.com/matteblack/">MATT</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://users.wevolt.com/jasonbadower/">JASON</a></div></div></td><td onmouseover="hide_layer(\'mainpop\', event);">&nbsp;</td></tr><tr><td onmouseover="hide_layer(\'mainpop\', event);" height="350" colspan="3">&nbsp;</td></tr></table>';
 	if (obj == 'main_not_logged'){
 	var yadjust = 150;
@@ -183,20 +192,18 @@ function mini_menu(itemtitle, itemlink, itemid, obj, value, element, e)
 	}
 	obj = 'mainpop';
 
-	
-	
-		 } else if (obj == 'main_pro') {
+} else if (obj == 'main_pro') {
 		document.getElementById("mainpop").innerHTML = '<table width="500" border="0" cellspacing="0" cellpadding="0"><tr><td onmouseover="hide_layer(\'mainpop\', event);" height="85" colspan="3">&nbsp;</td></tr><tr><td width="37">&nbsp;</td><td background="http://www.wevolt.com/images/sub_menu_bg.png" style="width:255px; height:201px; padding-top:35px; background-repeat:no-repeat;" valign="top"><div style="padding-left:30px;"><div style="float:left; width:100px;text-align:left;"><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/w3forum/wevolt/">FORUM</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/blog.php">BLOG</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/tutorials.php">TUTORIALS</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/mobile.php">MOBILE</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/studio.php">STUDIO</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/create.php">CREATE</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/what.php">SAY WHAT?</a></div><div style="float:right; width:100px;text-align:left;"><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/wevolt.php">ABOUT</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/contact.php">CONTACT</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://store.wevolt.com/">STORE</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://calendar.wevolt.com/">CALENDAR</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://www.wevolt.com/search/">WESEARCH</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://users.wevolt.com/matteblack/">MATT</a><br/><img src="http://www.wevolt.com/images/menu_yellow_dopt.png">&nbsp;<a href="http://users.wevolt.com/jasonbadower/">JASON</a></div></div></td><td onmouseover="hide_layer(\'mainpop\', event);">&nbsp;</td></tr><tr><td onmouseover="hide_layer(\'mainpop\', event);" height="350" colspan="3">&nbsp;</td></tr></table>';
 	obj = 'mainpop';
 	var yadjust = -15;
 	var xadjust = 32;
-		 } else if (obj == 'myvolt') {
+} else if (obj == 'myvolt') {
 				MenuType = 'myvolt';
 					obj = itemtitle;
- 		} else if (obj == 'wevolt') {
+} else if (obj == 'wevolt') {
 				MenuType = 'wevolt';
 					obj = itemtitle;
- 		}
+}
  
 
    
@@ -230,8 +237,8 @@ function mini_menu(itemtitle, itemlink, itemid, obj, value, element, e)
 		 		document.getElementById(obj).style.top = (parseInt(adjustedy)-10)+ 'px';	
 		} else {
 				var positionarray = findPos(document.getElementById('string_'+itemid));
-				document.getElementById(obj).style.left = (parseInt(positionarray[0])+90)  + 'px';
-		  		document.getElementById(obj).style.top = (parseInt(positionarray[1])-4)  + 'px';
+				document.getElementById(obj).style.left = (parseInt(positionarray[0]))  + 'px';
+		  		document.getElementById(obj).style.top = (parseInt(positionarray[1])+40)  + 'px';
 				document.getElementById("popclose").style.left = (parseInt(positionarray[0])+195)  + 'px';
 				document.getElementById("popclose").style.top = '0px';
 				document.getElementById("popclosetop").style.left = '0px';
@@ -267,9 +274,13 @@ function hide_layer(obj, e)
 }
 
 function mark_page(itemid,value) {
-
+	
+		if (siteversion == 2) {
+			
+			attach_file( 'http://www.wevolt.com/connectors/mark_page.php?id='+itemid+'&status='+value);
+		} else {
 			attach_file( 'http://www.wevolt.com/processing/mark_page.php?id='+itemid+'&status='+value);
-
+		}
 }
  function show_user_menu(value) {
 				

@@ -1,4 +1,5 @@
 <?
+$SiteVersion = 1;
 include_once(CLASSES.'/site.php');
 $Site = new site();
 
@@ -61,6 +62,7 @@ if  (((($_SESSION['readerstyle'] == 'flash') && ($_SESSION['currentreader'] == '
  var stringy = <? if ($_SESSION['IsPro'] == 0) {?>127<? } else {?>79<? }?>;
  var showtips = <?  if ($_SESSION['tooltips'] == '') echo '1'; else echo $_SESSION['tooltips']; ?>;
  var homepage = <? if ($HomePage == 1) echo '1'; else echo '0';?>;
+ var siteversion = <? echo $SiteVersion;?>;
 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)))
 {
 <? if ($IsProject) {?>

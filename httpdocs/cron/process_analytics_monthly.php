@@ -1,6 +1,8 @@
+#!/usr/bin/php -q
 <? 
-include_once('../includes/db.class.php');
-$DB = new DB();
+include_once('/var/www/vhosts/wevolt.com/httpdocs/classes/defineThis.php');
+include '/var/www/vhosts/wevolt.com/httpdocs/includes/db.class.php';
+$DB =  new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 
 function lastDay($month, $year){
     $lastDay;

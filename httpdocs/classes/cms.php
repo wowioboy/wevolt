@@ -77,7 +77,7 @@
 								$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 								$today = date("Ymd"); 
 								$query = "SELECT r.*,p.hits as TotalHits, p.cover, (select count(*) from favorites as f where f.ProjectID=p.ProjectID) as TotalVolts,
-										  (SELECT hits from analytics as a where a.ProjectID='".$this->ProjectID."' and a.date ='$today') as TodayHits,
+										  (SELECT distinct hits from analytics as a where a.ProjectID='".$this->ProjectID."' and a.date ='$today') as TodayHits,
 										  (SELECT count(*) from comic_pages as cp where cp.ComicID='".$this->ProjectID."') as TotalPages,
 										  (SELECT count(*) from pagecomments as pc where pc.comicid='".$this->ProjectID."') as TotalComments,
 										  (SELECT count(*) from likes as l where l.ProjectID='".$this->ProjectID."') as TotalLikes
@@ -109,13 +109,15 @@
 						public function getAssistantProjects() {
 								$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 								$AssistantComics = array ();
-								$query = "select ComicID from comic_settings where Assistant1='".$this->AdminEmail."' or '".$this->AdminEmail."' or '".$this->AdminEmail."'";
+								$query = "select ComicID from comic_settings where (Assistant1='".$this->AdminEmail."' or Assistant1='".trim($_SESSION['username'])."') or (Assistant2='".$this->AdminEmail."' or Assistant2='".trim($_SESSION['username'])."') or (Assistant3='".$this->AdminEmail."' or Assistant3='".trim($_SESSION['username'])."')";
 								$db->query($query);
-								//print $query;
+								//if ($_SESSION['userid'] == '735b90b443')
+									//print $query;
 								$numassistantComics = $db->numRows();
 								while ($setting = $db->fetchNextObject()) { 
 										$AssistantComics[] = $setting->ComicID;
 								}
+							
 								$db->close();
 								return $AssistantComics;
 						}
@@ -268,10 +270,11 @@
 						public function drawAssistantProjectsList() {
 								$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 									$query = "SELECT cs.ComicID, c.* from comic_settings as cs 
-		  								  join projects as c on cs.ComicID=c.ProjectID
-		  								  where (cs.Assistant1='".$this->AdminEmail."' or cs.Assistant2='".$this->AdminEmail."' or cs.Assistant3='".$this->AdminEmail."') 
-										  and (c.ProjectType !='forum' and c.ProjectType != 'blog') 
+									join projects as c on cs.ComicID=c.ProjectID
+									 where (Assistant1='".$this->AdminEmail."' or Assistant1='".trim($_SESSION['username'])."') or (Assistant2='".$this->AdminEmail."' or Assistant2='".trim($_SESSION['username'])."') or (Assistant3='".$this->AdminEmail."' or Assistant3='".trim($_SESSION['username'])."') and (c.ProjectType !='forum') 
 										  order by c.ProjectType";
+									
+									
 							  	$string = "<table cellspacing=\"10\"><tr>";
     						    $db->query($query);
 							//	print $query;

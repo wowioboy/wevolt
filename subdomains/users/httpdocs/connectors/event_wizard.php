@@ -285,6 +285,9 @@ if (($_REQUEST['step'] == 'add_exit') || ($_REQUEST['step'] == 'save')){
 		$custom = $_REQUEST['custom'];
 		$week_number = $_REQUEST['week_number'];
 		$week_day = $_REQUEST['week_day'];
+		$ShowList = $_POST['show_list'];
+		if ($_POST['invite'] != 1) 
+			$ShowList = 0;
 		
 		if (is_array($_REQUEST['week_day']))
 			@implode(',',$_REQUEST['week_day']);
@@ -292,7 +295,7 @@ if (($_REQUEST['step'] == 'add_exit') || ($_REQUEST['step'] == 'save')){
 		if (($task == 'new')||($task == 'add')) {
 		
 			$query = "INSERT into calendar (title, description, `start`, `end`, user_id, content_id, content_type, `type`, privacy_setting, url, location, contact_name, contact_phone,contact_email, address, address2, city, state, zip, tags, created_date, more_info, use_wemail, thumb, frequency, `interval`, custom, week_day, week_number,selected_groups,show_start_time,show_end_time,show_list,no_end) 
-			                        values ('$Title','$Description','$StartDate','$EndDate','$UserID','$ContentID', '$ContentType','$EventType','$Privacy', '$Link', '$Location','$ContactName', '$ContactPhone', '$ContactEmail','$Address','$Address2', '$City', '$State', '$Zip', '$Tags','$CreatedDate','$MoreInfo','$UseWemail','$Thumb','$frequency', '$interval', '$custom', '$week_day', '$week_number','$GroupList','".$_POST['start_set']."','".$_POST['end_set']."','".$_POST['show_list']."','".$_POST['NoEnd']."')";
+			                        values ('$Title','$Description','$StartDate','$EndDate','$UserID','$ContentID', '$ContentType','$EventType','$Privacy', '$Link', '$Location','$ContactName', '$ContactPhone', '$ContactEmail','$Address','$Address2', '$City', '$State', '$Zip', '$Tags','$CreatedDate','$MoreInfo','$UseWemail','$Thumb','$frequency', '$interval', '$custom', '$week_day', '$week_number','$GroupList','".$_POST['start_set']."','".$_POST['end_set']."','".$ShowList."','".$_POST['NoEnd']."')";
 			$DB->execute($query);
     		$output .= $query.'<br/>';	
 			$query = "SELECT id from calendar where created_date='$CreatedDate' and user_id='$UserID'";

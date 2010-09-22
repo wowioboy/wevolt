@@ -46,18 +46,8 @@ padding:0px;
 <body>
 <div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center"> 
 <div class="spacer"></div>
-<table width="508" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="492" align="center" style="font-size:18px;">
-                                        <b>APPLY FOR JOB POSITION</b>
- </td><td class="wizardboxcontent"></td>
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
+                                       <img src="http://www.wevolt.com/images/headers/apply_job_header.png">
                         
 <? if ($CloseWindow == 1) {?>
 <script type="text/javascript">

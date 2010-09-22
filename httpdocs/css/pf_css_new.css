@@ -19,6 +19,53 @@ h2 {
     text-align: center;
 }
 
+.wizard_wrapper {
+background-image:url(http://www.wevolt.com/images/!wizardV2_bg.jpg);
+ background-repeat:no-repeat; 
+ background-position:center;
+ text-align:center;
+
+	
+}
+
+.pro_nav {
+	background-color:#264e7a;	
+	height:26px;
+}
+
+.pro_nav a:link {
+	color:#fff;
+}
+
+
+.pro_nav a:hover {
+	color:#cba701;
+}
+
+.pro_nav a:visited {
+	color:#fff;
+}
+
+
+.pro_sub_nav a:link {
+	color:#7bbeff;
+}
+
+
+.pro_sub_nav a:hover {
+	color:#ffffff;
+}
+
+.pro_sub_nav a:visited {
+	color:#7bbeff;
+}
+
+
+
+.grey_text {
+color: #58595b;
+font-size:12px;
+}
 .feed_title {
 color:#0054a6;	
 font-size:10px;
@@ -52,6 +99,26 @@ font-size:10px;
 	font-size:12px;	
 }
 
+.dark_blue_links a:link {
+	color:#0054a6;
+	font-size:12px;	
+}
+.dark_blue_links a:hover {
+	color:#000000;
+	font-size:12px;	
+	text-decoration:underline;
+}
+
+.dark_blue_links a:visited {
+	color:#0054a6;
+	font-size:12px;	
+}
+
+#ad_div {
+	padding-top:4px;
+	padding-bottom:4px;	
+}
+
 .yellow_links a:link {
 	color:#febe38;
 	font-size:12px;	    
@@ -66,6 +133,36 @@ font-size:10px;
 	color:#febe38;
 	font-size:12px;	
 }
+
+/*GALLERY CSS */
+
+.gallery_item {
+	background-color:#e5e5e5;
+	padding:5px;
+	border:#000 1px solid;	
+}
+
+/* SIDEBAR */
+.sidebar-title {
+font-size:12px;
+font-weight:bold;
+
+}
+#sidebar_footer {
+background-image:url(http://www.wevolt.com/images/sidebar_footer_v2.png); 
+background-repeat:no-repeat;
+background-position:top left;
+height:10px;	
+}
+.sidebar_spot_text{
+	color:#a7a9ac;
+	font-size:10px;
+}
+.sidebar_spot_title{
+	color:#7bbeff;
+	font-size:12px;
+}
+
 
 .sidebar_nav a:link {
 	font-size:12px;
@@ -102,7 +199,11 @@ font-size:10px;
 	line-height:18px;
 }
 
-
+#sidebar {
+background-image:url(http://www.wevolt.com/images/sidebar_bg.png); 
+background-repeat:repeat-y;
+width:315px;
+}
 .feed_text {
 	color:#000;
 	font-size:10px;
@@ -122,14 +223,6 @@ font-size:10px;
 	font-size:10px;
 }
 
-.sidebar_spot_text{
-	color:#a7a9ac;
-	font-size:10px;
-}
-.sidebar_spot_title{
-	color:#7bbeff;
-	font-size:12px;
-}
 
 
 .jcarousel-control a {
@@ -301,6 +394,31 @@ ul.draglist_alt li {
 	padding-top:2px;
 }
 
+/*MYVOLT PROFILE SELECTOR */
+
+.fade_select_on {
+	background-image:url(http://www.wevolt.com/images/fade_tab_right.png);	
+	height:20px;
+	width:82px;
+	background-repeat:no-repeat;
+	color:#ffffff;
+	text-align:left;
+	padding-left:5px;
+	padding-top:2px;
+	
+}
+
+.fade_select_off {
+	height:20px;
+	width:82px;
+	color:#064a8d;
+	cursor:pointer;
+	text-align:left;
+	padding-left:5px;
+	padding-top:2px;
+}
+
+
 /*TAB CSS */
 .norm_tab_btn {
 background-image:url(http://www.wevolt.com/images/tab_btn_off.png);
@@ -400,6 +518,83 @@ font-size:10px;
 color:#ffffff;
 }
 
+.myvoltnav_bg{
+background-image:url(http://www.wevolt.com/images/myvolt_nav_bg.png); 
+background-repeat:repeat-x;
+height:40px;	
+font-size:10px; 
+color:#ffffff;	
+	
+}
+
+.myvolt_nav_links a:link {
+font-size:12px; 
+color:#ffffff;
+font-weight:bold;	
+}
+
+.myvolt_nav_links a:hover {
+font-size:12px; 
+color:#fdd60c;
+font-weight:bold;		
+}
+
+.myvolt_nav_links a:visited {
+font-size:12px; 
+color:#ffffff;
+font-weight:bold;	
+}
+
+
+.myvolt_sub_nav_bg {
+	background-image:url(http://www.wevolt.com/images/myvolt_sub_nav.png); 
+background-repeat:repeat-x;
+height:40px;	
+font-size:10px; 
+color:#ffffff;	
+	
+}
+
+.white_foot_left {
+background-image:url(http://www.wevolt.com/images/white_foot_left.png); 
+background-repeat:no-repeat;
+background-position:top left;
+height:11px;	
+}
+
+
+.white_foot_right {
+background-image:url(http://www.wevolt.com/images/white_foot_right.png); 
+background-repeat:no-repeat;
+background-position:top right;
+height:11px;	
+}
+
+
+
+
+#myvolt_content {
+	background-color:#FFF;
+	 min-height:600px;
+  height:auto;
+  height:600px;
+}
+
+
+.small_blue_links a:link{
+	color:#2f6199;
+	font-size:10px;
+}
+.small_blue_links a:hover{
+	color:#ffe531;
+	font-size:10px;
+	
+}
+.small_blue_links a:visited{
+	color:#2f6199;
+	font-size:10px;
+}
+
 .xp_bg {
 background-image:url(http://www.wevolt.com/images/panel/control_xp_bg.png); 
 background-repeat:repeat-x;
@@ -457,7 +652,7 @@ text-align:center;
 
 .control_divider {
 background-image:url(http://www.wevolt.com/images/panel/control_button_seperator.png); 
-background-repeat:repeat-x;
+background-repeat:no-repeat;
 height:25px; 
 width:5px;
 }
@@ -468,6 +663,12 @@ background-repeat:repeat-x;
 font-size:10px; 
 color:#000;
 height:13px;
+}
+
+.control_filler {
+background-image:url(http://www.wevolt.com/images/panel/control_bg_filler.png); 
+background-repeat:repeat-x;
+height:38px;
 }
 
 #string_buttons {
@@ -523,7 +724,7 @@ height:30px;
 width:1px;
 }
 .main_nav_buttons {
-background-image:url(http://www.wevolt.com/images/main_button_bg.png); 
+background-image:url(http://www.wevolt.com/images/main_header_button_bg.png); 
 background-repeat:repeat-x;
 height:30px; 
 font-size:10px; 
@@ -936,6 +1137,112 @@ height:8px;
 	background-image:url(http://www.wevolt.com/images/update_wrapper_BL.png);
 	background-repeat:no-repeat;
 }
+
+
+#whiteBox_T {
+background-color:#ffffff;
+height:8px;
+}
+
+.whiteBox_C {
+	color:#000000;
+	background-color:#ffffff;
+}
+
+#whiteBox_B {
+background-color:#ffffff;
+height:8px;
+ 
+}
+
+
+#whiteBox_TL{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/white_wrapper_TL.png);
+	background-repeat:no-repeat;
+}
+
+#whiteBox_TR{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/white_wrapper_TR.png);
+	background-repeat:no-repeat;
+}
+
+#whiteBox_BR{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/white_wrapper_BR.png);
+	background-repeat:no-repeat;
+}
+#whiteBox_BL{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/white_wrapper_BL.png);
+	background-repeat:no-repeat;
+}
+
+.grey_links a:link{
+color:#595a5c;	
+}
+
+.grey_links a:hover{
+
+text-decoration:underline;	
+}
+
+.grey_links a:visited{
+color:#595a5c;	
+}
+
+
+/*LIGHT BLUE BOX */
+
+#lightblueBox_T {
+background-color:#7bbeff;
+height:8px;
+}
+
+.lightblueBox_C {
+	color:#000000;
+	background-color:#7bbeff;
+}
+
+#lightblueBox_B {
+background-color:#7bbeff;
+height:8px;
+ 
+}
+
+
+#lightblueBox_TL{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/light_blue_wrapper_TL.png);
+	background-repeat:no-repeat;
+}
+
+#lightblueBox_TR{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/light_blue_wrapper_TR.png);
+	background-repeat:no-repeat;
+}
+
+#lightblueBox_BR{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/light_blue_wrapper_BR.png);
+	background-repeat:no-repeat;
+}
+#lightblueBox_BL{
+	width:8px;
+	height:8px; 
+	background-image:url(http://www.wevolt.com/images/light_blue_wrapper_BL.png);
+	background-repeat:no-repeat;
+}
+
 #flashreader {width:100%;height:100%;}
 
 .blue_med_header {
@@ -1200,9 +1507,12 @@ color:#ffffff;
  }
 
 .light_blue_text {
-	
 color:#7ab6ec;
 font-size:12px;	
+}
+.light_blue_text_sm {
+color:#7ab6ec;
+font-size:10px;	
 }
  .sender_name a:link {
  	font-size:12px;
@@ -1229,15 +1539,14 @@ font-size:12px;
  .profileInfoHeader {
  color:#5783ab;
  font-size:12px;
- text-align:right;
- width:145px;
- vertical-align:top;
- padding:3px 10px 3px 3px;
+ text-align:left;
+
+ padding:3px 0px 3px 3px;
  
  }
  
  .profileInfobox {
- width:246px;
+
  text-align:left;
  padding-top:3px;
  padding-bottom:3px;
@@ -1453,6 +1762,13 @@ background: url(select.gif) no-repeat;
 overflow: hidden;
 }
 
+#content_wrapper {
+
+  min-height:675px;
+  height:auto !important;
+  height:675px;
+	
+}
 #string_subtitle {
 
 font-size:9px;
@@ -1466,17 +1782,25 @@ text-transform:uppercase;
 
 }
 
+#string_2subtitle {
+
+font-size:9px;
+color:#fff;
+text-transform:lowercase;
+}
+
+#string_2title {
+	color:#fff;
+font-size:10px;
+text-transform:uppercase;
+
+}
 
 #currentstatus {
 font-size:12px;
 padding-bottom:5px;
 }
 
-.sidebar-title {
-font-size:12px;
-font-weight:bold;
-
-}
 .warning {
 color:#ebbf19;
 font-size:12px;
@@ -1541,6 +1865,50 @@ color:#000000;
 .unmarked a:visited{
 color:#FFFFFF;
 }
+
+
+
+.marked_2 {
+background-image:url(http://www.wevolt.com/images/string_bg_2_marked.png); 
+background-repeat:repeat-x;
+cursor:pointer;height:40px;
+
+text-align:center;
+color:#ffffff;
+
+}
+.marked_2 a:link{
+color:#ffffff;
+}
+.marked_2 a:hover{
+color:#e5e5e5;
+}
+.marked_2 a:visited{
+color:#ffffff;
+}
+
+.unmarked_2 {
+background-image:url(http://www.wevolt.com/images/string_bg_2.png); 
+background-repeat:repeat-x;
+
+height:40px;
+cursor:pointer;
+text-align:center;
+color:#ffffff;
+
+}
+.unmarked_2 a:link{
+color:#FFFFFF;
+}
+.unmarked_2 a:hover{
+color:#e5e5e5;
+}
+.unmarked_2 a:visited{
+color:#FFFFFF;
+}
+
+
+
 .menubar {
 padding:5px;
 

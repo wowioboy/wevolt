@@ -32,7 +32,7 @@ $mailString = '<table width="100%" border="0" cellspacing="0" cellpadding="0"><t
 			$Avatar =$mail->avatar;
 		$mailString .= '<tr><td width="30">
 		<img src="'.$Avatar.'" width="25" vspace="3"></td>
-		<td with="30%" class="'.$ClassName.'" >&nbsp;<a href="javascript:void(0)" onclick="parent.window.location=\'http://users.wevolt.com/'.$mail->sendername.'\';return false;">'.$mail->sendername.'</a>
+		<td with="30%" class="'.$ClassName.'" >&nbsp;<a href="javascript:void(0)" onclick="parent.window.location=\'http://users.wevolt.com/'.$mail->sendername.'/\';return false;">'.$mail->sendername.'</a>
 		</td>
 		<td width="40%" class="'.$ClassName.'" ><a href="javascript:void(0)" onclick="read_message(\''.$mail->ID.'\');">'.$mail->subject.'</a>
 		</td>

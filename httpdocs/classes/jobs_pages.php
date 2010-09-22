@@ -88,6 +88,16 @@ function to display the pagination
 		if ($_GET['cat']!='') {
 			$queryString .= '&cat='.$_GET['cat'];
 		}
+		
+		if ($_GET['media']!='') {
+			$queryString .= '&media='.$_GET['media'];
+		}
+		if ($_GET['content']!='') {
+			$queryString .= '&content='.$_GET['content'];
+		}
+		if ($_GET['genre']!='') {
+			$queryString .= '&genre='.$_GET['genre'];
+		}
 
         if($this->openPage > 1) {
            echo ",<a href=\"".$_SERVER['SCRIPT_NAME']."?page=1".$queryString."\">";

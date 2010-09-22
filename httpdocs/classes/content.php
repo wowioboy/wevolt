@@ -27,6 +27,7 @@
 		var $AdminUserArray;
 		var $ContentUrl;
 		var $IsBookMarked;
+		var $CurrentPageThumb;
 		
 		function __construct($ContentUrl, $ProjectID, $SafeFolder,$NoTemplate) {
 				$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
@@ -223,6 +224,7 @@
 				$this->EpisodeColorist = 	$this->readerarray[$this->CurrentIndex]->EpisodeColorist;
 				$this->EpisodeLetterer = 	$this->readerarray[$this->CurrentIndex]->EpisodeLetterer;
 				$this->Image = 				$this->readerarray[$this->CurrentIndex]->image;
+				$this->CurrentPageThumb = 	$this->readerarray[$this->CurrentIndex]->thumbmd;
 				$this->ProImage = 			$this->readerarray[$this->CurrentIndex]->proimage;
 				$this->Title = 				$this->readerarray[$this->CurrentIndex]->title;
 				$this->FileType = 			$this->readerarray[$this->CurrentIndex]->FileType;
@@ -1304,7 +1306,7 @@ getTwitters(\'tweet_'.$ModuleArray['CustomVar1'].'\', {
 
   						$db->query($query);
 						//if ($_SESSION['username'] == 'matteblack')
-						//	print $query;
+							//print $query;
   						$nRows = $db->numRows();
   						$bgcolor = 'CommentOddBGColor';
 						$rowcounter = 0; 
@@ -3073,7 +3075,7 @@ getTwitters(\'tweet_'.$ModuleArray['CustomVar1'].'\', {
 							}
 							$String .='</div>';
 						    $String .= $this->drawProjectModuleFooter($this->ContentWidth-$SideBarWidth);
-							$String .='</td><td valign="top" id="sidebar">';
+							$String .='</td><td valign="top" id="blog_sidebar">';
 						    $String .= $this->drawProjectModuleTop('', $SideBarWidth);
 							$query = "select * from pfw_blog_categories where ComicID = '".$this->ProjectID."' order by Title";
 							$db->query($query);

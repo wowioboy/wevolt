@@ -18,6 +18,7 @@ $GetTwitter = 0;
 $Project = new project($ComicName);
 	
 $ProjectID=$Project->get_projectID();
+
 $PFCOMMON = $_SERVER['DOCUMENT_ROOT'].'/'.$PFDIRECTORY.'/templates/common/includes/';
 $User->getInviteStatus($_SESSION['userid'],$ProjectID);
 	
@@ -60,6 +61,8 @@ $Downloads= $ProjectArray['DownloadCount'];
 $MobileContent= $ProjectArray['MobileCount'];
 $TodaysPage=$ProjectArray['TodaysPage'];
 $LatestPageThumb=$ProjectArray['LatestPageThumb'];
+
+	
 $ProjectThumb=$ProjectArray['Thumb'];
 $Rating = $ProjectArray['Rating'];
 $CreditsString =''; 
@@ -234,6 +237,9 @@ if (($Section == 'Pages') &&(($_SESSION['readerpage'] == 'norm')||($_SESSION['re
 	$ContentSection->setPageID($PageID);
 	
 	$ContentSection->getPages($SeriesNum,$EpisodeNum);
+	
+	if ($ContentSection->CurrentPageThumb != '')
+	$CurrentPageThumb = $ContentSection->CurrentPageThumb;
 	$ContentSection->getLikes();
 	$PageXP = $ContentSection->PageXP;
 	$ArchiveDropDown = $ContentSection->buildArchivesDropdown();

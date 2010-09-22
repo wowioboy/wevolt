@@ -629,8 +629,9 @@ function set_attendance(value) {
 </script>
 
                        
-                  <div style="background-image:url(http://www.wevolt.com/images/700_bgd.jpg); background-repeat:no-repeat; height:467px; width:700px;" align="center">
+                <div class="wizard_wrapper" align="center">
 <div style="height:10px;"></div>
+<div align="center">
 <table width="608" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -683,6 +684,7 @@ function set_attendance(value) {
 						<td id="wizardBox_BR"></td>
 						</tr></tbody></table>
                         <div class="spacer"></div>
+                        </div>
  <?  if ($Auth == 1) {?>                    
 
                           <?   if ($_REQUEST['action'] == 'view') { 
@@ -946,7 +948,7 @@ The privacy of this event is set to <? echo $EventArray->privacy_setting;?>
                          <div class="messageinfo_warning"><div class="spacer"></div> <div class="spacer"></div><div class="spacer"></div>You do not have access to view this event. The privacy of this event is set to <? echo $EventArray->privacy_setting;?></div>
                           
                           <? }?>
-<img src="http://www.wevolt.com/images/wizard_exit_btn.png" onClick="closeWindow();" class="navbuttons"/>&nbsp;&nbsp; 
+
            </div>             
                         
                        

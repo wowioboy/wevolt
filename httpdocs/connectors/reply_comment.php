@@ -79,11 +79,9 @@ if ($_POST['insert'] == '1'){
 	}
 </script>
 
-
-
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
-
-<div style="height:15px;"></div>
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
+<div align="center">
+<div style="height:20px;"></div>
 <table width="592" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -93,7 +91,7 @@ if ($_POST['insert'] == '1'){
                                        <div id="commentbox">
 <div class="modheader">Reply to <? echo $Username;?>'s Comment</div>
 <form method="POST" action="#" name="commentform" id="commentform">
-<textarea rows="6" style="width:98%" name="txtFeedback" onFocus="doClear(this);" id="txtComment"><? if ($_POST['txtFeedback']=='')
+<textarea rows="10" style="width:98%" name="txtFeedback" onFocus="doClear(this);" id="txtComment"><? if ($_POST['txtFeedback']=='')
 								echo 'enter a comment'; 
 							else
 		 						echo $_POST['txtFeedback'];?></textarea><div class="spacer"></div>
@@ -126,6 +124,6 @@ alert('There was an error submitting comment, please check your fields and try a
 						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
 						<td id="wizardBox_BR"></td>
 						</tr></tbody></table>
-                        
+  </div>                      
               
                      </div>

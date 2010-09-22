@@ -1,4 +1,5 @@
 <?
+$SiteVersion = 1;
 include_once(CLASSES.'/site.php');
 $Site = new site();
 
@@ -15,7 +16,39 @@ if (($_GET['sa'] =='') &&($_GET['a'] == '') &&($_POST['a'] == '')) {
 	
 $Site->drawHeader();
 
-?>
+if (($MetaContentTitle == '') && ($IsProject)) {
+	$MetaContentTitle = $ProjectTitle;
+	$MetaDescription = $Synopsis;
+	if ($ProjectType != 'blog')
+		$ProjectType = 'book';
+	$MetaContentType = $ProjectType;
+	$MetaThumb = 'http://www.wevolt.com'.$ProjectThumb;
+} else if (($MetaContentTitle == '') && ($IsJob)) { 
+	$MetaContentTitle = 'job post: '.$JobArray->title;	
+	$MetaDescription = $JobArray->description;
+	$MetaContentType = 'job post';
+	$MetaThumb = 'http://www.wevolt.com/images/we_fb_logo.jpg';	
+	
+} 
+
+if ($MetaThumb == ''){	
+	$MetaThumb = 'http://www.wevolt.com/images/we_fb_logo.jpg';	
+}
+if ($MetaContentTitle == ''){	
+	$MetaContentTitle = 'WEvolt';	
+}
+if ($MetaContentType == ''){	
+	$MetaContentType = 'website';	
+}
+?>	
+<meta property="og:title" content="<? echo $MetaContentTitle;?>"/>
+    <meta property="og:type" content="<? echo $MetaContentType;?>"/>
+    <meta property="og:url" content="<? echo $_SESSION['refurl'];?>"/>
+    <meta property="og:image" content="<? echo $MetaThumb;?>"/>
+    <meta property="og:site_name" content="WEvolt"/>
+   
+    <meta property="og:description"
+          content="<? echo $MetaDescription;?>"/>
 
 <meta name="description" content="<?php if ($IsProject) echo $Synopsis; ?><? echo $Site->getGlobalDescription();?> "></meta>
 <meta name="keywords" content="<?php if ($IsProject) { echo $Creator; echo ','; echo $Writer;  echo ','; echo $Artist;  echo ','; echo $Letterist;  echo ','; echo $Colorist;  echo ','; echo $Genre;  echo ','; echo $Tags;} ?>,<? echo $Site->getGlobalKeywords();?> "></meta>
@@ -61,6 +94,7 @@ if  (((($_SESSION['readerstyle'] == 'flash') && ($_SESSION['currentreader'] == '
  var stringy = <? if ($_SESSION['IsPro'] == 0) {?>127<? } else {?>79<? }?>;
  var showtips = <?  if ($_SESSION['tooltips'] == '') echo '1'; else echo $_SESSION['tooltips']; ?>;
  var homepage = <? if ($HomePage == 1) echo '1'; else echo '0';?>;
+  var siteversion = <? echo $SiteVersion;?>;
 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)))
 {
 <? if ($IsProject) {?>

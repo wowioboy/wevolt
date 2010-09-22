@@ -105,7 +105,7 @@ if ($sort == 1) {
 				} else  if ($sort == 4){
 					$sql = "select * from comics as c
 						join rankings as r on c.comiccrypt=r.ComicID
-				        where c.installed = 1 and c.Published = 1 and c.pages>0 ORDER BY r.ID ASC";
+				        where c.installed = 1 and c.Published = 1 and c.pages>0 and c.ShowRanking=1 ORDER BY r.ID ASC";
 				
 				}
 
@@ -142,7 +142,7 @@ $search = trim($Genre);
 				} else  if ($sort == 4){
 					$sql = "select * from comics as c
 						join rankings as r on c.comiccrypt=r.ComicID
-				        where c.installed = 1 and c.Published = 1 and c.genre LIKE '%".$keywords[$i]."%'".
+				        where c.installed = 1 and c.Published = 1 and c.ShowRanking=1 and c.genre LIKE '%".$keywords[$i]."%'".
 						"ORDER BY r.ID ASC";
 				
 				}
@@ -215,7 +215,7 @@ $search = trim($Genre);
 				}else if ($sort == 4) {
 				$sql = "SELECT * FROM comics as c
 					join rankings as r on c.comiccrypt=r.ComicID
-					WHERE c.installed = 1 and c.Published = 1 and (c.title LIKE '%".$keywords[$i]."%'
+					WHERE c.installed = 1 and c.Published = 1 and c.ShowRanking=1 and (c.title LIKE '%".$keywords[$i]."%'
 					 OR c.creator LIKE '%".$keywords[$i]."%'
 					 OR c.writer LIKE '%".$keywords[$i]."%'
 					 OR c.artist LIKE '%".$keywords[$i]."%'

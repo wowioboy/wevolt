@@ -262,8 +262,8 @@ if (!isset($_GET['sub'])) {
 	$counter = 0;
 	//$LIMIT = ' LIMIT 160'; 
 	$query = $SELECT . $JOIN . $where . $ORDERBY.$LIMIT;
-	if (($_SESSION['username'] == 'wevolt') ||($_SESSION['username'] == 'matteblack') )
-		print $query.'<br/>';
+	//if (($_SESSION['username'] == 'wevolt') ||($_SESSION['username'] == 'matteblack') )
+		//print $query.'<br/>';
 	$pagination->createPaging($query,$NumItemsPerPage);
 	$AlreadyAdded = array();
 	while($line=mysql_fetch_object($pagination->resultpage)) {

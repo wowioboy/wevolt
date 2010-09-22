@@ -20,6 +20,16 @@ if ($_POST['save'] == 1) {
 						$query = "INSERT into favorites (creatorid, UserID, ContentType, ContentID) values ('$Creator','".$_SESSION['userid']."','forum_topic','".$_POST['p']."')";
 						$DB->execute($query);
 					}
+				} else if ($_POST['type'] == 'job_post') {
+					$query = "SELECT * from pf_jobs where encrypt_id='".$_GET['id']."'";
+					$ItemArray = $DB->queryUniqueObject($query);
+					$Creator = $ItemArray->user_id;
+					$query = "SELECT count(*) from favorites where UserID='".$_SESSION['userid']."' and ContentID='".$_POST['p']."' and ContentType='job'";
+					$Found = $DB->queryUniqueValue($query);
+					if ($Found == 0) {
+						$query = "INSERT into favorites (creatorid, UserID, ContentType, ContentID) values ('$Creator','".$_SESSION['userid']."','job','".$_POST['p']."')";
+						$DB->execute($query);
+					}
 				} else {
 					$query = "SELECT * from projects where ProjectID='".$_GET['id']."'";
 					$ProjectArray = $DB->queryUniqueObject($query);
@@ -88,27 +98,15 @@ parent.$.modal().close();
  <? }?>
 
 <form name="modform" id="modform" method="post" action="#">
-   <div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
 
-<div style="height:15px;"></div>
-<table width="592" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="576" align="center">
-                                        <img src="http://www.wevolt.com/images/volt_project_header.png" vspace="8"/>
- </td><td class="wizardboxcontent"></td>
-
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
-                        
-               <div style="height:10px;"></div>      
-      <div class="messageinfo_white">     
+                                        <img src="http://www.wevolt.com/images/headers/volt_content_header.png" vspace="8"/>
+   
+      <div class="grey_text">     
 <strong>What do you want to do with this REvolt</strong>
 </div>
-<div style="height:10px;"></div>   
+<div style="height:10px;"></div> 
+<div align="center" style="width:624px;">  
 <table width="400" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -146,9 +144,10 @@ We're gonna throw this in your VOLT for later and let you EXCITE it right now.</
 						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
 						<td id="wizardBox_BR"></td>
 						</tr></tbody></table>
+                        </div>
 <div class="spacer"></div>
 <div align="center">
-<img src="http://www.wevolt.com/images/wizard_cancel_btn.png" onClick="parent.$.modal().close();" class="navbuttons"/></div>  
+<img src="http://www.wevolt.com/images/cms/cms_grey_cancel_box.png" onClick="parent.$.modal().close();" class="navbuttons"/></div>  
                         
 <input type="hidden" name="action" value="" id="action"/>
 <input type="hidden" name="save" id="save" value="" />

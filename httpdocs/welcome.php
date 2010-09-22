@@ -1,5 +1,5 @@
 <?php 
-include 'includes/init.php';
+include_once($_SERVER['DOCUMENT_ROOT'].'/includes/init.php'); 
  if ($_SESSION['IsPro'] == 1) 
     $_SESSION['noads'] = 1;
 $query = "SELECT ReadBetaWelcome from users_settings where UserID='".$_SESSION['userid']."'";
@@ -8,18 +8,42 @@ if (($HasRead == '') or ($HasRead == 0)){
 $query = "UPDATE users_settings set ReadBetaWelcome='1' where UserID='".$_SESSION['userid']."'";
 $InitDB->execute($query);
 }
-$PageTitle = 'wevolt | welcome to WEvolt!';
+$PageTitle .= 'welcome to WEvolt!';
 $TrackPage = 1;
-include 'includes/header_template_new.php';
-$Site->drawModuleCSS(); ?>
-<div align="left">
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
+
+require_once('includes/pagetop_inc.php');
+$Site->drawModuleCSS();
+
+?>
+
+<div align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="<? echo $TemplateWrapperWidth;?>">
   <tr>
-  <td valign="top" <? if ($_SESSION['IsPro'] == 1) {?>style="padding:5px; color:#FFFFFF;width:60px;"<? } else {?>width="<? echo $SideMenuWidth;?>"<? }?>><? include 'includes/site_menu_inc.php';?></td>
-  <td  valign="top"  <? if ($_SESSION['IsPro'] == 1) {?>align="center"<? }?> ><? if ($_SESSION['noads'] != 1) {?>
-       <div style="padding-left:13px;"> <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id-"top_ads"></iframe></div>
-      <? }?>
-       <div style="width:728px;" align="center">
+    <td valign="top" align="center">
+    <div class="content_bg">
+		<? if ($_SESSION['userid'] != '') {?>
+            <div id="controlnav">
+                <?php $Site->drawControlPanel(); ?>
+            </div>
+        <? }?>
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+       
+       
+        <div id="header_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+    
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+   <div style="width:<? echo $SiteTemplateWidth;?>px;">
+ <div style="width:728px;" align="center">
         <div class="spacer"></div>
       <img src="http://www.wevolt.com/images/tuts/wevolt_welcome_header.png" /><div class="spacer"></div><div class="spacer"></div>
       <? if (($_SESSION['showelcome'] == 1) && ($HasRead == 1)) {?><div class="spacer"></div><div class="messageinfo_white" style="font-size:10px;">
@@ -100,8 +124,15 @@ $Site->drawModuleCSS(); ?>
 	   <? if ($_GET['page'] != '6'){?><a href="http://www.wevolt.com/welcome.php?page=<? if (($_GET['page'] == '1') || ($_GET['page'] == '')) echo '2'; else if ($_GET['page'] == '2') echo '3'; else if ($_GET['page']=='3') echo '4';else if ($_GET['page']=='4') echo '5';else if ($_GET['page']=='5') echo '6';?>"><img src="http://www.wevolt.com/images/tut_next.png" border="0"/></a><? }?>
        </td></tr></table>
         <div class="spacer"></div>
-</div> </div> </td>
+</div> </div> 
+ </div>
+
+	</td>
   </tr>
+ 
 </table>
 </div>
-<?php include 'includes/footer_template_new.php';?>
+  
+<?php require_once('includes/pagefooter_inc.php'); ?>
+
+

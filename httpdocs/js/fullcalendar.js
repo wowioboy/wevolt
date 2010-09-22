@@ -49,7 +49,7 @@ var defaults = {
 	lazyFetching: true,
 	startParam: 'start',
 	endParam: 'end',
-	type: 'reminder',
+	type: 'all',
 	
 	// time formats
 	titleFormat: {
@@ -749,11 +749,11 @@ $.fn.fullCalendar = function(options) {
 						}else if (buttonName == 'sort') {
 							tr.append('<td><div style="height:5px;"></div>' +
 									'<select id="calendar_selector">' +
+									'<option value="all">all</option>' +
 									'<option value="reminder">reminders</option>' +
 									'<option value="event">events</option>' +
 									'<option value="todo">todos</option>' +
 									'<option value="promotion">promotions</option>' +
-									'<option value="all">all</option>' +
 									'</select></td>');
 						} else if (buttonName == 'add' || buttonName == 'trash' || buttonName == 'edit') {
 							if (buttonName == 'add') {

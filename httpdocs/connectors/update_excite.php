@@ -55,6 +55,23 @@ if ($_GET['id'] != '') {
 					
 				
 				$Link = 'http://www.wevolt.com/view_event.php?action=view&id='.$ProjectArray->id;
+			} else if ($_GET['type'] == 'job_post') {
+			$query = "select j.*,p.thumb as ProjectThumb
+						from pf_jobs as j
+						left join projects as p on j.project_id=p.ProjectID
+						join users as u on u.encryptid=j.user_id
+						where j.encrypt_id='".$_GET['id']."'";
+					
+				$ProjectArray = $DB->queryUniqueObject($query);
+				$Headline = $ProjectArray->title;
+				$Thumb = 'http://www.wevolt.com'.$ProjectArray->ProjectThumb;
+				$Comment = $ProjectArray->description;
+				$Tags = $ProjectArray->tags;
+				if ($Thumb == '')
+					$Thumb = $ProjectArray->UThumb;
+					
+				
+				$Link = 'http://www.wevolt.com/jobs.php?view='.$_GET['id'];
 			}
 	}
 }
@@ -325,8 +342,8 @@ function select_link(value) {
 	
 		document.getElementById("urltab").className ='tabinactive';
 		document.getElementById("urlupload").style.display = 'none';
-	document.getElementById("linktargetdiv").style.display = 'none';
-	document.getElementById("searchtab").className ='tabinactive';
+		document.getElementById("linktargetdiv").style.display = 'none';
+		document.getElementById("searchtab").className ='tabinactive';
 		document.getElementById("searchupload").style.display = 'none';
 		
 		document.getElementById("mytab").className ='tabactive';
@@ -449,20 +466,10 @@ padding:0px;
   <LINK href="http://www.wevolt.com/css/pf_css_new.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center"> 
-<div class="spacer"></div>
-<table width="608" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="592" align="center">
-                                        <img src="http://www.wevolt.com/images/excite_edit_header.png" vspace="8"/>
- </td><td class="wizardboxcontent"></td>
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
+                                        <img src="http://www.wevolt.com/images/headers/excite_header.png" vspace="8"/>
+
                         
 <? if ($CloseWindow == 1) {?>
 <script type="text/javascript">
@@ -477,9 +484,8 @@ parent.window.location = href;
 
 <form name="modform" id="modform" method="post" action="#">
               
-   <div>
-                                         
-<div style="height:10px;"></div>
+   <div style="padding-left:10px;">
+
 
 <table><tr><td valign="top"><table width="200" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
@@ -490,11 +496,11 @@ parent.window.location = href;
                                         1. Headline<br>
 <textarea style="width:180px; height:25px;" name="txtBlurb" id="txtBlurb"><? echo $Headline;?></textarea><div style="height:5px;"></div>
 2. Comment<br>
-<textarea rows="1"  style="width:180px; height:80px" name="txtComment" id="txtComment"  ></textarea>
+<textarea rows="1"  style="width:180px; height:80px" name="txtComment" id="txtComment"  ><? if ($Comment != '') echo $Comment;?></textarea>
 <div style="height:5px;"></div><div class="messageinfo_white">
  3. Tags
 Enter Tags (separate with a ',')</div>
-<textarea rows="1"  style="width:180px; height:70px;" name="txtTags" id="txtTags" onfocus="doClear(this)" onblur="setDefault(this)"></textarea><div style="height:5px;"></div>
+<textarea rows="1"  style="width:180px; height:70px;" name="txtTags" id="txtTags" onfocus="doClear(this)" onblur="setDefault(this)"><? if ($Tags != '') echo $Tags;?></textarea><div style="height:5px;"></div>
 
 <? if (in_array($_SESSION['userid'],$SiteAdmins)) {?>
 <div class="messageinfo_white">
@@ -510,7 +516,8 @@ Enter Tags (separate with a ',')</div>
                                         </td>
                                         <td width="10"></td>
                                         
-                                        <td valign="top"><center><img src="http://www.wevolt.com/images/wizard_done_btn.png" onclick="submit_form();" class="navbuttons" />     <img src="http://www.wevolt.com/images/wizard_cancel_btn.png" onclick="parent.$.modal().close();" class="navbuttons"/><div style="height:5px;"></div></center>
+                                        <td valign="top"><center><img src="http://www.wevolt.com/images/cms/cms_grey_save_box.png" class="navbuttons" onclick="submit_form();"/>
+                                      <img src="http://www.wevolt.com/images/cms/cms_grey_cancel_box.png" onclick="parent.$.modal().close();" class="navbuttons"/><div style="height:5px;"></div></center>
                                         <table width="375" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 										<td id="wizardBox_TL"></td>
 										<td id="wizardBox_T"></td>
@@ -553,14 +560,14 @@ Enter full link including http://<br/>
 		echo '<div align="left">'.$Link.'</div>';
 }
 	?>
-    <div align="left" id="linktargetdiv" <? if (($_GET['type'] == 'forum topic') || ($_GET['type'] == 'cal_entry')){?>style="display:none;"<? }?>><div style="height:5px;"></div>
+    <div align="left" id="linktargetdiv" <? if (($_GET['type'] == 'forum topic') || ($_GET['type'] == 'cal_entry')|| ($_GET['type'] == 'job_post')){?>style="display:none;"<? }?>><div style="height:5px;"></div>
     <select name="txtLinkTarget">
     <option value="_parent" selected>Same Page</option>
     <option value="_blank">New Page</option>
     </select>
     </div>
     <div style="height:5px;"></div>
-<div id="thumbselect" align="left" class="messageinfo_white"<? if (($ExciteType == 'project') ||($ExciteType == 'forum topic') || ($_GET['type'] == 'cal_entry')){?> style="display:none;"<? }?>>
+<div id="thumbselect" align="left" class="messageinfo_white"<? if (($ExciteType == 'project') ||($ExciteType == 'forum topic') || ($_GET['type'] == 'cal_entry') || ($_GET['type'] == 'job_post')){?> style="display:none;"<? }?>>
 <div style="height:10px;"></div>
    5. UPLOAD THUMBNAIL 
     <iframe id='loaderframe' name='loaderframe' height='50px' width="350px" frameborder="no" scrolling="no" src="/includes/media_upload_inc.php?compact=yes&transparent=1&uploadaction=user_thumb" allowtransparency="true"></iframe><div style="height:10px;"></div>

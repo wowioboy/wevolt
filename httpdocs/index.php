@@ -2,202 +2,354 @@
 session_start();
 if ($_GET['p'] == 'contact')
 	header("Location:/contact.php");
-include 'includes/init.php';
+require_once('includes/init.php');
 $InitDB->close();
 $PageTitle .= 'home';
-$TrackPage = 1;
+$TrackPage = 1; 
 $HomePage = 1;
 $Home = true;
-include 'includes/header_template_new.php';
+require_once('includes/pagetop_inc.php');
 $Site->drawModuleCSS();
  if ($_SESSION['IsPro'] == 1) {
            $_SESSION['noads'] = 1;
 		} 
 ?>
 
-<div align="left">
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
+<script>
+
+    $(document).ready(function(){
+ 
+		$("#twitter_wevolt").tweet({
+          count: 1,
+           username: "wevoltonline",
+           loading_text: "loading tweets..."
+        });
+		$("#twitter_jasonbadower").tweet({
+          count: 1,
+           username: "jasonbadower",
+           loading_text: "loading tweets..."
+        });
+		$("#twitter_matteblack").tweet({
+          count: 1,
+           username: "matteblack",
+           loading_text: "loading tweets..."
+        });
+        $('.ten_select').click(function(){
+            if ($(this) != $('.arrow_select_on')) {
+	            var tabId = $(this).attr('tab') + '-tab';
+	            $('.arrow_select_on').removeClass('arrow_select_on').addClass('arrow_select_off');
+	            $(this).removeClass('arrow_select_off').addClass('arrow_select_on');
+	            $('.ten_tab[id!=' + tabId + ']').hide();
+	            $('#' + tabId).show();
+            } 
+        });
+    });
+</script>
+<style>
+.arrow_select_on {
+	color:#fff;
+}
+.slide {
+	border-color:#fff !important;
+	background-color:#000 !important;
+	margin: 0px 5px 0px 5px !important;
+}
+.activeSlide {
+	background-color:#fff !important;
+}
+.carousel_label {
+	width:130px;
+	height:30px;
+	background-color:#000;
+	filter:alpha(opacity=50);
+	-ms-filter: "alpha(opacity=50)";
+	opacity:.5;
+	position:absolute;
+	left:0;
+	bottom:0;
+	z-index:1;
+	-webkit-border-top-right-radius: 30px;
+	-moz-border-radius-topright: 30px;
+	border-top-right-radius: 30px;
+}
+#LateNav {
+	position:absolute;
+	z-index:2;
+	bottom:7.5px;
+	left:5px;
+}
+.carousel_label span {
+	filter:alpha(opacity=100);
+	-ms-filter: "alpha(opacity=100)";
+	opacity:1;
+}
+.tweets {
+
+font-size:10px;	
+}
+</style>
+ 
+<div align="center">
+<? if ($_SESSION['userid'] != '') {?>
+<div class="content_bg">
+		
+            <div id="controlnav">
+                <?php $Site->drawControlPanel('980px'); ?>
+            </div>
+   
+ </div>  
+<? }?>     
+<table cellpadding="0" cellspacing="0" border="0" width="1058">
   <tr>
-    <td valign="top" <? if ($_SESSION['IsPro'] == 1) {?>width="60"<? } else {?>width="<? echo $SideMenuWidth;?>"<? }?>><? include 'includes/site_menu_inc.php';?></td>
-    <td  valign="top"  <? if ($_SESSION['IsPro'] == 1) {?>align="center"<? }?>><? if ($_SESSION['noads'] != 1) {?>
-       <div style="padding-left:13px;"> <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id-"top_ads"></iframe></div>
-      <? }?>
-        <div style="padding:10px;">
-          <div class="spacer"></div>
-          <table>
+    <td valign="top" align="center">
+    <div class="content_bg">
+		
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:980px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+        <div id="header_div" style="background-color:#FFF;width:980px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+     <div class="content_bg" >
+        <div id="feature_div"  style="background-color:#FFF;width:980px;" >
+                      <table cellpadding="0" cellspacing="0" border="0"><tr>
+                      <td  style="width:680px;" valign="top">
+                           
+                            <div>
+                                <div style="width:680px;height:250px; background-color:#CCC; position:relative;">
+                                 <div style="position:absolute;top:0;left:0;z-index:0;">
+                                 
+                              
+                                <?php echo $Site->drawLatestModule('CreatedDate DESC', true, 2); ?>
+                                  
+                                 </div>
+                               <div class="carousel_label">
+                               </div>
+                                <span id="LateNav"></span>
+                              
+                                </div>
+                            </div>
+                          
+                  </td>
+                  <td width="300px;" valign="top">
+                         <iframe src="" allowtransparency="true" width="300" height="250" frameborder="0" scrolling="no" id="home_300" name="home_300"></iframe>
+                  </td>
+                  </tr>
+                  </table>
+         </div>
+         
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        
+         <div id="top_ten_div" style="background-color:#FFF;width:980px;">
+         <div style="padding-left:10px;">
+         <div align="left">
+         <img src="http://www.wevolt.com/images/top_ten_header.png" /><br />
+    	</div>
+                            <table><tr><td width="860px">
+                                <div id="comics-tab" class="ten_tab">
+                                  <?php 
+                                $mVersion = 2;
+                                $ModContent = 'comics';
+                                include('modules/top_10_mod.php');?>
+                                </div>
+                              <div id="blog-tab" class="ten_tab" style="display:none;">
+                                  <? 
+                                $ModContent = 'blogs';
+                                include('modules/top_10_mod.php');?>
+                                </div>
+                              <div id="forum-tab" class="ten_tab" style="display:none;">
+                                  <? 
+                                $ModContent = 'forums';
+                                include('modules/top_10_mod.php');?>
+                                </div>
+                              <div id="writing-tab" class="ten_tab" style="display:none;">
+                                  <? 
+                                $ModContent = 'writing';
+                                include('modules/top_10_mod.php');?>
+                                </div>
+                                
+                       
+                            </td><td valign="top" >
+                            <div class="ten_select arrow_select_on" tab="comics">Comics</div>
+                             <div class="ten_select arrow_select_off" tab="blog">Blogs</div>
+                              <div class="ten_select arrow_select_off" tab="forum">Forums</div>
+                               <div class="ten_select arrow_select_off" tab="writing"><!--Tutorials--></div>
+                             </td></tr></table>
+                        
+<!--              <input id="top_10_tabs" value="Comics,Forums,Blogs,Writing" type="hidden" />-->
+        </div>
+        </div>
+        <div class="spacer"></div>
+        <div id="coumns" style="width:980px;">
+          <div style="padding-left:15px;">
+        <table cellpadding="0" cellspacing="0">
             <tr>
-              <td>
-              <center>
-            <div>
-<div style="width:416px;">
-<div class="panel_top">
-  <div  style="display:table;width:100%;">
-  <div style="display:table-cell;vertical-align:middle;width:50%;text-align:left;">
-  	<img src="http://www.wevolt.com/images/w3volt_latest.png" />
-  
-  </div>
-  <div style="display:table-cell;vertical-align:middle;text-align:right;width:50%;">
-  	<span id="LateNav"></span>
-  
-  </div>
-  </div>
-</div>
-<div class="panel_body" style="height:230px;">
-<?php echo $Site->drawLatestModule('CreatedDate DESC'); ?>
-</div>
-</div>
-</div>
-			  </center>
-              </td>
-              <td valign="top" width="10"></td>
-              <td  align="center"><iframe src="" allowtransparency="true" width="300" height="250" frameborder="0" scrolling="no" id="home_300" name="home_300"></iframe></td>
-            </tr>
-          </table>
-          <div class="spacer"></div>
-                 
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tr>
-              <td valign="top">
-              <? $Site->drawStandardModuleTop('<table><tbody>
-                      <tr>
-                        <td width="100"><img src="http://www.wevolt.com/images/matt_spotlight.png" />
-                            <div class="smspacer"></div></td>
-                        <td width="5"></td>
-                        <td align="left"><a href="http://users.wevolt.com/matteblack/"><img src="http://www.wevolt.com/images/home_tab_btn.png"  border="0"/></a></td>
-                        <td width="5"></td>
-                          <td align="left"><a href="http://users.wevolt.com/matteblack/?t=projects"><img src="http://www.wevolt.com/images/projects_tab_btn.png"  border="0"/></a></td>
-                        <td width="5"></td>
-                          <td align="left"><a href="http://www.wevolt.com/mattjacobs/"><img src="http://www.wevolt.com/images/blog_tab_btn.png"  border="0"/></a></td>
+             <td width="116" valign="top"> <div class="spacer"></div><div class="spacer"></div><img src="http://www.wevolt.com/images/the_news.png" />
+           	 <div class="spacer"></div>
+			<? 
+			$ModProject = 'abd81528278';
+			include $_SERVER['DOCUMENT_ROOT'].'/modules/blog_pull.php';?>
             
-                      </tr>
-                    </tbody>
-                    </table>
-                          <div style="height:3px;"></div>', 477, '', 12,'');
-						  
-								$ModUser = 'matteblack';
-								$ModProject = '766ebcd524b';
-								include 'modules/excite_feed_mod.php';?>
-                 <? $Site->drawStandardModuleFooter();?>
+            </td>
+            <td width="20"></td>
+                <td valign="top"> <div class="spacer"></div><div class="spacer"></div>
+                 <div align="left">
+              <img src="http://www.wevolt.com/images/the_spotlight_header.png" />
+              </div>
+              <div class="spacer"></div>
+              <table><tr>
+              <td width="106" valign="top">
+              
+              <img src="http://www.wevolt.com/images/project_header.png" /><div style="height:5px;"></div>
+              <? $Site->drawSpotLight('project');?>
+              </td>
+              <td width="18"></td>
+              <td width="106" valign="top">
+                <img src="http://www.wevolt.com/images/creator_header.png" /><div style="height:5px;"></div>
+                <? $Site->drawSpotLight('creator');?>
+              </td>
+             
+              </tr>
+              </table>
+              
+                </td>
+                <td width="18"></td>
+                <td width="280" valign="top"> <div class="spacer"></div><div class="spacer"></div>
+                 <div align="left">
+                <img src="http://www.wevolt.com/images/the_feed_header.png" />
+                </div>
+                 <div class="spacer"></div>
+                <? include 'modules/feed_pull.php';?>
+                <div class="spacer"></div>
+         
+                </td>
+
+                <td style="width:298px;">
+                 <div class="spacer"></div>
+                <div style="width:298px; background-image:url(images/twitter_box_top.png); background-repeat:no-repeat; height:8px;"></div>
+                <div style="background-color:#0e478a;">
+                <div style="padding-left:12px;">
+               <table width="100%"><tr>
+               <td><img src="http://www.wevolt.com/images/follow_on_wevolt.png" /></td>
+               <td><a href="http://www.facebook.com/#!/group.php?gid=131247090248002&ref=ts" target="_blank"><img src="http://www.wevolt.com/images/fb_icon.png" border="0"/></a></td>
+                <td><a href="http://www.twitter.com/wevoltonline" target="_blank"><img src="http://www.wevolt.com/images/twitter_icon.png" border="0"/></a></td>
+               <td align="right" width="90"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.wevolt.com&amp;layout=button_count&amp;show_faces=false&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe>
+                </td>
+                
+               </tr></table>
                
-                  <div style="height:5px;"></div>
-             <? $Site->drawStandardModuleTop('<table><tbody>
-                      <tr>
-                        <td width="100"><img src="http://www.wevolt.com/images/jasons_spot.png" /> 
-                            <div class="smspacer"></div></td>
-                        <td width="5"></td>
-                        <td align="left"><a href="http://users.wevolt.com/jasonbadower/"><img src="http://www.wevolt.com/images/home_tab_btn.png"  border="0"/></a></td>
-                        <td width="5"></td>
-                          <td align="left"><a href="http://users.wevolt.com/jasonbadower/?t=projects"><img src="http://www.wevolt.com/images/projects_tab_btn.png"  border="0"/></a></td>
-                        <td width="5"></td>
-                          <td align="left"><a href="http://www.wevolt.com/jasonbadower/"><img src="http://www.wevolt.com/images/blog_tab_btn.png"  border="0"/></a></td>
-            
-                      </tr>
-                    </tbody>
-                    </table>
-                            <div style="height:3px;"></div>', 477, '', 12,'');
-							
-								$ModUser = 'jasonbadower';
-								$ModProject = '44c4c17325e';
-								include 'modules/excite_feed_mod.php';
-								$Site->drawStandardModuleFooter();?>
-        
-               </td>
-                <td width="5"></td>
-                <td valign="top">
-                <script type="text/javascript">
-				function show_news(value) {
-			
-					if (value == 'news') {
-						document.getElementById('news_div').style.display='';
-						document.getElementById('updates_div').style.display='none';
-					} else if (value == 'updates') {
-						document.getElementById('news_div').style.display='none';
-						document.getElementById('updates_div').style.display='';
-					}
-				
-				}
-				
-				</script>
-                <? $Site->drawStandardModuleTop('<table><tbody>
-                      <tr>
-                        <td width="50"><img src="http://www.wevolt.com/images/news_header.png" />
-                            <div class="smspacer"></div></td>
-                        <td width="5"></td>
-                        <td align="left" width="50"></td>
-                        <td width="5"></td>
-                          <td align="left"><img src="http://www.wevolt.com/images/news_tab_btn.png"  onclick="show_news(\'news\');" class="navbuttons" border="0"/></td>
-                        <td width="5"></td>
-                          <td align="left"><img src="http://www.wevolt.com/images/updates_tab_btn.png" onclick="show_news(\'updates\');" class="navbuttons" border="0"/></td>
-            
-                      </tr>
-                    </tbody>
-                    </table>
-                            <div style="height:3px;"></div><div style="height:3px;"></div>', 250, '', 12,'');?>
-                                <div style="overflow:auto; height:240px;">
-                                <div id="news_div" style="display:none;">
-								<? 
-								$ModUser = 'w3volt';
-								$ModCat = 'news';
-								include 'modules/news_feed_mod.php';?>
-                              </div>
-                               <div id="updates_div" >
-                               <? 
-								$ModUser = 'w3volt';
-								$ModCat = 'updates';
-								include 'modules/news_feed_mod.php';?>
-                              </div>
-                              </div>
-							  <? $Site->drawStandardModuleFooter();?>
-              </td>
+             <div style="height:5px;"></div>
+                <table cellpadding="0" cellspacing="0"><tr>
+                <td width="55">
+               <div style="color:#7fdbed; font-weight:bold;font-size:11px;">WEvolt</div>
+                <img src="http://www.wevolt.com/images/wevolt_avatar.jpg" width="46" height="46" />
+                </td>
+                <td >
+                
+                
+                <table width="218" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  background="http://www.wevolt.com/images/twitter_box_TL.png" width="17" height="4" style="background-repeat:no-repeat;"></td>
+    <td content rowspan="3" bgcolor="#FFFFFF">  <div id="twitter_wevolt" align="left" style="width:95%;" class="tweets"></div></td>
+    <td background="http://www.wevolt.com/images/twitter_box_TR.png" width="4" height="4" style="background-repeat:no-repeat;"></td>
+  </tr>
+  <tr>
+    <td  background="http://www.wevolt.com/images/twitter_box_L.png" width="17" height="47" style="background-repeat:repeat-y;"></td>
+    <td  bgcolor="#FFFFFF"></td>
+  </tr>
+  <tr>
+    <td background="http://www.wevolt.com/images/twitter_box_BL.png" width="17" height="17" style="background-repeat:no-repeat;"></td>
+    <td background="http://www.wevolt.com/images/twitter_box_BR.png" width="4" height="4" style="background-repeat:no-repeat;"></td>
+  </tr>
+</table>
+ 
+                </td>
+                </tr>
+                </table>
+               <div style="height:5px;"></div>
+                 <table cellpadding="0" cellspacing="0"><tr>
+                <td  width="55">
+               <div style="color:#7fdbed;font-weight:bold; font-size:11px;">Jason<br/>Badower</div>
+                <img src="http://www.wevolt.com/images/jason_avatar.jpg" width="46" height="46" />
+                </td>
+                <td >
+                
+                
+                <table width="218" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  background="http://www.wevolt.com/images/twitter_box_TL.png" width="17" height="4" style="background-repeat:no-repeat;"></td>
+    <td content rowspan="3" bgcolor="#FFFFFF">  <div id="twitter_jasonbadower" align="left" style="width:95%;" class="tweets"></div></td>
+    <td background="http://www.wevolt.com/images/twitter_box_TR.png" width="4" height="4" style="background-repeat:no-repeat;"></td>
+  </tr>
+  <tr>
+    <td  background="http://www.wevolt.com/images/twitter_box_L.png" width="17" height="47" style="background-repeat:repeat-y;"></td>
+    <td  bgcolor="#FFFFFF"></td>
+  </tr>
+  <tr>
+    <td background="http://www.wevolt.com/images/twitter_box_BL.png" width="17" height="17" style="background-repeat:no-repeat;"></td>
+    <td background="http://www.wevolt.com/images/twitter_box_BR.png" width="4" height="4" style="background-repeat:no-repeat;"></td>
+  </tr>
+</table>
+ 
+                </td>
+                
+             
+                </tr>
+                </table>
+                <div style="height:5px;"></div>
+                 <table cellpadding="0" cellspacing="0"><tr>
+                <td  width="55">
+               <div style="color:#7fdbed;font-weight:bold;font-size:11px;">Matt<br/>Jacobs</div>
+                <img src="http://www.wevolt.com/images/matt_avatar_new.jpg" width="46" height="46" />
+                </td>
+                <td >
+                
+                
+                <table width="218" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td  background="http://www.wevolt.com/images/twitter_box_TL.png" width="17" height="4" style="background-repeat:no-repeat;"></td>
+    <td content rowspan="3" bgcolor="#FFFFFF">  <div id="twitter_matteblack" align="left" style="width:95%;" class="tweets"></div></td>
+    <td background="http://www.wevolt.com/images/twitter_box_TR.png" width="4" height="4" style="background-repeat:no-repeat;"></td>
+  </tr>
+  <tr>
+    <td  background="http://www.wevolt.com/images/twitter_box_L.png" width="17" height="47" style="background-repeat:repeat-y;"></td>
+    <td  bgcolor="#FFFFFF"></td>
+  </tr>
+  <tr>
+    <td background="http://www.wevolt.com/images/twitter_box_BL.png" width="17" height="17" style="background-repeat:no-repeat;"></td>
+    <td background="http://www.wevolt.com/images/twitter_box_BR.png" width="4" height="4" style="background-repeat:no-repeat;"></td>
+  </tr>
+</table>
+ 
+                </td>
+                </tr>
+                </table>
+				 <div style="height:5px;"></div>
+                </div>
+                </div>
+                </td>
             </tr>
-          </table>
-          
-            <? $Site->drawStandardModuleTop('<div align="left"><table border="0" cellpadding="0" cellspacing="0">
-                    <tbody>
-                      <tr>
-                        <td width="100"><img src="http://www.wevolt.com/images/wevolt_top_10.png" />
-                            <div class="smspacer"></div></td>
-                        <td width="5"></td>
-                        <td  id="Comics_tab"  onclick="box_list_tab(\'top_10-Comics\');" align="left" width="60"><img src="http://www.wevolt.com/images/comics_tab_btn.png" class="navbuttons"/></td>
-                        <td width="5"></td>
-                        <td id="Blogs_tab"  onclick="box_list_tab(\'top_10-Blogs\');" align="left" width="60"><img src="http://www.wevolt.com/images/blogs_tab_btn.png" class="navbuttons"/></td>
-                        <td width="5"></td>
-                        <td  id="Forums_tab"  onclick="box_list_tab(\'top_10-Forums\');" align="left" width="60"><img src="http://www.wevolt.com/images/forums_tab_btn.png" class="navbuttons"/></td> <td width="5"></td>
-                        <td  id="Forums_tab"  onclick="box_list_tab(\'top_10-Writing\');" align="left" width="60"><img src="http://www.wevolt.com/images/writing_tab_btn.png" class="navbuttons"/></td>
-						<td></td>
+        </table>
             
-                      </tr>
-                    </tbody>
-                </table></div>', 750, '', 12,'');?>
-                               
-                        <div style="overflow:hidden; height:120px;">
-                            <div id="Comics_div">
-                              <? 
-							$ModContent = 'comics';
-							include 'modules/top_10_mod.php';?>
-                            </div>
-                          <div id="Blogs_div" style="display:none;">
-                              <? 
-							$ModContent = 'blogs';
-							include 'modules/top_10_mod.php';?>
-                            </div>
-                          <div id="Forums_div" style="display:none;">
-                              <? 
-							$ModContent = 'forums';
-							include 'modules/top_10_mod.php';?>
-                            </div>
-                          <div id="Writing_div" style="display:none;">
-                              <? 
-							$ModContent = 'writing';
-							include 'modules/top_10_mod.php';?>
-                            </div>
-                        </div><? $Site->drawStandardModuleFooter();?>
-          <input id="top_10_tabs" value="Comics,Forums,Blogs,Writing" type="hidden" />
-        
-      </div></td>
+        </div>
+        </div>
+    </div>
+	</td>
+  </tr>
+  <tr>
+      <td style="background-image:url(http://www.wevolt.com/images/bottom_frame_with_blue.png); background-repeat:no-repeat;width:1058px;height:12px;">
+      </td>
   </tr>
 </table>
 </div>
-
-<?php include 'includes/footer_template_new.php';?>
+  
+<?php require_once('includes/pagefooter_inc.php'); ?>
 

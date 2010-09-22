@@ -40,7 +40,7 @@ FB.XFBML.Host.parseDomTree();
 
 <div id="comments_post" align="center"> 
 <img src="http://www.wevolt.com/images/sync_facebook.png"/> <div style="height:10px;"></div>
-<div id="user" class="messageinfo_white"><div style="height:10px;"></div>If you see your name below then you're already logged into Facebook, otherwise click the Facebook Connect button to get started. <div style="height:10px;"></div>
+<div id="user" class="messageinfo"><div style="height:10px;"></div>If you see your name below then you're already logged into Facebook, otherwise click the Facebook Connect button to get started. <div style="height:10px;"></div>
   <div style="height:10px;"></div>
  
 <fb:login-button onlogin="update_user_box();"></fb:login-button> 

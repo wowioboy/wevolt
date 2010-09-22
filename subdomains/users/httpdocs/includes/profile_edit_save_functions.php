@@ -1,7 +1,7 @@
 <? 
 
 $UserFields = array();
-    $Now = date('Y-m-d h:i:s');
+    $Now = date('Y-m-d H:i:s');
 	
  	//BASIC PROFILE INFO	
 	$Sex = $_POST['txtSex'];

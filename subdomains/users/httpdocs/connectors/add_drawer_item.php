@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include_once($_SERVER['DOCUMENT_ROOT'].'/includes/db.class.php');
+include $_SERVER['DOCUMENT_ROOT'].'/classes/defineThis.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/db.class.php';
+
 
 
 
@@ -17,7 +19,7 @@ if ($Refer == '')
 	$Refer = $_POST['refer'];
 if ($Refer == '')
 	$Refer = $_GET['returnlink'];
-if ($Refer == '')
+if ($Refer == '') 
 	$Refer = $_POST['txtReturn'];
 $ItemID = $_GET['id'];
 if ($ItemID == '')
@@ -38,7 +40,7 @@ if ($_SESSION['userid'] == '') {
 
 } else {
 	$Auth = true;
-	$DB = new DB();
+	$DB = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 	if ($_POST['step'] == '') {
 				
 				$DrawerCount = 1;
@@ -91,7 +93,7 @@ $DB->close();
 <style type="text/css">
 body,html {
 margin:0px;
-padding:0px;
+padding:0px; 
 
 }
 
@@ -108,22 +110,11 @@ function closeWindow()
 
 <script type="text/javascript" src="http://www.wevolt.com/scripts/global_functions.js"></script>
  <LINK href="http://www.wevolt.com/css/pf_css_new.css" rel="stylesheet" type="text/css">
-<div style="background-image:url(http://www.wevolt.com/images/!wizard_base.jpg); background-repeat:no-repeat; height:416px; width:624px;" align="center">
-<div style="height:10px;"></div>
-<table width="608" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-										<td id="wizardBox_TL"></td>
-										<td id="wizardBox_T"></td>
-										<td id="wizardBox_TR"></td></tr>
-										<tr><td class="wizardboxcontent"></td>
-										<td class="wizardboxcontent" valign="top" width="592" align="center">
-                                        <img src="http://www.wevolt.com/images/drawers_add_header.png" vspace="8"/>
- </td><td class="wizardboxcontent"></td>
+<div class="wizard_wrapper" align="center" style="height:416px; width:624px;">
 
-						</tr><tr><td id="wizardBox_BL"></td><td id="wizardBox_B"></td>
-						<td id="wizardBox_BR"></td>
-						</tr></tbody></table>
-                        
-                        <div class="spacer"></div><div style="height:10px;"></div>
+                                        <img src="http://www.wevolt.com/images/headers/drawers_header.png" vspace="5"/>
+ 
+<div align="center">
 <table cellpadding="0" cellspacing="0" border="0" width="510">
 <tr>
 <td align="center" class="messageinfo_white">
@@ -207,4 +198,5 @@ closeWindow();
 </td>
 </tr>
 </table>
+</div>
 </div>

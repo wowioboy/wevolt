@@ -1,21 +1,41 @@
 <?php 
 include 'includes/init.php';
 $TrackPage = 1;
-$PageTitle =' wevolt | contact'; 
+$PageTitle .='contact'; 
 if ($_SESSION['IsPro'] == 1) 
     $_SESSION['noads'] = 1;
+require_once('includes/pagetop_inc.php');
+$Site->drawModuleCSS();
 
- include 'includes/header_template_new.php';
-$Site->drawModuleCSS(); ?>
-
-<div align="left">
-<table cellpadding="0" cellspacing="0" border="0" <? if ($_SESSION['IsPro'] == 1) {?> width="100%"<? }?>>
-<tr>
-    <td valign="top" <? if ($_SESSION['IsPro'] == 1) {?>style="padding:5px; color:#FFFFFF;width:60px;"<? } else {?>width="<? echo $SideMenuWidth;?>"<? }?>><? include 'includes/site_menu_inc.php';?></td>
-
-<td  valign="top" align="center"><? if ($_SESSION['noads'] != 1) {?><div style="padding-left:13px;"> <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id-"top_ads"></iframe></div><? }?>
+?>
 
 <div align="center">
+<table cellpadding="0" cellspacing="0" border="0" width="<? echo $TemplateWrapperWidth;?>">
+  <tr>
+    <td valign="top" align="center">
+    <div class="content_bg">
+		<? if ($_SESSION['userid'] != '') {?>
+            <div id="controlnav">
+                <?php $Site->drawControlPanel(); ?>
+            </div>
+        <? }?>
+        <? if ($_SESSION['noads'] != 1) {?>
+            <div id="ad_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;" align="center">
+                <iframe src="" allowtransparency="true" width="728" height="90" frameborder="0" scrolling="no" name="top_ads" id="top_ads"></iframe>
+            </div>
+        <?  }?>
+       
+       
+        <div id="header_div" style="background-color:#FFF;width:<? echo $SiteTemplateWidth;?>px;">
+           <? $Site->drawHeaderWide();?>
+        </div>
+    </div>
+    
+     <div class="shadow_bg">
+        	 <? $Site->drawSiteNavWide();?>
+    </div>
+    
+   <div align="center">
 <div class="spacer"></div>
                            <img src="http://www.wevolt.com/images/contact_header.png">
                            <div class="spacer"></div>
@@ -32,10 +52,14 @@ $Site->drawModuleCSS(); ?>
 </map>
                            <div class="spacer"></div>                   
   </div>
- 	</td>
-</tr>
-</table>
 
-<?php include 'includes/footer_template_new.php';?>
+	</td>
+  </tr>
+ 
+</table>
+</div>
+  
+<?php require_once('includes/pagefooter_inc.php'); ?>
+
 
 

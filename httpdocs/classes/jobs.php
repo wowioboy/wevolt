@@ -29,8 +29,6 @@
 			$this->JobArray = $db->queryUniqueObject($query);
 			return $this->JobArray;
 			$db->close();
-			
-			
 		}
 		
 		public function getJobPositions($JobID, $UserID) {
@@ -73,7 +71,7 @@
 
 		}
 		
-		public function getJobs($CatID, $Search) {
+		public function getJobs($CatID, $Search,$SiteTemplateWidth=980) {
 		
 			$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 			include_once($_SERVER['DOCUMENT_ROOT'].'/classes/jobs_pages.php');
@@ -126,12 +124,12 @@
 				 $db2->close();
 				
 			
-			echo '<table width="'.($_SESSION['contentwidth']-50).'" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+			echo '<table width="'.($SiteTemplateWidth-340).'" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
 				  <td id="blue_cmsBox_TL"></td>
 				  <td id="blue_cmsBox_T"></td>
 				  <td id="blue_cmsBox_TR"></td></tr>
 				  <tr><td class="blue_cmsBox_L" background="http://www.wevolt.com/images/cms/blue_cms_box_L.png" width="8"></td>
-				  <td class="blue_cmsboxcontent" valign="top" width="'.($_SESSION['contentwidth']-66).'" align="left">';
+				  <td class="blue_cmsboxcontent" valign="top" width="'.($SiteTemplateWidth-356).'" align="left">';
 										
 						echo '<table width="100%" cellspacing="5"><tr>';
 						echo '<td class="blue_cmsboxcontent" valign="top" colspan="4">';
@@ -178,13 +176,19 @@
 			
 			
 		}
-		public function drawCatSelect($MediaID=1,$CatID,$OnChange='get_cat(this.options[this.selectedIndex].value)',$Name='catSelect') {
+		public function drawCatSelect($MediaID=1,$CatID,$OnChange='get_cat(this.options[this.selectedIndex].value)',$Name='catSelect',$Blank=false) {
 			$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 			if ($MediaID=='')
 				$MediaID=1;
 			$query = "select * from pf_jobs_cats where media_id='$MediaID' order by title ASC";
 			echo '<select name="'.$Name.'" id="'.$Name.'" onChange="'.$OnChange.';">';
 			$db->query($query);
+			if ($Blank == true) {
+				echo '<option value="';
+				if ($CatID == '')
+						echo ' selected ';
+				echo '>">All</option>';
+			}
 			while ($job = $db->fetchNextObject()) {
 					echo '<option value="'.$job->id.'"';
 					if ($CatID == $job->id)
@@ -197,10 +201,16 @@
 			
 		}
 		
-		public function drawMediaSelect($MediaID=1,$OnChange='get_media(this.options[this.selectedIndex].value)',$Name='mediaSelect') {
+		public function drawMediaSelect($MediaID=1,$OnChange='get_media(this.options[this.selectedIndex].value)',$Name='mediaSelect',$Blank=false) {
 			$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
-			$query = "select * from pf_jobs_media order by title ASC";
+			$query = "select * from pf_jobs_media where active=1 order by title ASC";
 			echo '<select name="'.$Name.'" id="'.$Name.'" onChange="'.$OnChange.';">';
+			if ($Blank == true) {
+				echo '<option value="';
+				if ($CatID == '')
+						echo ' selected ';
+				echo '>">All</option>';
+			}
 			$db->query($query);
 			while ($job = $db->fetchNextObject()) {
 					echo '<option value="'.$job->id.'"';

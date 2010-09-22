@@ -683,6 +683,39 @@
 					
 					echo '}';
 					
+					echo '.projectboxcontent a:link { ';
+                            if ($SkinArray->GlobalSiteLinkFontStyle == 'bold') 
+                                $StyleTag = 'font-weight:bold;';
+                            if ($SkinArray->GlobalSiteLinkFontStyle == 'regular') 
+                                $StyleTag = 'font-style:normal;';
+                            if ($SkinArray->GlobalSiteLinkFontStyle == 'underline') 
+                                $StyleTag = 'text-decoration:underline;';	
+                             echo $StyleTag;
+                                echo 'color:#'.$SkinArray->GlobalSiteLinkTextColor.';';
+					echo '}';
+					
+					echo '.projectboxcontent a:visited { ';
+                            if ($SkinArray->GlobalSiteVisitedFontStyle == 'bold') 
+                                $StyleTag = 'font-weight:bold;';
+                            if ($SkinArray->GlobalSiteVisitedFontStyle == 'regular') 
+                                $StyleTag = 'font-style:normal;'; 
+                            if ($SkinArray->GlobalSiteVisitedFontStyle == 'underline') 
+                                $StyleTag = 'text-decoration:underline;';	
+                             echo $StyleTag;
+                            echo 'color:#'.$SkinArray->GlobalSiteVisitedTextColor.';';
+					echo '}';
+					
+					echo '.projectboxcontent a:hover { ';
+                            if ($SkinArray->GlobalSiteHoverFontStyle == 'bold') 
+                                $StyleTag = 'font-weight:bold;';
+                            if ($SkinArray->GlobalSiteHoverFontStyle == 'regular') 
+                                $StyleTag = 'font-style:normal;';
+                            if ($SkinArray->GlobalSiteHoverFontStyle == 'underline') 
+                                $StyleTag = 'text-decoration:underline;';	
+                             echo $StyleTag;
+                              echo 'color:#'.$SkinArray->GlobalSiteHoverTextColor.';';
+					echo '}';
+					
 					echo '#projectmodbottom { ';
 						 if ($SkinArray->ModBottomImage != '') 
                             echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModBottomImage.');
@@ -699,7 +732,7 @@
 					echo '#projectmodbottomleft {';
 						 if ($SkinArray->ModBottomLeftImage != '') 
                             echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModBottomLeftImage.');
-                            background-repeat:none;';
+                            background-repeat:no-repeat;';
 							
 							if ($SkinArray->ModBottomLeftBGColor != '') 
                             echo 'background-color:#'.$SkinArray->ModBottomLeftBGColor.';';
@@ -712,7 +745,7 @@
 					echo '#projectmodtopleft {'; 
 							if ($SkinArray->ModTopLeftImage != '') 
                             	echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModTopLeftImage.');
-                            		background-repeat:none;';
+                            		background-repeat:no-repeat;';
 							if ($SkinArray->ModTopLeftBGColor != '')
                            		echo 'background-color:#'.$SkinArray->ModTopLeftBGColor.';';
 							 
@@ -725,7 +758,7 @@
 					echo '#projectmodtopright {';
 						  if ($SkinArray->ModTopRightImage != '') 
 						       echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModTopRightImage.');
-                           			 background-repeat:none;';
+                           			 background-repeat:no-repeat;';
 							
 							if ($SkinArray->ModTopRightBGColor != '') 
                            		echo 'background-color:#'.$SkinArray->ModTopRightBGColor.';';
@@ -738,7 +771,7 @@
 					echo '#projectmodbottomright { ';
 							if ($SkinArray->ModBottomRightImage != '') 
                             echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModBottomRightImage.');
-                            	  background-repeat:none;';
+                            	  background-repeat:no-repeat;';
 							if ($SkinArray->ModBottomRightBGColor != '')
                             	echo 'background-color:#'.$SkinArray->ModBottomRightBGColor.';';
                              
@@ -822,7 +855,7 @@
 					echo '#bubblebottomleft {';
 							if ($SkinArray->ModBottomLeftImage != '') 
                            		echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModBottomLeftImage.');
-                           		 background-repeat:none;';
+                           		 background-repeat:no-repeat;';
                              
 							if ($SkinArray->ModBottomLeftBGColor != '') 
                             	echo 'background-color:#'.$SkinArray->ModBottomLeftBGColor.';';
@@ -834,7 +867,7 @@
 					echo '#bubbletopleft{';
 							 if ($SkinArray->ModTopLeftImage != '')
                             	echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModTopLeftImage.');
-                           			 background-repeat:none;';
+                           			 background-repeat:no-repeat;';
                             
                              if ($SkinArray->ModTopLeftBGColor != '')
                             	echo 'background-color:#'.$SkinArray->ModTopLeftBGColor.';';
@@ -846,7 +879,7 @@
 					echo '#bubbletopright{';
 						 if ($SkinArray->ModTopRightImage != '')
                             	echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModTopRightImage.');
-                           			 background-repeat:none;';
+                           			 background-repeat:no-repeat;';
                             
                              if ($SkinArray->ModTopRightBGColor != '')
                             		echo 'background-color:#'.$SkinArray->ModTopRightBGColor.';';
@@ -858,7 +891,7 @@
 					echo '#bubblebottomright{';
 							 if ($SkinArray->ModBottomRightImage != '') 
                            		echo 'background-image:url(/templates/skins/'.$this->SkinCode.'/images/'.$SkinArray->ModBottomRightImage.');
-                            		  background-repeat:none;';
+                            		  background-repeat:no-repeat;';
                            
                              if ($SkinArray->ModBottomRightBGColor != '') 
                            		echo 'background-color:#'.$SkinArray->ModBottomRightBGColor.';';

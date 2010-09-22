@@ -63,9 +63,9 @@ if ($range == 'today') {
 	for ($i = 0; $i < 7; $i++) {
 		$dateString = $date->format('Y-m-d');
 		$queries[] = "select * 
-				  from calendar 
-				  where user_id = '$userid' 
-				  and '$dateString' = date(start)";
+				      from calendar 
+				      where user_id = '$userid' 
+				      and '$dateString' = date(start)";
 		// get non custom repeating days 
 		$queries[] = "select * 
 					  from calendar 

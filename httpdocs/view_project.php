@@ -53,7 +53,9 @@ if ($_GET['auth'] == 1) {
 
 
 
-$PageTitle .= $ComicTitle.' - '.$TrackSection;
+$PageTitle .= $ComicTitle;
+if ($TrackSection !='Home')
+ $PageTitle .= ' - '.$TrackSection;
 if ($TrackSection == 'Reader')
 	$PageTitle .= ' - Page '.$Page.' - '.$ReaderPageTitle;
 
@@ -77,7 +79,7 @@ $Output = $Tracker->insertPageView($ProjectID,$Pagetracking,$Remote,$_SESSION['u
 //if ($_SESSION['username'] == 'matteblack')
 	//print 'OUTPUT = ' .$Output;
 $BodyStyle = $ProjectTemplate->getBodyStyle();
-include_once('includes/header_template_new.php');
+include_once('includes/pagetop_inc.php');
 
 
 $Site->drawModuleCSS();
@@ -209,7 +211,7 @@ function project_tab_inactive(tabid, divid) {
 			<? } else {?>
 			
 					var pages = 1; 
-			<? }?> 
+			<? }?>  
 			
 				attach_file('http://www.wevolt.com/connectors/change_page_layout.php?p='+pages+'&ref='+escape(redirect)+'&page='+page); 
 				//swf.loadComic( "http://www.wevolt.com/processing/get_comic_xml_v2.php?content=<? //echo $ProjectName;?> );
@@ -218,7 +220,20 @@ function project_tab_inactive(tabid, divid) {
 		</script>
 <? }?>
 <div align="left">
+<? if ($_SESSION['userid'] != '') {?>
+            <div id="controlnav">
+                <? $Site->drawControlPanel('100%');?>
+            </div>
+        <? }?>
+ <?  if ((($_SESSION['IsPro'] == 1) || ($_SESSION['ProInvite'] == 1) || ($_SESSION['IsSuperFan'] == 1)) && ($_SESSION['sidebar'] == 'closed')) {?>
+ <div id="pronav">
+                <? $Site->drawProNav('100%');?>
+ </div>
+ <? }?>  
+ 
+  
 <img src="http://www.wevolt.com<? echo $ProjectThumb;?>" style="display:none;"/>
+
 	<table cellpadding="0" cellspacing="0" border="0" id="reader_container">
 
 	<tr><? if (($_SESSION['IsPro'] == 1) || ($_SESSION['ProInvite'] == 1)) {
@@ -227,14 +242,14 @@ function project_tab_inactive(tabid, divid) {
 	} else {
 			$_SESSION['noads'] = 0;
 			$FlashHeight = 90;	
-	}
-		?>
-		<td valign="top" <? if (($_SESSION['IsPro'] == 1) || ($_SESSION['ProInvite'] == 1)) {?>style="width:60px;"<? } else {?> width="<? echo $SideMenuWidth;?>" <? }?> id="sidebar_div">
-			<?  include 'includes/site_menu_inc.php';?>
-    
+	} 
+		?> 
+        <? if ($_SESSION['sidebar'] == 'open') {?>
+		<td valign="top" id="sidebar">
+			<?  include 'includes/sidebar_inc.php';?>
 		</td> 
-        
-        <td  valign="top" align="center" >
+        <? }?>
+        <td  valign="top" <? if (($_SESSION['sidebar'] == 'open') && (($_SESSION['IsPro'] != 1) && ($_SESSION['IsSuperFan'] != 1))) {?>align="left"<? } else {?> align="center"<? } ?> rowspan="2">
         		
 		 <? 
 		 
@@ -303,9 +318,11 @@ $Redirect = 'http://'.$_SERVER['SERVER_NAME'].'/'.$_GET['project'].'/reader/';
 if ($_GET['episode'] != '')
 	$Redirect .= 'episode/'.$_GET['episode'].'/';
 
-
-$_SESSION['sharelink'] = $Redirect .'page/'.$Page.'/';
- 
+if ($Page != '')
+	$_SESSION['sharelink'] = $Redirect .'page/'.$Page.'/';
+else 
+ 	$_SESSION['sharelink'] = $Redirect;
+	
 if ($_SESSION['userid'] != ''){
 	$Tracker->insertUserReadLog($ProjectID,$_SESSION['userid'],$_SESSION['sharelink']); 
 	
@@ -523,21 +540,23 @@ include $PFDIRECTORY.'/templates/common/includes/comic_footer.php';
 				})
 								
 			</script>
-            <center>
+      
 			<? 
                 echo $TemplateHTML;?>
-                </center>
+          
                  
             <? }?>
            <? }?>                  
 		</td>
         
 	</tr>
-    
+   <tr>
+    <td id="sidebar_footer"></td>
+  </tr>
 </table>
 
 </div>
 
-<?php include 'includes/footer_template_new.php';
+<?php include 'includes/pagefooter_inc.php';
 
 ?>

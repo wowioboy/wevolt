@@ -63,6 +63,8 @@
 					  join creators as cr on cr.ComicID=p.ProjectID
 					  where (lower(p.SafeFolder)='".$QueryName."' or p.ProjectID='$SafeFolder')";
 			$ProjectTableArray= $db->queryUniqueObject($query);
+			//if ($_SESSION['username'] == 'matteblack')
+				//print $query;
 		//	echo 'QUERY = ' .  $query;
 			$ProjectTableArray= $db->queryUniqueObject($query);
 			$this->CurrentDate  = date('Y-m-d').' 00:00:00';
@@ -147,13 +149,13 @@
 			unset($ProjectTableArray);
 			$db->close();
 							
-		 }
+		 } 
 		 
 		 public function getProjectRanking() {
 								$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 								$today = date("Ymd"); 
 								$query = "SELECT r.*,p.hits as TotalHits, p.PagesUpdated as LastUpdated, p.cover, (select count(*) from favorites as f where f.ProjectID=p.ProjectID) as TotalVolts,
-										  (SELECT hits from analytics as a where a.ProjectID='".$this->ProjectID."' and a.date ='$today') as TodayHits,
+										  (SELECT distinct hits from analytics as a where a.ProjectID='".$this->ProjectID."' and a.date ='$today') as TodayHits,
 										  (SELECT count(*) from comic_pages as cp where cp.ComicID='".$this->ProjectID."') as TotalPages,
 										  (SELECT count(*) from pagecomments as pc where pc.comicid='".$this->ProjectID."') as TotalComments,
 										  (SELECT count(*) from likes as l where l.ProjectID='".$this->ProjectID."') as TotalLikes
@@ -163,11 +165,13 @@
 										
 								$this->RankArray = $db->queryUniqueObject($query);
 								$db->close();
-							
+						
 								return  $this->RankArray;
 		}
 		
 		public function getReccomendations($Keywords, $Genres, $CreatorSays,$SafeFolder) { 
+		
+						//if ($_SESSION['username'] == 'matteblack') {
 								$db = new DB(PANELDB, PANELDBHOST, PANELDBUSER, PANELDBPASS);
 								//$CreatorSays = 'ef575e881d8';
 								$CreatorPicks = explode(',',$CreatorSays);
@@ -218,34 +222,46 @@
 									(select TO_DAYS(p.PagesUpdated) from projects as p2 where p2.ProjectID = p.ProjectID) as LastUpdate
 									 from projects as p";	  
 							
-									$where = " where (((";
+									$where = " where (";
 									
 									$Gcount=0;
-									
-									foreach ($GenreArray as $genre) {								
-										$where .="p.genre LIKE '%".trim($genre)."%'";
-										$Gcount++;
-										if (($Gcount < $TotalGenres) || (($Gcount == $TotalGenres)&&($TotalTags >0)))
-											$where .=" or ";
-										
-									}
+									foreach ($GenreArray as $genre) {	
+										if (trim($genre) != '') {	
+												if ($Gcount == 0)
+													$where .= '((';		
+											if ($Gcount != 0) 	
+											$where .= " or ";			
+											$where .="p.genre LIKE '%".trim($genre)."%'";
+											$Gcount++;
+											
+}
+											
+										}
 							
-									$Gcount=0;
+									$KCount=0;
 									
 									foreach ($TagArray as $keyword) {
 											
-										if (((trim($keyword) != '') && (trim($keyword) != ' ')) && ($Gcount <5)) {
-											if (($Gcount <= $TotalTags) && ($Gcount != 0))
-												$where .=" or ";
-																			
+										if (((trim($keyword) != '') && (trim($keyword) != ' ')) && ($KCount <5)) {
+											if (($Gcount == 0) && ($KCount == 0))
+													$where .= '((';	
+											else if (($Gcount>0) && ($KCount == 0))
+												$where .= ' or ';	
+											
+											if ($KCount != 0)
+												$where .=" or ";								
 											$where .=" p.tags LIKE '%".trim(mysql_real_escape_string($keyword))."%'";
-											$Gcount++;
+											//if (($KCount <= $TotalTags) && ($KCount != 0) &&($TagArray[$KCount+1] != ''))
+												//$where .=" or ";
+											$KCount++;
 										}
 									}
-									$where .= ")  and (p.Ranking<40 and p.Ranking>2)";
-									
-									$where .=")";
-									$where .= " and p.installed = 1 and p.Published=1 and p.Hosted=1)"; 
+									if (($KCount >0) || ($Gcount > 0))
+										$where .= ')  and ';
+									$where .= "(p.Ranking<40 and p.Ranking>2)";
+										if (($KCount >0) || ($Gcount > 0))
+										$where .=")";
+									$where .= " and p.installed = 1 and p.Published=1 and p.Hosted=1 and p.ShowRanking=1)"; 
 									
 									$where .= " and p.SafeFolder != '$SafeFolder'";  
 	
@@ -273,6 +289,8 @@
 								}
 								echo '</table>';
 								$db->close();
+						//}
+
 		}
 		 
 		public function CreateNewImgTag($imageTag) {

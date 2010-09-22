@@ -45,7 +45,7 @@ if ($ModContent == 'forums') {
 } else {
 	
 	switch ($ModContent) {
-		case 'comic':
+		case 'comics':
 			$where = " and c.pages > 0 and c.projecttype = 'comic' ";
 			break;
 		case 'writing':
@@ -59,8 +59,9 @@ if ($ModContent == 'forums') {
 	}
 	$query = "select * from projects as c
 			  join rankings as r on c.ProjectID=r.ComicID
-			  where c.installed = 1 and c.Published = 1 and IsPublic=1 and c.Hosted = 1 $where 
+			  where c.installed = 1 and c.Published = 1 and IsPublic=1 and c.Hosted = 1". $where." 
 			  ORDER BY r.ID ASC limit 10";
+			
 	$results = @$InitDB->fetchAll($query);
 	foreach ($results as $i => $row) {
 		$ProjectThumb = $row['thumb'];
@@ -71,7 +72,7 @@ if ($ModContent == 'forums') {
 if ($mVersion!=2) 
 		$string .= '<td align="center" valign="top" width="100"><div class="small_text">'.($i+1).'</div><a href="http://www.wevolt.com/'.$row['SafeFolder'].'/"><img src="http://www.wevolt.com'.$ProjectThumb.'" width="'.$iwidth.'" height="'.$iheight.'" border="0"></a><div class="small_blue_title">'.$row['title'].'</div></td>';
 		else 
-		$string .= '<a href="http://www.wevolt.com/'.$TargetType.'/'.$TargetName.'/"><img src="'.$ProjectThumb.'" width="'.$iwidth.'" height="'.$iheight.'" border="0" tooltip="<h2>'.$row['title'].'</h2>'.$row['synopsis'].'"></a>';
+		$string .= '<a href="http://www.wevolt.com/'.$row['SafeFolder'].'/"><img src="'.$ProjectThumb.'" width="'.$iwidth.'" height="'.$iheight.'" border="0" tooltip="<h2>'.$row['title'].'</h2>'.$row['synopsis'].'"></a>';
 	}
 }
 if ($mVersion!=2) 
